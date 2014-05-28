@@ -1,0 +1,66 @@
+#desktop-header
+  #primary-header
+    .row
+      #address.left
+        |вул. Сахарова, 17, м. Львів, Україна
+
+      #languages-bar.right
+        ul
+          li.active
+            span.image
+          li
+            a.image title='Русский'
+          li
+            a.image title="Polish"
+          li
+            a.image title="English"
+
+
+      #social-links-bar.right
+        ul
+          li
+            a href="#" title="facebook"
+              span.image
+          li
+            a href="#" title="vkontakte"
+              span.image
+
+
+      #primary-header-menu.right
+        ul
+          li
+            a.title href=about_path
+              |Про нас
+
+          li
+            a.title href=news_path
+              |Новини
+
+          li
+            a.title href=articles_path
+              |Корисні статті
+
+  #secondary-header
+    .row
+      #logo.left
+        img src=asset_path('static_images/logo.jpg')
+
+      .right
+        #phones.left
+          ul
+            li
+              a.phone href="#"
+                |+38 (032) 240-33-50
+            li
+              a.phone href="#"
+                |+38 (032) 765-33-50
+
+        #secondary-header-menu.left
+          ul
+            li
+              a.title href="#"
+                |Квартири
+            li
+              a.title href="#"
+                |Контакти
+

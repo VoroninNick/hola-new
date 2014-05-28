@@ -1,14 +1,41 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>Hola</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<%= yield %>
+    <title><%= content_for?(:title) ? yield(:title) : "foundation-rails" %></title>
 
-</body>
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "vendor/modernizr" %>
+    <%= csrf_meta_tags %>
+
+    <!-- IE sticky footer fix -->
+    <!--[if !IE 7]>
+    <style type="text/css">
+        #wrap {display:table;height:100%}
+    </style>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div id="wrap">
+
+      <div id="main">
+        <%= render partial: 'partials/header' %>
+        <div id="content">
+          <%= yield %>
+        </div>
+      </div>
+
+    </div>
+
+    <div id="footer">
+        <%= render partial: 'partials/footer' %>
+    </div>
+
+
+    <%= javascript_include_tag "application" %>
+  </body>
 </html>

@@ -1,0 +1,124 @@
+@import "_config"
+$desktop-primary-header-background: #3e414a
+$desktop-primary-header-height: 29px
+$desktop-primary-header-line-height: 29px
+$desktop-primary-header-text-font-size: 0.8rem
+$desktop-primary-header-text-color: white
+
+$desktop-secondary-header-background: #2e3138
+
+$desktop-secondary-header-text-color: white
+
+$desktop-secondary-header-menu-item-height: 36px
+$desktop-secondary-header-menu-item-color: white
+
+#desktop-header
+  #primary-header
+    background: $desktop-primary-header-background
+    height: $desktop-primary-header-height
+    line-height: $desktop-primary-header-line-height
+    //background-color: red
+
+
+  #address
+    font-size: $desktop-primary-header-text-font-size
+    color: $desktop-primary-header-text-color
+
+  #languages-bar
+    ul
+      li
+        list-style: none
+        display: inline-block
+        padding-right: 10px
+        padding-top: 2px
+
+        .image
+          width: 25px
+          height: 25px
+          background-image: url( <%= asset_path('static_images/facebook.jpg') %> )
+          display: inline-block
+
+
+  #primary-header-menu
+    ul
+      li
+        list-style: none
+        display: inline-block
+        height: $desktop-primary-header-height
+        line-height: $desktop-primary-header-line-height
+
+
+
+        .title
+          padding-left: 15px
+          padding-right: 15px
+
+          display: block
+
+          height: $desktop-primary-header-height
+          line-height: $desktop-primary-header-line-height
+
+          font-size: $desktop-primary-header-text-font-size
+          color: $desktop-primary-header-text-color
+
+
+          &:hover
+            background-color: $pink-color
+
+        &.active
+          .title
+            background-color: $pink-color
+
+
+
+  #social-links-bar
+    ul
+      padding-right: 6rem
+      padding-left: 3rem
+
+      li
+        list-style: none
+        display: inline-block
+
+        padding-right: 10px
+        padding-top: 2px
+
+        &:last-child
+          padding-right: 0
+
+        .image
+          width: 25px
+          height: 25px
+          background-image: url( <%= asset_path('static_images/facebook.jpg') %> )
+          display: inline-block
+
+
+
+  #secondary-header
+    background: $desktop-secondary-header-background
+
+    #phones
+      ul
+        li
+          list-style: none
+
+          .phone
+            color: $desktop-secondary-header-text-color
+            font: $visual-h1-font
+
+
+    #secondary-header-menu
+
+      ul
+        li
+          list-style: none
+          display: inline-block
+
+          .title
+            font: $visual-h3-font
+            //line-height: $desktop-secondary-header-menu-item-height
+            height: $desktop-secondary-header-menu-item-height
+            display: block
+            padding-right: 15px
+            padding-left: 15px
+            color: $desktop-secondary-header-menu-item-color
