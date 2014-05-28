@@ -1,4 +1,24 @@
 Rails.application.routes.draw do
+  get 'appartments', to: 'appartments#list', as: 'appartments'
+
+  get 'appartments/:item', to: 'appartments#item', as: 'appartments_item'
+
+  get 'about', to: 'about#index', as: 'about'
+
+  get 'articles', to: 'articles#list', as: 'articles'
+
+  get 'articles/:item', to: 'articles#item', as: 'articles_item'
+
+  get 'news', to: 'news#list', as: 'news'
+
+  get 'news/:item', to: 'news#item', as: 'news_item'
+
+  get 'contact', to: 'contact#show', as: 'contact'
+
+  get 'contact/create'
+
+  root to: 'home#index'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
