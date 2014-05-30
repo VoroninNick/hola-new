@@ -12,6 +12,32 @@ $desktop-secondary-header-text-color: white
 $desktop-secondary-header-menu-item-height: 36px
 $desktop-secondary-header-menu-item-color: white
 
+.toggle-image
+  svg
+    opacity: 1
+
+    -webkit-transition-property: opacity
+    -moz-transition-property: opacity
+    -o-transition-property: opacity
+    transition-property: opacity
+
+    -webkit-transition-duration: 0.4s
+    -moz-transition-duration: 0.4s
+    -o-transition-duration: 0.4s
+    transition-duration: 0.4s
+
+
+  svg.active
+    opacity: 0
+
+  &.active, &:hover
+    svg.active
+      opacity: 1
+
+    svg.inactive
+      opacity: 0
+
+
 #desktop-header
   #primary-header
     background: $desktop-primary-header-background
@@ -35,8 +61,45 @@ $desktop-secondary-header-menu-item-color: white
         .image
           width: 25px
           height: 25px
-          background-image: url( <%= asset_path('static_images/facebook.jpg') %> )
-          display: inline-block
+
+          //background-image: url( <%#  asset_path('static_images/facebook.jpg') %> )
+
+
+          display: block
+          position: relative
+
+
+          svg
+            width: 25px
+            height: 25px
+            position: absolute
+            top: 0
+            left: 0
+
+            -webkit-transition-property: all
+            -moz-transition-property: all
+            -o-transition-property: all
+            transition-property: all
+
+            -webkit-transition-duration: 0.4s
+            -moz-transition-duration: 0.4s
+            -o-transition-duration: 0.4s
+            transition-duration: 0.4s
+
+          svg.active
+            //display: none
+            opacity: 0
+
+        & .image:hover, &.active .image
+          svg.active
+            //display: block
+            opacity: 1
+
+          svg.inactive
+            //display: none
+            opacity: 0
+
+
 
 
   #primary-header-menu
@@ -86,16 +149,25 @@ $desktop-secondary-header-menu-item-color: white
         &:last-child
           padding-right: 0
 
-        .image
+        .toggle-image
           width: 25px
           height: 25px
-          background-image: url( <%= asset_path('static_images/facebook.jpg') %> )
-          display: inline-block
+          //background-image: url( <%= asset_path('static_images/facebook.jpg') %> )
+          display: block
+          position: relative
+
+          svg
+            width: 25px
+            height: 25px
+            position: absolute
+            top: 0
+            left: 0
 
 
 
   #secondary-header
     background: $desktop-secondary-header-background
+    height: 90px
 
     #phones
       ul

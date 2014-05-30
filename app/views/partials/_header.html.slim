@@ -8,22 +8,36 @@
         ul
           li.active
             span.image
+              // if 1 == 1 then "#{str = ApplicationHelper.css_svg("static_images/all/Launguage-EN color.svg").delete("\n"); raw str }"; else "<svg> \n\n </svg>".gsub ;end
+              = embedded_svg('static_images/all/Launguage-UA color.svg', class: 'active')
+              = embedded_svg('static_images/all/Launguage-UA.svg', class: 'inactive')
           li
             a.image title='Русский'
+              = embedded_svg('static_images/all/Launguage-RU color.svg', class: 'active')
+              = embedded_svg('static_images/all/Launguage-RU.svg', class: 'inactive')
+
           li
             a.image title="Polish"
+              = embedded_svg('static_images/all/Launguage-PL color.svg', class: 'active')
+              = embedded_svg('static_images/all/Launguage-PL.svg', class: 'inactive')
           li
             a.image title="English"
+              = embedded_svg('static_images/all/Launguage-EN color.svg', class: 'active')
+              = embedded_svg('static_images/all/Launguage-EN.svg', class: 'inactive')
 
 
       #social-links-bar.right
         ul
           li
             a href="#" title="facebook"
-              span.image
+              span.toggle-image
+                = embedded_svg('static_images/all/Social-facebook-active.svg', class: 'active')
+                = embedded_svg('static_images/all/Social-facebook-passive.svg', class: 'inactive')
           li
             a href="#" title="vkontakte"
-              span.image
+              span.toggle-image
+                = embedded_svg('static_images/all/Social-vk-active.svg', class: 'active')
+                = embedded_svg('static_images/all/Social-vk-passive.svg', class: 'inactive')
 
 
       #primary-header-menu.right
