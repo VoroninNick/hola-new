@@ -56,8 +56,11 @@
 
   #secondary-header
     .row
-      #logo.left
-        img src=asset_path('static_images/logo.jpg')
+      #logo-wrapper.left
+        a#mobile-close-button.toggle-button
+          = embedded_svg('static_images/all/menu-close-button.svg')
+        #logo
+          = embedded_svg('static_images/all/logo.svg')
 
       .right
         #phones.left
@@ -77,4 +80,62 @@
             li
               a.title href="#"
                 |Контакти
+
+            li.separator
+
+            li
+              a#search-button.toggle-button
+                = embedded_svg('static_images/all/Search-passive.svg', class: 'inactive')
+
+      #mobile-buttons
+        .mobile-button#mobile-search-button
+          a.toggle-button
+            = embedded_svg('static_images/all/Search-passive.svg', class: 'active')
+
+        .mobile-button#mobile-menu-button
+          a.toggle-button
+            = embedded_svg('static_images/all/mobile-menu-button.svg', class: 'active')
+
+
+  #mobile-menu
+    ul
+      li
+        a
+          |Квартири
+      li
+        a
+          |Контакти
+      li
+        a
+          |Про нас
+      li
+        a
+          |Новини
+      li
+        a
+          |Корисні статті
+      li
+        .social-buttons
+      li
+        .languages
+          ul
+            li.active
+              span.toggle-image
+                // if 1 == 1 then "#{str = ApplicationHelper.css_svg("static_images/all/Launguage-EN color.svg").delete("\n"); raw str }"; else "<svg> \n\n </svg>".gsub ;end
+                = embedded_svg('static_images/all/Launguage-UA color.svg', class: 'active')
+                = embedded_svg('static_images/all/Launguage-UA.svg', class: 'inactive')
+            li
+              a.toggle-image title='Русский'
+                = embedded_svg('static_images/all/Launguage-RU color.svg', class: 'active')
+                = embedded_svg('static_images/all/Launguage-RU.svg', class: 'inactive')
+
+            li
+              a.toggle-image title="Polish"
+                = embedded_svg('static_images/all/Launguage-PL color.svg', class: 'active')
+                = embedded_svg('static_images/all/Launguage-PL.svg', class: 'inactive')
+            li
+              a.toggle-image title="English"
+                = embedded_svg('static_images/all/Launguage-EN color.svg', class: 'active')
+                = embedded_svg('static_images/all/Launguage-EN.svg', class: 'inactive')
+
 

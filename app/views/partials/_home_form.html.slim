@@ -1,0 +1,52 @@
+#home-form
+  #home-form-row
+    #home-form-column.columns
+      .h2
+        |Форма швидкого пошуку
+      form
+        #quantity-field.field.columns.large-6
+          label хочу
+
+          .select
+
+            select#quantity-select name="quantity"
+              option value="1"
+                |1-кімнатну
+              option value="2"
+                |2-кімнатну
+              option value="3"
+                |3-кімнатну
+              option value="4"
+                |4-кімнатну
+
+
+
+
+        #region-field.field.columns.large-6
+          label for="region-select"
+            |в
+          .select
+            select id="region-select" name="region"
+              option value="1"
+                |Галицькому р-ні
+              option value="2"
+                |Сихівському р-ні
+              option value="3"
+                |Шевченківському р-ні
+
+
+        #price-from-field.field.columns.large-3
+          label for="price-from-input"
+            |від
+          .input-text
+            input id="price-from-input" type="text" name="price-from" placeholder="120$"
+
+        #price-to-field.field.columns.large-3
+          label for="price-to-input"
+            |до
+          .input-text
+            input id="price-to-input" type="text" name="price-to" placeholder="320$"
+
+        #submit.submit-field.field.columns.large-6
+          .submit-wrapper
+            input type="submit" value="Замовити"

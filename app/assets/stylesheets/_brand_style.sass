@@ -1,125 +1,289 @@
-#test ul li
+@import "config"
+//#test ul li
   list-style: none
-  display: inline-block
+  //display: inline-block
+  //
+  //
+  //a, > span
+  //  //padding-left: 15rem
+  //  //background: #d00a61
+  //
+  //  display: block
+  //  padding-right: 0rem
+  //  height: 36px
+  //  line-height: 36px
+  //  color: white
+  //  border-radius: 6px 0px 0px 6px
+  //  font-size: 1.1rem
+  //  text-transform: uppercase
+  //  font-weight: 400
+  //  position: relative
+  //
+  //
+  //.brand-wrap:after
+  //  //border-top: 1rem solid #d00a61
+  //  //border-bottom: 1rem solid #d00a61
+  //  //border-left: 1rem solid #d00a61
+  //  //border-right: 1rem solid #d00a61
+  //  //content: ""
+  //  width: 15rem
+  //  height: 28rem
+  //  display: block
+  //  float: left
+  //  background-color: #d00a61
+  //  border-radius: 0 6rem 0 0
+  //
+  //
+  //.brand-wrap
+  //  padding-right: 16px
+  //  height: auto
+  //
+  //  #span1
+  //    display: block
+  //    height: 36px
+  //    line-height: 36px
+  //    //float: left
+  //    background: #d00a61
+  //    padding-left: 16px
+  //    border-radius: 6px 0px 0 6px
+  //    min-width: 16rem
+  //    min-height: 9rem
+  //
+  //
+  //
+  //  #span2
+  //    position: absolute
+  //    //float: left
+  //    display: block
+  //    //right: 16rem
+  //    //top: 28rem
+  //    width: 16px
+  //    height: 100%
+  //    right: 0
+  //    top: 0
+  //    padding-bottom: 8px
+  //
+  //    #right-bg
+  //      top: 0
+  //      left: 0
+  //      width: 16px
+  //      height: 100%
+  //      background-color: #d00a61
+  //      position: relative
+  //      display: block
+  //      border-radius: 0 6px 0 0
+  //      //bottom: 8px
+  //
+  //
+  //    #t1
+  //      width: 0
+  //      height: 0
+  //      border-style: solid
+  //      border-color: #d00a61 transparent transparent transparent
+  //      border-width: 8px 8px 0 0
+  //      top: auto
+  //      display: block
+  //      left: 0
+  //      position: absolute
+  //
+  //    #t2
+  //      width: 0
+  //      height: 0
+  //      position: absolute
+  //      top: auto
+  //      left: 0
+  //      border-style: solid
+  //      border-width: 0 0 8px 8px
+  //      border-color: transparent transparent #851452 transparent
+  //
+  //    #t3
+  //      position: absolute
+  //      border-color: #ff7f9d transparent transparent transparent
+  //      width: 0
+  //      height: 0
+  //      display: block
+  //      border-width: 8px 8px 0 0
+  //      border-style: solid
+  //      top: auto
+  //      left: 8px
+  //
+  //
+  //
+  //.reset
+  //  display: block
+  //  position: relative
 
 
-  a, > span
-    //padding-left: 15rem
-    //background: #d00a61
 
+.h1
+  font: $visual-h1-font
+
+.h2
+  font: $visual-h2-font
+.h3
+  font: $visual-h3-font
+.h4
+  font: $visual-h4-font
+
+.reset
+  display: block
+  position: relative
+
+
+
+
+[class*=brand-container]
+  position: relative
+
+  .content
+    background-color: $brand-container-bg-color
+
+  .brand-bottom-bg
+    background-color: $brand-container-bg-color
+    bottom: 0
+    left: 0
+    position: absolute
     display: block
-    padding-right: 0rem
-    height: 36px
-    line-height: 36px
-    color: white
-    border-radius: 6px 0px 0px 6px
-    font-size: 1.1rem
-    text-transform: uppercase
-    font-weight: 400
-    position: relative
 
-
-  .brand-wrap:after 
-    //border-top: 1rem solid #d00a61
-    //border-bottom: 1rem solid #d00a61
-    //border-left: 1rem solid #d00a61
-    //border-right: 1rem solid #d00a61
-    //content: ""
-    width: 15rem
-    height: 28rem
-    display: block
-    float: left
-    background-color: #d00a61
-    border-radius: 0 6rem 0 0
-
-
-  .brand-wrap
-    padding-right: 16px
-    height: auto
-
-    #span1
+    &:before
+      content: ""
       display: block
-      height: 36px
-      line-height: 36px
-      //float: left
-      background: #d00a61
-      padding-left: 16px
-      border-radius: 6px 0px 0 6px
-      min-width: 16rem
-      min-height: 9rem
-
-
-
-    #span2
       position: absolute
-      //float: left
-      display: block
-      //right: 16rem
-      //top: 28rem
-      width: 16px
-      height: 100%
+      bottom: 0
       right: 0
-      top: 0
-      padding-bottom: 8px
+      width: 0
+      height: 0
+      border-style: solid
+      border-color: transparent transparent $brand-container-corner-dark-color transparent
 
-      #right-bg
-        top: 0
-        left: 0
-        width: 16px
-        height: 100%
-        background-color: #d00a61
-        position: relative
-        display: block
-        border-radius: 0 6px 0 0
-        //bottom: 8px
+    &:after
+      content: ""
+      display: block
+      position: absolute
+      bottom: 0
+      width: 0
+      height: 0
+      border-style: solid
+      border-color: $brand-container-corner-light-color transparent transparent transparent
 
 
-      #t1
-        width: 0
-        height: 0
-        border-style: solid
-        border-color: #d00a61 transparent transparent transparent
-        border-width: 8px 8px 0 0
-        top: auto
-        display: block
-        left: 0
-        position: absolute
+.small-brand-container
+  padding-bottom: 16px
 
-      #t2
-        width: 0
-        height: 0
-        position: absolute
-        top: auto
-        left: 0
-        border-style: solid
-        border-width: 0 0 8px 8px
-        border-color: transparent transparent #851452 transparent
+  .content
+    border-radius: $brand-container-border-radius $brand-container-border-radius 0 0
 
-      #t3
-        position: absolute
-        border-color: #ff7f9d transparent transparent transparent
-        width: 0
-        height: 0
-        display: block
-        border-width: 8px 8px 0 0
-        border-style: solid
-        top: auto
-        left: 8px
+  .brand-bottom-bg
+    right: 16px
+    height: 16px
+    border-radius: 0 0 0 $brand-container-border-radius
+
+
+    &:before
+
+      border-width: 0 0 16px 16px
+
+
+    &:after
+      right: -16px
+
+      border-width: 16px 16px 0 0
 
 
 
-  .reset
-    display: block
+
+
+
+[class*=order-button]
+  display: inline-block
+  font: $visual-h2-font
+  text-shadow: -2px 1px 0px rgba(73, 80, 94, 0.6)
+  font-weight: 700
+
+
+  &, &:hover, &:active, &:visited
+    color: white
+
+  .button-price
+    background-color: $order-button-price-bg-color
+    text-transform: uppercase
+    display: inline-block
+
+  .button-label
+
+    text-transform: uppercase
+    display: inline-block
+
+    .button-label-title
+      background-color: $order-button-title-bg-color
+
+
+.large-order-button
+  //height: 4rem
+  .button-price
+    padding: 0rem 1.5rem
+    border-radius: $large-order-button-border-radius 0 0 $large-order-button-border-radius
+    height: 4.25rem
+    line-height: 4.25rem
+
+  .button-label
+    padding: 0
+    border-radius: 0 $large-order-button-border-radius 0 0
+    height: 4.25rem
+    line-height: 4.25rem
     position: relative
 
+    .button-label-title
+      padding: 0rem 2.5rem 0.25rem 2rem
+      height: 3.25rem
+      display: block
+      border-radius: 0 $large-order-button-border-radius 0 0
+
+    .button-label-bottom-bg
+      position: absolute
+      background-color: $green-color
+      left: 0
+      bottom: 0
+      height: 16px
+      right: 16px
+
+      &:before
+        content: ""
+        display: block
+        position: absolute
+        bottom: 0
+        right: 0
+        width: 0
+        height: 0
+        border-style: solid
+        border-color: transparent transparent $order-button-label-corner-dark-color transparent
+
+      &:after
+        content: ""
+        display: block
+        position: absolute
+        bottom: 0
+        width: 0
+        height: 0
+        border-style: solid
+        border-color: $order-button-label-corner-light-color transparent transparent transparent
+
+
+      &:before
+
+        border-width: 0 0 16px 16px
+
+      &:after
+        right: -16px
+        border-width: 16px 16px 0 0
+
+
+    .brand-bottom-bg
 
 
 
+.pink-color
+  color: $pink-color
 
-
-
-
-
-
-
-
+.green-color
+  color: $green-color

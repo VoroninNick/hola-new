@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   get 'appartments', to: 'appartments#list', as: 'appartments'
 
   get 'appartments/:item', to: 'appartments#item', as: 'appartments_item'
@@ -16,6 +17,8 @@ Rails.application.routes.draw do
   get 'contact', to: 'contact#show', as: 'contact'
 
   get 'contact/create'
+
+  get 'test', to: 'test#index'
 
   root to: 'home#index'
 

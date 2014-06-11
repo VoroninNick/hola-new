@@ -39,6 +39,7 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 # gem 'debugger', group: [:development, :test]
 
 
+gem 'protected_attributes'
 
 gem 'slim-rails'
 
@@ -47,3 +48,9 @@ gem 'simple_form'
 gem 'foundation-rails'
 gem 'rails_admin'
 gem 'devise'
+
+
+# js gems
+gem "selectize-rails"
+
+gem "rails_admin_map_field", :github => "beyondthestory/rails_admin_map_field"

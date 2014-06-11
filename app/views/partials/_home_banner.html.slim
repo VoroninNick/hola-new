@@ -1,0 +1,25 @@
+#home-slider
+  .slides
+    .slide
+      .slide-image
+        = link_to( image_tag('http://placehold.it/2000x520&text=slide 1'), '#' )
+      .slide-description-wrapper
+        .reset
+          .row
+            .slide-description.small-brand-container.right.pull-1
+              .content
+                .title
+                  |Двокімнатний люкс
+                .description
+                  |Галицький район, м. Львів
+                br
+                  = order_button('350 $', 'Замовити!', 'large')
+              .brand-bottom-bg
+
+  .bullets
+    ul
+      li.active
+
+      li
+
+      li

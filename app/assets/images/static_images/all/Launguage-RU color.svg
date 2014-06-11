@@ -14,7 +14,7 @@
 	<clipPath id="SVGID_2_">
 		<use xlink:href="#SVGID_1_"  overflow="visible"/>
 	</clipPath>
-	<path opacity="0.3" clip-path="url(#SVGID_2_)" fill="#353A42" d="M370,149v1l0,0l0,0h-1v1l0,0l0,0h-1v1l0,0l0,0h-1v1l0,0l0,0h-1v1
+	<path opacity="0.3" clip-path="url(#SVGID_2_)" fill="#353A42" class="shadow" d="M370,149v1l0,0l0,0h-1v1l0,0l0,0h-1v1l0,0l0,0h-1v1l0,0l0,0h-1v1
 		l0,0l0,0h-1v1l0,0l0,0h-1v1l0,0l0,0h-1v1l0,0l0,0h-1v1l0,0l0,0h-1v1l0,0l0,0h-1v1l0,0l0,0h-1v1l0,0l0,0h-1v1l0,0l0,0h-1v1l0,0l0,0
 		h-1v1l0,0l0,0h-1v1l0,0l0,0h-1v1l0,0l0,0h-1v1l0,0l0,0h-1v1l0,0l0,0h-1v1l0,0l0,0h-1v1l0,0l0,0h-1v1l0,0l0,0h-1v1l0,0l0,0h-1v1l0,0
 		l0,0h-1v1l0,0l0,0h-1v1l0,0l0,0h-1v1l0,0l0,0h-1v1l0,0l0,0h-1v1l0,0l0,0h-1v1l0,0l0,0h-1v1l0,0l0,0h-1v1l0,0l0,0h-1v1l0,0l0,0h-1v1

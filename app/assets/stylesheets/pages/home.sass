@@ -1,0 +1,256 @@
+//@import "foundation/components/grid"
+@import "config"
+@import "functions"
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.page.home
+  .h2
+    text-transform: uppercase
+    color: white
+    text-align: center
+
+#home-slider
+  .slide
+    position: relative
+    .slide-description-wrapper
+      position: absolute
+      height: 0
+      width: 100%
+      bottom: 0
+
+
+      .slide-description
+        -webkit-transform: translateY(-100%)
+        margin-top: -30px
+        width: auto
+        //position: absolute
+        display: inline-block
+
+        .content
+          padding: 1.5rem 2rem 1rem 2rem
+
+          .title
+            font: $visual-h1-font
+            color: $visual-h1-color
+            text-shadow: $visual-h1-text-shadow
+            text-transform: uppercase
+
+            padding: $visual-h1-padding
+
+          .description
+
+
+  .bullets
+    height: 2.25rem
+    background-color: #3e414a
+
+    ul
+      text-align: center
+      margin: 0
+      height: 100%
+      li
+        display: inline-block
+        height: 12px
+        width: 12px
+
+        background-color: $pink-color
+        border-radius: 50%
+        overflow: hidden
+        margin-right: 2.25rem
+        cursor: pointer
+
+
+        //@include vertical-align(25%)\
+        top: 25%
+        position: relative
+        -webkit-transform: translateY(-25%) rotate(-60deg)
+
+        &:after
+          content: ""
+          position: relative
+          display: block
+          background-color: rgba(0, 0, 0, 0.3)
+          top: 6px
+          width: 12px
+          height: 12px
+
+        &:last-child
+          margin-right: 0
+
+        &.active
+          background-color: $green-color
+          cursor: default
+
+
+
+
+
+
+// home form
+
+#home-form
+  #home-form-row
+    @include grid-row
+    max-width: 792px
+
+  .field
+    display: inline-block
+    margin-bottom: 1rem
+
+    > label
+      width: 3rem
+      line-height: 4rem
+      display: block
+      float: left
+
+
+    .select
+      padding-left: 3rem
+      height: 4rem
+      width: 100%
+
+      select
+        height: 100%
+        width: 100%
+
+    .input-text
+      height: 4rem
+      padding-left: 3rem
+      padding-top: 0.625rem
+
+      input
+        font-size: 1.2rem
+        background-color: $input-field-bg
+        border-radius: 6px
+        color: white
+        height: 2.75rem
+//line-height: 4rem
+
+.js
+  .select
+    select
+      display: none
+
+    .custom-select
+      position: relative
+      display: block
+      outline: none
+
+      .selected-value
+        display: block
+        background-color: $input-field-bg
+
+        color: white
+        height: 4rem
+        line-height: 4rem
+        width: 100%
+        padding-right: 4rem
+        padding-left: 1rem
+        font-size: 1.2rem
+
+        border-radius: 8px
+
+      label.dropdown-arrow
+        width: 4rem
+        height: 4rem
+
+        top: 0
+        right: 0
+        position: absolute
+        display: block
+        background-color: #5f6774
+
+        border-radius: 0px 8px 8px 0px
+
+        -webkit-transition-duration: 0.3s
+        -webkit-transition-property: all
+
+        svg
+          top: 24px
+          left: 19px
+          position: relative
+          width: 26px
+          height: 16px
+          -webkit-transform: rotate(180deg)
+
+          -webkit-transition-duration: 0.3s
+          -webkit-transition-property: all
+
+
+      ul.dropdown
+        position: relative
+        z-index: 1
+        display: none
+        margin: 0
+        padding-right: 4rem
+
+        li
+          list-style: none
+          height: 4rem
+          background-color: $input-field-bg
+          display: block
+          line-height: 4rem
+          color: white
+          font-size: 1.2rem
+          padding-left: 1rem
+          padding-right: 1rem
+
+          border-bottom: solid 1px #5e6472
+
+          &:last-child
+            border-radius: 0 0 8px 8px
+
+          &:hover
+            background-color: $green-color
+
+          &:last-child
+            border-bottom: none
+
+
+
+      &.open
+        .selected-value
+          border-radius: 8px 8px 8px 0
+
+        label.dropdown-arrow
+          background-color: $pink-color
+
+          svg
+            -webkit-transform: rotate(0deg)
+
+
+        .dropdown
+          display: block
+
+
+
+
+
+
+
+
+
+
+
+
+  .submit-field
+    .submit-wrapper
+
+      input
+        background-color: transparent
+        border: none
+        outline: none
+
+.js
+  #home-form
+    .field
+      .select
+        select
+      //display: none
+
+      .selectize-control
+        min-width: 200px
+

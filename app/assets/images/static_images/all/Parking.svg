@@ -3,7 +3,7 @@
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 width="128px" height="128px" viewBox="0 0 128 128" enable-background="new 0 0 128 128" xml:space="preserve">
-<path fill="#444953" d="M128,25c0-13.807-11.193-25-25.002-25H25.002C11.194,0,0,11.193,0,25v78c0,13.807,11.194,25,25.002,25
+<path fill="#444953" class="bg" d="M128,25c0-13.807-11.193-25-25.002-25H25.002C11.194,0,0,11.193,0,25v78c0,13.807,11.194,25,25.002,25
 	h77.996C116.807,128,128,116.807,128,103V25z"/>
 <g>
 	<g>
@@ -14,7 +14,7 @@
 		<clipPath id="SVGID_2_">
 			<use xlink:href="#SVGID_1_"  overflow="visible"/>
 		</clipPath>
-		<path clip-path="url(#SVGID_2_)" fill="#353A42" enable-background="new    " d="M90.871,22H37.129
+		<path clip-path="url(#SVGID_2_)" fill="#353A42" class="shadow" enable-background="new    " d="M90.871,22H37.129
 			c-0.675,0-1.281,0.065-1.715,0.555c-0.042,0.042-0.085-0.044-0.125,0c-0.042,0.042-0.085,0.018-0.125,0.063
 			c-0.042,0.042-0.085,0.049-0.125,0.094c-0.042,0.042-0.085,0.065-0.125,0.109c-0.042,0.042-0.085,0.073-0.125,0.117
 			c-0.042,0.042-0.085,0.077-0.125,0.121c-0.042,0.042-0.085,0.079-0.125,0.123c-0.042,0.042-0.085,0.08-0.125,0.124

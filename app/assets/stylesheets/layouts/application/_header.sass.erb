@@ -1,20 +1,26 @@
 @import "_config"
+@import "_functions"
 $desktop-primary-header-background: #3e414a
-$desktop-primary-header-height: 29px
-$desktop-primary-header-line-height: 29px
+$desktop-primary-header-height: 30px
+$desktop-primary-header-line-height: 30px
 $desktop-primary-header-text-font-size: 0.8rem
-$desktop-primary-header-text-color: white
+$desktop-primary-header-text-color: #777
 
 $desktop-secondary-header-background: #2e3138
 
-$desktop-secondary-header-text-color: white
+$desktop-secondary-header-text-color: #eeeeee
 
 $desktop-secondary-header-menu-item-height: 36px
-$desktop-secondary-header-menu-item-color: white
+$desktop-secondary-header-menu-item-color: #eeeeee
 
 .toggle-image
   svg
     opacity: 1
+    max-width: 100%
+    max-height: 100%
+    top: 0
+    left: 0
+    position: absolute
 
     -webkit-transition-property: opacity
     -moz-transition-property: opacity
@@ -38,7 +44,38 @@ $desktop-secondary-header-menu-item-color: white
       opacity: 0
 
 
+
+
+.toggle-button
+  svg
+    max-width: 100%
+    max-height: 100%
+
+    .bg, .shadow
+      -webkit-transition-property: fill
+      -moz-transition-property: fill
+      -o-transition-property: fill
+      transition-property: fill
+
+      -webkit-transition-duration: 0.4s
+      -moz-transition-duration: 0.4s
+      -o-transition-duration: 0.4s
+      transition-duration: 0.4s
+
+  &:hover
+    svg
+      .bg
+        fill: #9FD522 !important
+      .shadow
+        fill: rgba(70, 77, 83, 0.3) !important
+
+
 #desktop-header
+  ul
+    margin-bottom: 0
+    max-height: 100%
+
+
   #primary-header
     background: $desktop-primary-header-background
     height: $desktop-primary-header-height
@@ -47,18 +84,26 @@ $desktop-secondary-header-menu-item-color: white
 
 
   #address
+    padding-left: 20px
     font-size: $desktop-primary-header-text-font-size
     color: $desktop-primary-header-text-color
 
   #languages-bar
     ul
+      height: $desktop-primary-header-height
+
       li
+        height: 100%
         list-style: none
         display: inline-block
         padding-right: 10px
-        padding-top: 2px
+        //padding-top: 2px
+
+        &:last-child
+          padding-right: 20px
 
         .image
+          @include vertical-align(50%)
           width: 25px
           height: 25px
 
@@ -75,29 +120,42 @@ $desktop-secondary-header-menu-item-color: white
             position: absolute
             top: 0
             left: 0
+            opacity: 1
 
-            -webkit-transition-property: all
-            -moz-transition-property: all
-            -o-transition-property: all
-            transition-property: all
 
-            -webkit-transition-duration: 0.4s
-            -moz-transition-duration: 0.4s
-            -o-transition-duration: 0.4s
-            transition-duration: 0.4s
+            &.active
+              opacity: 0
+              z-index: 3
 
-          svg.active
-            //display: none
-            opacity: 0
+              -webkit-transition-property: opacity
+              -moz-transition-property: opacity
+              -o-transition-property: opacity
+              transition-property: opacity
+
+              -webkit-transition-duration: 0.4s
+              -moz-transition-duration: 0.4s
+              -o-transition-duration: 0.4s
+              transition-duration: 0.4s
+
+
+
+
+
+
 
         & .image:hover, &.active .image
           svg.active
             //display: block
             opacity: 1
 
+            //-webkit-transition-duration: 0.4s
+            //-moz-transition-duration: 0.4s
+            //-o-transition-duration: 0.4s
+            //transition-duration: 0.4s
+
           svg.inactive
             //display: none
-            opacity: 0
+            //opacity: 0
 
 
 
@@ -136,25 +194,35 @@ $desktop-secondary-header-menu-item-color: white
 
   #social-links-bar
     ul
-      padding-right: 6rem
-      padding-left: 3rem
+      padding-right: 5rem
+      padding-left: 2rem
+      height: $desktop-primary-header-height
 
       li
+        height: 100%
         list-style: none
         display: inline-block
 
+
         padding-right: 10px
-        padding-top: 2px
+        //padding-top: 2px
+
 
         &:last-child
           padding-right: 0
 
+
+        a
+          display: block
+          @include vertical-align(50%)
+
         .toggle-image
+
           width: 25px
           height: 25px
-          //background-image: url( <%= asset_path('static_images/facebook.jpg') %> )
+          //background-image: url( <%# asset_path('static_images/facebook.jpg') %> )
           display: block
-          position: relative
+          //position: relative
 
           svg
             width: 25px
@@ -169,28 +237,252 @@ $desktop-secondary-header-menu-item-color: white
     background: $desktop-secondary-header-background
     height: 90px
 
+    #mobile-search-button
+      display: none
+    #mobile-menu-button
+      display: none
+
+    .row
+      height: 100%
+
+      .right
+        height: 100%
+        //@include vertical-align(50%)
+
+
+    #logo-wrapper
+      height: 100%
+
+      #mobile-close-button
+        display: none
+
+        -webkit-transition-property: opacity
+        -moz-transition-property: opacity
+        -o-transition-property: opacity
+        transition-property: opacity
+
+        -webkit-transition-duration: 0.4s
+        -moz-transition-duration: 0.4s
+        -o-transition-duration: 0.4s
+        transition-duration: 0.4s
+
+
+      #logo
+        left: -30px
+        width: 254px
+        height: 76px
+        //padding-top: 14px
+        @include vertical-align(100%)
+
+        -webkit-transition-property: opacity
+        -moz-transition-property: opacity
+        -o-transition-property: opacity
+        transition-property: opacity
+
+        -webkit-transition-duration: 0.4s
+        -moz-transition-duration: 0.4s
+        -o-transition-duration: 0.4s
+        transition-duration: 0.4s
+
+        svg
+          width: 100%
+          height: 100%
+
+
+
     #phones
+      padding-right: 2rem
+      @include vertical-align(50%)
       ul
         li
           list-style: none
+
 
           .phone
             color: $desktop-secondary-header-text-color
-            font: $visual-h1-font
+            font: $visual-h2-font
 
 
     #secondary-header-menu
+      //@include vertical-align(50%)
+      height: 100%
 
       ul
+        height: 100%
+
         li
+          @include vertical-align(50%)
           list-style: none
-          display: inline-block
+          display: block
+          float: left
+
+          &.separator
+            margin-left: 10px
+            margin-right: 10px
+            width: auto
+            height: 17px
+            border-right: #e4e6e5 solid 1px
+            border-left: #24272e solid 1px
 
           .title
-            font: $visual-h3-font
-            //line-height: $desktop-secondary-header-menu-item-height
+            font: $visual-h4-font
+            line-height: $desktop-secondary-header-menu-item-height
             height: $desktop-secondary-header-menu-item-height
             display: block
             padding-right: 15px
             padding-left: 15px
             color: $desktop-secondary-header-menu-item-color
+            text-transform: uppercase
+
+
+
+
+          #search-button
+            width: 33px
+            height: 33px
+            display: block
+            position: relative
+            margin-left: 20px
+            margin-right: 20px
+
+
+
+#mobile-menu
+  display: none
+
+
+
+#desktop-header
+  @media only screen and (max-width: 884px)
+    #primary-header
+      #social-links-bar
+        ul
+          padding-right: 2rem
+          padding-left: 2rem
+
+    #secondary-header
+      #phones
+        padding-right: 1rem
+
+      #secondary-header-menu
+        ul
+          li
+            &.separator
+              display: none
+
+
+
+
+  @media only screen and (max-width: 850px)
+    #primary-header
+      display: none
+    #secondary-header
+      #logo-wrapper
+
+        #mobile-close-button
+          width: 60px
+          height: 60px
+          display: block
+          opacity: 0
+          position: absolute
+          top: 15px
+          left: 30px
+
+          svg
+            max-width: 100%
+            max-height: 100%
+
+      #secondary-header-menu
+        display: none
+
+      #phones
+        display: none
+
+
+      #mobile-buttons
+        float: right
+        display: block
+        height: 100%
+
+        .mobile-button
+          @include vertical-align(50%)
+          display: block
+          width: 60px
+          height: 60px
+          float: left
+          margin-right: 30px
+
+
+          a.toggle-image
+            height: 60px
+            width: 60px
+            position: relative
+            display: block
+
+
+          svg
+            max-width: 100%
+            max-height: 100%
+
+          &#mobile-menu-button
+
+
+          &#mobile-search-button
+            display: block
+
+
+    #mobile-menu
+      > ul
+        > li
+          list-style: none
+
+          .social-buttons
+            ul
+              li
+                list-style: none
+                width: 60px
+                height: 60px
+
+                .toggle-image
+                  display: block
+                  width: 100%
+                  height: 100%
+
+          .languages
+            ul
+              li
+                list-style: none
+                width: 60px
+                height: 60px
+                display: inline-block
+
+                .toggle-image
+                  position: relative
+                  display: block
+                  width: 100%
+                  height: 100%
+
+
+
+
+  &.mobile-menu-open
+    @media only screen and (max-width: 850px)
+      #secondary-header
+        #logo-wrapper
+          #logo
+            opacity: 0
+
+          #mobile-close-button
+            opacity: 1
+            z-index: 1
+
+
+
+
+#mobile-menu-button
+
+
+
+
+
+

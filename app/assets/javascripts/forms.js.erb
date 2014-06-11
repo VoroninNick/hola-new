@@ -1,0 +1,145 @@
+$(document).on('ready', function(){
+    $('.select').each(function(){
+        var $select_container = $(this)
+        var $select = $select_container.find('select')
+
+        var $custom_select = $('<div class="custom-select"></div>')
+        $custom_select.attr('tabindex', '1')
+        $custom_select.insertAfter($select)
+        var $selected_value = $('<div class="selected-value"></div>')
+        var $selected_option = $select.find('option').first()
+        $selected_value.text( $selected_option.text() )
+        $selected_value.attr( 'data-value', $selected_option.attr('value') )
+        $custom_select.append($selected_value)
+
+        var $dropdown_arrow = $('<label class="dropdown-arrow"></label>')
+        str = '<%= ApplicationHelper.js_embedded_svg('static_images/all/select-arrow.svg') %>'
+        var $dropdown_arrow_svg = $(str)
+
+        $dropdown_arrow.append($dropdown_arrow_svg)
+        $custom_select.append($dropdown_arrow)
+
+        var $dropdown = $('<ul class="dropdown"></ul>')
+        $custom_select.append($dropdown)
+        $select.find('option').each(function(){
+            var $option = $(this)
+            var value = $option.attr('value')
+            var text = $option.text()
+
+            var $item = $('<li></li>')
+            $item.text(text)
+            $item.attr('data-value', value)
+            $dropdown.append($item)
+        })
+
+        //var $custom_select = $select_container.find('.custom-select')
+
+        var $field = $select_container.parent()
+        var $field_label = $field.find('> label')
+
+
+
+        //var $dropdown = $custom_select.find('.dropdown')
+        var $dropdown_items = $dropdown.find('li')
+
+        $field_label.click(function(){
+            var $field_label = $(this)
+            var $custom_select = $field_label.parent().find('.custom-select')
+            var $select_container = $custom_select.parent()
+            console.log('hello - label')
+            $custom_select.toggleClass('open')
+            if($custom_select.hasClass('open')){
+                $select_container.trigger('focusin')
+            }
+            else{
+                $select_container.trigger('focusout')
+            }
+
+
+        })
+
+        $dropdown_arrow.click(function(){
+            //alert('hello')
+            var $dropdown_arrow = $(this)
+            var $custom_select = $dropdown_arrow.parent()
+            var $select_container = $custom_select.parent()
+            console.log('hello - dropdawn_arrow' )
+            $custom_select.toggleClass('open')
+
+            var $dropdown = $custom_select.find('.dropdown')
+
+
+
+            if($custom_select.hasClass('open')){
+                $dropdown.fadeIn()
+                $select_container.trigger('focusin')
+            }
+            else{
+
+                $select_container.trigger('focusout')
+            }
+        })
+
+        $dropdown_items.click(function(){
+            var $item = $(this)
+            var $dropdown = $item.parent()
+            var $custom_select = $dropdown.parent()
+            var $select_container = $custom_select.parent()
+            var $select = $select_container.find('select')
+            var $selected_item = $custom_select.find('.selected-value')
+            var item_text = $item.text()
+            var item_value = $item.attr('data-value')
+            $selected_item.text(item_text)
+            $selected_item.attr('data-value', item_value)
+
+
+
+
+
+            $custom_select.removeClass('open')
+
+        })
+
+        $selected_value.click(function(){
+            var $selected_value = $(this)
+            var $custom_select = $selected_value.parent()
+            //console.log('hello - dropdawn_arrow' )
+            $custom_select.toggleClass('open')
+
+            var $dropdown = $custom_select.find('.dropdown')
+
+            if($custom_select.hasClass('open')){
+                $dropdown.fadeIn()
+                //$select_container.trigger('focusin')
+            }
+            else{
+                $dropdown.fadeOut()
+                //$select_container.trigger('focusout')
+            }
+
+            //$dropdown.fadeIn()
+        })
+
+
+        $select_container.focusout(function(){
+            console.log('focus out')
+
+            var $select_container = $(this)
+            var $custom_select = $select_container.find('.custom-select')
+            $custom_select.removeClass('open')
+            //$select_container.css('display', 'none')
+
+            var $custom_select = $select_container.find('.custom-select')
+            var $dropdown = $custom_select.find('.dropdown')
+            $dropdown.fadeOut()
+        })
+
+        $select_container.focusin(function(){
+            console.log('focus in')
+            //alert('focus in')
+        })
+
+
+
+    })
+})

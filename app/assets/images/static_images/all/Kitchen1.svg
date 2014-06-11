@@ -3,7 +3,7 @@
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 width="128px" height="128px" viewBox="0 0 128 128" enable-background="new 0 0 128 128" xml:space="preserve">
-<path fill="#444953" d="M128,25c0-13.807-11.182-25-24.99-25H25.002C11.194,0,0,11.193,0,25v78c0,13.807,11.194,25,25.002,25h78.007
+<path fill="#444953" class="bg" d="M128,25c0-13.807-11.182-25-24.99-25H25.002C11.194,0,0,11.193,0,25v78c0,13.807,11.194,25,25.002,25h78.007
 	c13.81,0,24.99-11.193,24.99-25L128,25L128,25z"/>
 <g>
 	<g>
@@ -14,7 +14,7 @@
 		<clipPath id="SVGID_2_">
 			<use xlink:href="#SVGID_1_"  overflow="visible"/>
 		</clipPath>
-		<polygon clip-path="url(#SVGID_2_)" fill="#353A42" enable-background="new    " points="89,31 59,61 52,61 54,59 54,58 52,58 
+		<polygon clip-path="url(#SVGID_2_)" fill="#353A42" class="shadow" enable-background="new    " points="89,31 59,61 52,61 54,59 54,58 52,58
 			59,51 59,47 52,47 52,31 40,31 0,71 0,72 -1,72 -1,73 -2,73 -2,74 -3,74 -3,75 -3,75 -4,75 -4,76 -4,77 -5,77 -5,78 -6,78 -6,79 
 			-7,79 -7,80 -8,80 -8,81 -9,81 -9,82 -10,82 -10,83 -11,83 -11,84 -12,84 -12,85 -13,85 -13,86 -14,86 -14,87 -15,87 -15,88 
 			-16,88 -16,89 -17,89 -17,90 -18,90 -18,91 -19,91 -19,92 -20,92 -20,93 -21,93 -21,94 -22,94 -22,95 -23,95 -23,96 -24,96 

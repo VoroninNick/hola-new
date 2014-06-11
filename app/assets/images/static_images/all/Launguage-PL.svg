@@ -4,7 +4,7 @@
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 width="512px" height="512px" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
 <g>
-	<path fill="#444953" d="M0,412c0,55.229,44.771,100,100,100h312c55.229,0,100-44.771,100-100V100C512,44.771,467.229,0,412,0H100
+	<path fill="#444953" class="bg" d="M0,412c0,55.229,44.771,100,100,100h312c55.229,0,100-44.771,100-100V100C512,44.771,467.229,0,412,0H100
 		C44.771,0,0,44.771,0,100V412z"/>
 </g>
 <g>
@@ -15,7 +15,7 @@
 	<clipPath id="SVGID_2_">
 		<use xlink:href="#SVGID_1_"  overflow="visible"/>
 	</clipPath>
-	<path clip-path="url(#SVGID_2_)" fill="#353A42" d="M395,299h-73V149h-42v1h-1l0,0l0,0v1h-1l0,0l0,0v1h-1l0,0l0,0v1h-1l0,0l0,0v1
+	<path clip-path="url(#SVGID_2_)" fill="#353A42" class="shadow" d="M395,299h-73V149h-42v1h-1l0,0l0,0v1h-1l0,0l0,0v1h-1l0,0l0,0v1h-1l0,0l0,0v1
 		h-1l0,0l0,0v1h-1l0,0l0,0v1h-1l0,0l0,0v1h-1l0,0l0,0v1h-1l0,0l0,0v1h-1l0,0l0,0v1h-1l0,0l0,0v1h-1l0,0l0,0v1h-1l0,0l0,0v1h-1l0,0
 		l0,0v1h-1l0,0l0,0v1h-1l0,0l0,0v1h-1l0,0l0,0v1h-1l0,0l0,0v1h-1l0,0l0,0v1h-1l0,0l0,0v1h-1l0,0l0,0v1h-1l0,0l0,0v1h-1l0,0l0,0v1h-1
 		l0,0l0,0v1h-1l0,0l0,0v1h-1l0,0l0,0v1h-0.352c-3.131-5-7.063-9.578-11.623-12.999c-12.355-10.158-30.702-15.215-56.515-15.215
