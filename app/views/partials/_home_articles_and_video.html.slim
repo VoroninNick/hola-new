@@ -1,0 +1,37 @@
+#home-articles-and-video-section
+  #home-articles-and-video-row.row
+    .h2.columns.large-12
+      |В допомогу подорожувальникам
+
+    #articles.columns.large-6
+      - for i in 0..3
+        .item
+          .item-inner.medium-brand-container.right-side
+            .content
+              .item-image
+                = link_to( image_tag('http://placehold.it/200x200&text=article 1'), '#' )
+
+              .item-info
+                .item-title.h4
+                  a.link
+                    |Рада заборонила забирати житло за валютні кредити
+                .item-description
+                  |Верховна Рада прийняла мораторій на відчуження майна громадян, заставленого для отримання валютних кредитів. За відповідне рішення проголосували 241 народний депутат. Прийняття мораторію стало серйозною проблемою для депутатів і викликало гостру полеміку в залі.
+
+            .brand-bottom-bg
+
+
+    #videos.columns.large-6
+      - for i in 0..1
+        .large-brand-container
+          .content
+            .item
+              .item-inner
+                .video
+                  -# image_tag('http://placehold.it/495x208&text=video 1')
+                  -#iframe width="560" height="315" src="//www.youtube.com/embed/psnjq-2GB5E" frameborder="0" allowfullscreen
+                  iframe width="495" height="278" src="//www.youtube.com/embed/u00G-FLTrOk" frameborder="0" allowfullscreen
+            .clearfix
+
+
+          .brand-bottom-bg

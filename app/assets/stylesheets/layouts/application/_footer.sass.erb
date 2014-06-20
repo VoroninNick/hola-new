@@ -1,0 +1,133 @@
+$footer-height: 13.75rem
+
+$footer-info-height: 10.375rem
+$footer-info-padding: 2.25rem 0
+
+$footer-links-height: 3.375rem
+#footer
+  #footer-info
+    background: $light-gray-color
+    height: $footer-info-height
+    padding: $footer-info-padding
+
+    #footer-info-row
+      #copyright-and-developed-by
+        color: $gray-color
+
+        #copyright
+          p
+            margin: 0
+            font-weight: 300
+            line-height: 1.2
+
+
+        .developed-by
+          .description
+            padding: 1rem 0 0 0
+
+            p
+              font-size: 0.7rem
+              margin: 0
+              font-weight: 300
+      #menu-and-social-buttons
+        #menu
+          ul
+            li
+              list-style: none
+              display: inline-block
+              font: $visual-h4-font
+              //line-height: $desktop-secondary-header-menu-item-height
+              text-transform: uppercase
+              padding: 0 1.1rem
+
+
+              a
+                &, &:visited, &:link
+                  color: white
+                  text-decoration: none
+                &:hover
+                  color: $green-color
+
+
+
+
+        #social-buttons
+          ul
+            text-align: center
+            li
+              list-style: none
+              display: inline-block
+              padding: 0 0.375rem
+
+              a
+                display: block
+                width: 1.875rem
+                height: 1.875rem
+                position: relative
+                color: white
+
+
+                .toggle-image
+                  height: 100%
+                  width: 100%
+                  display: block
+
+
+                  svg
+                    max-width: 100%
+                    max-height: 100%
+
+
+
+      @media #{$medium-up}
+        #menu-and-social-buttons
+          float: right
+
+
+      #contacts
+        p
+          margin: 0
+          a.phone
+            color: white
+            font: $visual-h2-font
+            //display: block
+        .address
+          color: $gray-color
+          padding-top: 0.75rem
+
+.no-touch
+  #footer
+    #footer-info
+      #footer-info-row
+        #contacts
+          a.phone
+            cursor: $cursor-default-value
+            &:hover
+              text-decoration: none
+
+
+
+
+
+
+  #footer-links
+    height: $footer-links-height
+    ul
+      text-align: center
+      margin: 0
+      li
+        list-style: none
+        display: inline-block
+        padding: 0 1.875rem
+
+        a
+          line-height: $footer-links-height
+          font-size: 0.75rem
+          font-weight: 300
+          color: #666
+
+          &, &:visited, &:link
+            text-decoration: underline
+          &:hover
+            text-decoration: none
+            color: $green-color

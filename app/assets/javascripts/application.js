@@ -15,6 +15,7 @@
 //= require foundation
 //= require turbolinks
 //= require selectize
+//= require google_maps
 //= require_tree .
 
 $(document).foundation();

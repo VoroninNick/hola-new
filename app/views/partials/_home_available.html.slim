@@ -1,0 +1,32 @@
+#home-available.appartments-collection
+  .full-width-container
+    .content
+      .h2.columns.large-12
+        |Зараз вільні
+
+      #home-available-carousel
+        .reset
+          .carousel-inner
+            - for i in 0..10
+              .item
+                .item-inner
+                  .item-image
+                    a
+                      = stub_image(420, 350, 'item 1')
+                      .image-overlay
+                        = embedded_svg('static_images/all/search.svg')
+                  .item-info
+                    .item-title.h4
+                      a
+                        |Дво-поверховий люкс
+                    .region.left
+                      |Галицький район, м. Львів
+                    .address.left
+                      |вул. Григоренка, 17
+                    .price.h1.right
+                      |250 $
+                    br
+                    = order_button('350 $', 'Замовити!')
+
+
+      .clearfix

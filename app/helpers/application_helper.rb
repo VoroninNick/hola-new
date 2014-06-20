@@ -1,4 +1,12 @@
 module ApplicationHelper
+  def stub_image(width = 420, height = 350, text = 'item 1')
+    "<img src='http://placehold.it/#{width}x#{height}&text=#{text}' />".html_safe
+  end
+
+  def developed_by
+    render partial: 'helpers/vs/developed_by', locals: {  }
+  end
+
   def brand_wrap(title, tag = 'span', link = false)
     #render template: 'helpers/application/brand_wrap'
     render partial: 'helpers/application/brand_wrap', locals: { title: title, tag: tag, link: link }

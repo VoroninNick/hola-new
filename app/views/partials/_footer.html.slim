@@ -1,0 +1,66 @@
+#footer
+  #footer-info
+    #footer-info-row.row
+      #contacts.columns.large-4.show-for-medium-up.right
+        p
+          a.phone href="tel:380322403350"
+            |+38 (032) 240-33-50
+        p
+          a.phone href="tel:380677653350"
+            |+38 (067) 765-33-50
+        p.address
+          |вул. Сахарова, 17, м. Львів, Україна
+
+      #menu-and-social-buttons.columns.large-4.large-right.small-12
+        #menu
+          ul
+            li
+              = link_to('Квартири', '#')
+            li
+              = link_to('Контакти', '#')
+            li
+              = link_to('Про нас', '#')
+            li
+              = link_to('Новини', '#')
+            li
+              = link_to('Корисні статті', '#')
+
+        #social-buttons
+          ul
+            li
+              a href="#"
+                span.toggle-image
+                  = embedded_svg('static_images/all/Social-facebook-active.svg', class: 'active')
+                  = embedded_svg('static_images/all/Social-facebook-passive.svg', class: 'inactive')
+            li
+              a href="#" title="vkontakte"
+                span.toggle-image
+                  = embedded_svg('static_images/all/Social-vk-active.svg', class: 'active')
+                  = embedded_svg('static_images/all/Social-vk-passive.svg', class: 'inactive')
+            li.show-for-small
+              a href="#" title="vkontakte"
+                span.toggle-image
+                  = embedded_svg('static_images/all/Social-vk-active.svg', class: 'active')
+                  = embedded_svg('static_images/all/Social-vk-passive.svg', class: 'inactive')
+            li.show-for-small
+              a href="#" title="vkontakte"
+                span.toggle-image
+                  = embedded_svg('static_images/all/Social-vk-active.svg', class: 'active')
+                  = embedded_svg('static_images/all/Social-vk-passive.svg', class: 'inactive')
+
+      #copyright-and-developed-by.columns.large-4.small-12
+        #copyright
+          p
+            |&copy;&nbsp;2009 &mdash; 2014 ТзОВ &laquo;Квартири Львову&raquo;
+            br
+            |Всі права застережено
+        = developed_by
+
+  #footer-links
+      ul
+        li
+          = link_to('Правила користування','#')
+        li
+          = link_to('Відповідальність сторін','#')
+        li
+          = link_to('Карта сайту','#')

@@ -2,6 +2,6 @@
   position: relative;
   top: $percent-value;
   -webkit-transform: translateY(-#{$percent-value});
-  -ms-transform: translateY(#{$percent-value});
-  transform: translateY(#{$percent-value});
+  -ms-transform: translateY(-#{$percent-value});
+  transform: translateY(-#{$percent-value});
 }

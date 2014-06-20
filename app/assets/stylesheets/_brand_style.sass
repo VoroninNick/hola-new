@@ -117,17 +117,37 @@
 
 .h1
   font: $visual-h1-font
+  padding: $visual-h1-padding
 
 .h2
   font: $visual-h2-font
+  padding: $visual-h2-padding
+
 .h3
   font: $visual-h3-font
+  padding: $visual-h3-padding
+
 .h4
   font: $visual-h4-font
+  padding: $visual-h4-padding
 
 .reset
   display: block
   position: relative
+
+
+
+
+body a, .link
+  &, &:visited, &:active, &:hover
+    color: $green-color
+
+  &:hover
+    text-decoration: underline
+
+
+
+
 
 
 
@@ -137,6 +157,7 @@
 
   .content
     background-color: $brand-container-bg-color
+    position: relative
 
   .brand-bottom-bg
     background-color: $brand-container-bg-color
@@ -167,17 +188,246 @@
       border-color: $brand-container-corner-light-color transparent transparent transparent
 
 
+
+  &.right-side
+    .content
+      //overflow: hidden
+
+      &:after
+        content: ""
+        display: block
+        position: absolute
+        top: auto
+        bottom: 0
+        background: $brand-container-bg-color
+
+    .brand-bottom-bg
+      right: 0
+      top: 0
+      left: auto
+      height: auto
+
+      &:before
+
+      &:after
+        right: 0px
+
+
+
 .small-brand-container
-  padding-bottom: 16px
+  &.bottom-side
+    padding-bottom: 16px
+
+    .content
+      border-radius: $brand-container-border-radius $brand-container-border-radius 0 0
+
+    .brand-bottom-bg
+      right: 16px
+      height: 16px
+      border-radius: 0 0 0 $brand-container-border-radius
+
+
+      &:before
+
+        border-width: 0 0 16px 16px
+
+
+      &:after
+        right: -16px
+
+        border-width: 16px 16px 0 0
+
+  &.right-side
+    padding-right: 16px
+
+    .content
+      border-radius: $brand-container-border-radius 0 0 $brand-container-border-radius
+
+    .brand-bottom-bg
+      right: 16px
+      height: 16px
+      border-radius: 0 0 0 $brand-container-border-radius
+
+
+      &:before
+
+        border-width: 0 0 16px 16px
+
+
+      &:after
+        right: -16px
+
+        border-width: 16px 16px 0 0
+
+
+
+.medium-brand-container
+  &.bottom-side
+    padding-bottom: 20px
+
+    .content
+      border-radius: $brand-container-border-radius $brand-container-border-radius 0 0
+
+    .brand-bottom-bg
+      right: 20px
+      height: 20px
+      border-radius: 0 0 0 $brand-container-border-radius
+
+
+      &:before
+
+        border-width: 0 0 20px 20px
+
+
+      &:after
+        right: -16px
+
+        border-width: 20px 20px 0 0
+
+  &.right-side
+    padding-right: 40px
+
+    .content
+      border-radius: $brand-container-border-radius 0 0 $brand-container-border-radius
+
+      &:after
+        width: 20px
+        height: 20px
+        right: -20px
+
+    .brand-bottom-bg
+      //right: 16px
+      //height: 16px
+      width: 40px
+      bottom: 20px
+      border-radius: 0 $brand-container-border-radius 0 0
+
+
+      &:before
+
+        border-width: 0 0 20px 20px
+        right: 20px
+        bottom: -20px
+
+
+      &:after
+
+        bottom: -20px
+
+        border-width: 20px 20px 0 0
+
+
+
+.large-brand-container
+  padding-bottom: 28px
 
   .content
     border-radius: $brand-container-border-radius $brand-container-border-radius 0 0
 
   .brand-bottom-bg
-    right: 16px
-    height: 16px
+    right: 28px
+    height: 28px
     border-radius: 0 0 0 $brand-container-border-radius
 
+
+    &:before
+
+      border-width: 0 0 28px 28px
+
+
+    &:after
+      right: -28px
+
+      border-width: 28px 28px 0 0
+
+
+
+
+[class*=brand-button]
+  display: inline-block
+  font: $visual-h2-font
+  text-shadow: -2px 1px 0px rgba(73, 80, 94, 0.6)
+  font-weight: 700
+  width: 100%
+  height: 4rem
+  background: transparent
+  position: relative
+
+
+
+
+  &, &:hover, &:active, &:visited
+    color: white
+
+
+  .button-top
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    background-color: $brand-button-bg-color
+    border-radius: $brand-button-border-radius $brand-button-border-radius 0 0
+
+
+  .button-value
+    background-color: transparent
+    text-transform: uppercase
+    display: inline-block
+    height: 100%
+    width: 100%
+    position: relative
+
+    input
+      width: 100%
+      height: 100%
+      font: $visual-h2-font
+      font-weight: 700
+      color: white
+      text-transform: uppercase
+      text-shadow: -2px 1px 0px rgba(73, 80, 94, 0.6)
+
+
+  .button-bottom
+    background-color: $brand-button-bg-color
+    bottom: 0
+    left: 0
+    position: absolute
+    display: block
+    border-radius: 0 0 0 $brand-button-border-radius
+
+    &:before
+      content: ""
+      display: block
+      position: absolute
+      bottom: 0
+      right: 0
+      width: 0
+      height: 0
+      border-style: solid
+      border-color: transparent transparent $brand-button-corner-dark-color transparent
+
+    &:after
+      content: ""
+      display: block
+      position: absolute
+      bottom: 0
+      width: 0
+      height: 0
+      border-style: solid
+      border-color: $brand-button-corner-light-color transparent transparent transparent
+
+
+
+
+.large-brand-button
+  height: 4rem
+
+  .button-top
+    bottom: 16px
+
+  .button-bottom
+    right: 16px
+    height: 16px
 
     &:before
 
@@ -196,9 +446,7 @@
 
 [class*=order-button]
   display: inline-block
-  font: $visual-h2-font
-  text-shadow: -2px 1px 0px rgba(73, 80, 94, 0.6)
-  font-weight: 700
+
 
 
   &, &:hover, &:active, &:visited
@@ -218,7 +466,81 @@
       background-color: $order-button-title-bg-color
 
 
+
+
+.medium-order-button
+
+  font: $visual-h4-font
+  text-shadow: -2px 1px 0px rgba(73, 80, 94, 0.6)
+  font-weight: 700
+  font-size: 1.2rem
+  //height: 4rem
+  .button-price
+    padding: 0rem 1.5rem
+    border-radius: $large-order-button-border-radius 0 0 $large-order-button-border-radius
+    height: 3rem
+    line-height: 3rem
+
+  .button-label
+    padding: 0
+    border-radius: 0 $large-order-button-border-radius 0 0
+    height: 3rem
+    line-height: 3rem
+    position: relative
+
+    .button-label-title
+      padding: 0rem 2.5rem 0rem 2rem
+      height: 2.5rem
+      display: block
+      border-radius: 0 $large-order-button-border-radius 0 0
+
+    .button-label-bottom-bg
+      position: absolute
+      background-color: $green-color
+      left: 0
+      bottom: 0
+      height: 8px
+      right: 8px
+
+      &:before
+        content: ""
+        display: block
+        position: absolute
+        bottom: 0
+        right: 0
+        width: 0
+        height: 0
+        border-style: solid
+        border-color: transparent transparent $order-button-label-corner-dark-color transparent
+
+      &:after
+        content: ""
+        display: block
+        position: absolute
+        bottom: 0
+        width: 0
+        height: 0
+        border-style: solid
+        border-color: $order-button-label-corner-light-color transparent transparent transparent
+
+
+      &:before
+
+        border-width: 0 0 8px 8px
+
+      &:after
+        right: -8px
+        border-width: 8px 8px 0 0
+
+
+    .brand-bottom-bg
+
 .large-order-button
+
+  font: $visual-h2-font
+  text-shadow: -2px 1px 0px rgba(73, 80, 94, 0.6)
+  font-weight: 700
+
   //height: 4rem
   .button-price
     padding: 0rem 1.5rem
@@ -282,8 +604,16 @@
 
 
 
+
+
+
 .pink-color
   color: $pink-color
 
 .green-color
   color: $green-color
+
+
+
+
+

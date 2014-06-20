@@ -1,0 +1,32 @@
+#home-recommended.appartments-collection
+  #home-recommended-row.row
+    .large-brand-container
+      .content
+        .h2.columns.large-12
+          |Рекомендовані квартири
+
+        - for i in 0..2
+          .item.columns.large-4
+            .item-inner
+              .item-image
+                a
+                  = image_tag('http://placehold.it/420x350&text=item 1')
+                  .image-overlay
+                    = embedded_svg('static_images/all/search.svg')
+              .item-info
+                .item-title.h4
+                  a
+                    |Дво-поверховий люкс
+                .region.left
+                  |Галицький район, м. Львів
+                .address.left
+                  |вул. Григоренка, 17
+                .price.h1.right
+                  |250 $
+                br
+                = order_button('350 $', 'Замовити!')
+        .clearfix
+
+
+
+      .brand-bottom-bg

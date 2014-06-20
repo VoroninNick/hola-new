@@ -7,10 +7,14 @@
 
 
 .page.home
-  .h2
+  .h2, .h3, .h4
     text-transform: uppercase
     color: white
     text-align: center
+
+    a
+      position: relative
+      left: -5px
 
 #home-slider
   .slide
@@ -127,6 +131,7 @@
         border-radius: 6px
         color: white
         height: 2.75rem
+        border: none
 //line-height: 4rem
 
 .js
@@ -198,7 +203,7 @@
           padding-left: 1rem
           padding-right: 1rem
 
-          border-bottom: solid 1px #5e6472
+          border-top: solid 1px #5e6472
 
           &:last-child
             border-radius: 0 0 8px 8px
@@ -206,8 +211,13 @@
           &:hover
             background-color: $green-color
 
-          &:last-child
-            border-bottom: none
+            &, & + li
+              border-top: none
+
+
+
+          &:first-child
+            //border-top: none
 
 
 
@@ -238,6 +248,7 @@
 
   .submit-field
     .submit-wrapper
+      padding-left: 3rem
 
       input
         background-color: transparent
@@ -253,4 +264,159 @@
 
       .selectize-control
         min-width: 200px
+
+
+
+#home-recommended
+  margin-top: $section-vertical-indent
+
+  #home-recommended-row
+    .large-brand-container
+      .content
+        @include grid-column($float: false)
+        padding-bottom: 5.5rem
+
+
+
+$items-per-row: 5
+$items-count: 11
+
+#home-available
+  margin-top: $section-vertical-indent
+
+  background-color: $brand-container-bg-color
+  width: 100%
+  padding-bottom: 4rem
+  #home-available-carousel
+    padding-bottom: 1rem
+    overflow: auto
+    clear: left
+    width: 100%
+
+    scrollbar:
+      track-color: #2e3138
+
+    &::-webkit-scrollbar
+      width: 1rem
+      height: 1rem
+
+    &::-webkit-scrollbar-button
+      background-color: #666
+
+    &::-webkit-scrollbar-track
+      background-color: #2e3138
+
+
+    &::-webkit-scrollbar-track-piece
+      //background-color: #ffffff
+
+    &::-webkit-scrollbar-thumb
+      height: 1rem
+      width: 1rem
+      background-color: #81a31b
+      //border-radius: 3px
+
+    &::-webkit-scrollbar-corner
+      //background-color: #999
+
+    &::-webkit-resizer
+      //background-color: #666
+
+
+    .carousel-inner
+      width: #{( 100 * $items-count / $items-per-row) + '%'}
+      max-width: none
+
+      .item
+        display: inline-block
+        padding-left: 0.9375rem
+        padding-right: 0.9375rem
+        width: #{ ( 100 /  $items-count ) + '%'}
+
+
+
+
+
+#home-map
+  #map-wrapper
+    #home-map-container
+      height: 500px
+
+
+
+#home-articles-and-video-section
+  #home-articles-and-video-row
+    #articles
+      padding-right: 30px
+      .item
+        margin-bottom: 2.25rem
+
+        &:last-child
+          margin-bottom: 0
+
+        .item-inner.medium-brand-container
+          .content
+
+
+            .item-image
+              width: 30%
+              padding-right: 0.9375rem
+
+              a
+                img
+                  border-radius: $brand-container-border-radius 0 0 $brand-container-border-radius
+
+            .item-info
+              width: 70%
+              padding-left: 0.9375rem
+            //position: relative
+            //z-index: 1
+
+
+            // make overflow hiden for article item
+            .item-info
+              position: absolute
+              display: block
+              top: 0
+              left: 30%
+              padding-left: 15px
+
+              .item-title
+                padding: 0
+                margin: $visual-h4-padding
+                height: #{$visual-h4-line-height}rem
+                overflow: hidden
+
+
+
+
+              .item-description
+                height: #{4 + 0.125}rem
+                overflow: hidden
+
+
+    #videos
+      padding-left: 30px
+
+      .large-brand-container
+        margin-bottom: 2rem
+
+        .content
+          padding: rem-calc(30) rem-calc(30) rem-calc(50) rem-calc(30)
+
+
+
+
+
+
+//$my-medium-button-height: 2rem
+
+//$my-medium-button-height: 4rem
+
+//$my-large-button-height: 6rem
+
+//$size: medium
+
+//.my-#{$size}-button
+  height: #{my-#{$size}-button-height }
 
