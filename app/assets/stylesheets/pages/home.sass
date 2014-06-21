@@ -41,6 +41,14 @@
             text-transform: uppercase
             padding: 0 0 0.5rem 0
 
+            a
+              color: white
+              text-decoration: none
+
+              &:hover
+                color: $green-color
+                text-decoration: underline
+
           .description
 
 
@@ -342,11 +350,16 @@ $items-count: 11
 
 
 #home-articles-and-video-section
+  padding-bottom: 6rem
+
   #home-articles-and-video-row
+    position: relative
+
     #articles
       padding-right: 30px
       .item
         margin-bottom: 2.25rem
+        position: relative
 
         &:last-child
           margin-bottom: 0
@@ -391,6 +404,19 @@ $items-count: 11
                 height: #{4 + 0.125}rem
                 overflow: hidden
 
+        &:after
+          content: ""
+          position: absolute
+          display: block
+          right: -30px
+          height: 2px
+          border-top: 2px dashed #4c4d4f
+          width: 30px
+          top: 50%
+          margin-top: -1px
+
+
+
 
     #videos
       padding-left: 30px
@@ -400,6 +426,16 @@ $items-count: 11
 
         .content
           padding: rem-calc(30) rem-calc(30) rem-calc(50) rem-calc(30)
+
+
+        &:after
+          position: absolute
+          content: ""
+          width: 30px
+          top: 50%
+          left: -30px
+          height: 2px
+          border-top: 2px dashed #4c4d4f
 
 
 
