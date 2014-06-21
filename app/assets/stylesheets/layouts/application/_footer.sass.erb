@@ -29,6 +29,14 @@ $footer-links-height: 3.375rem
               font-size: 0.7rem
               margin: 0
               font-weight: 300
+
+              a
+                text-decoration: underline
+
+                &:hover
+                  color: $green-color
+                  text-decoration: none
+
       #menu-and-social-buttons
         #menu
           ul
@@ -47,6 +55,7 @@ $footer-links-height: 3.375rem
                   text-decoration: none
                 &:hover
                   color: $green-color
+                  text-decoration: underline
 
 
 
@@ -83,6 +92,14 @@ $footer-links-height: 3.375rem
         #menu-and-social-buttons
           float: right
 
+      @media #{$small-only}
+        #menu-and-social-buttons
+          #social-buttons
+            ul
+              li
+                display: inline-block !important
+
+
 
       #contacts
         p
@@ -100,10 +117,10 @@ $footer-links-height: 3.375rem
     #footer-info
       #footer-info-row
         #contacts
-          a.phone
-            cursor: $cursor-default-value
-            &:hover
-              text-decoration: none
+  a.phone
+    cursor: $cursor-default-value
+    &:hover
+      text-decoration: none
 
 
 
