@@ -18,8 +18,8 @@ function initializeHomeMap(){
     ];
 
     var mapOptions = {
-        zoom: 8,
-        center: new google.maps.LatLng(-34.397, 150.644),
+        zoom: 16,
+        center: new google.maps.LatLng(49.840387, 24.030778),
         scrollwheel: false,
         mapTypeId: HOME_MAPTYPE_ID
     };
