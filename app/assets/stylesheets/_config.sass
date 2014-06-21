@@ -8,7 +8,7 @@ $light-gray-color: #454954
 
 
 $visual-header-font-family: 'Open Sans', sans-serif, "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif
-$visual-header-text-shadow: -2px 1px 0px rgba(76, 83, 102, 0.6)
+$visual-header-text-shadow: rgba(100, 100, 100, 0.7) -2px 2px 0.5px
 $visual-header-color: white
 $visual-header-padding: 2.25rem 0
 
@@ -19,7 +19,7 @@ $visual-h1-font-family: $visual-header-font-family
 
 $visual-h1-font: #{$visual-h1-font-weight} #{$visual-h1-font-size}/#{$visual-h1-line-height} #{$visual-h1-font-family}
 
-$visual-h1-text-shadow: $visual-header-text-shadow
+$visual-h1-text-shadow: rgba(100, 100, 100, 1) -2px 2px 0.5px
 $visual-h1-color: $visual-header-color
 
 $visual-h1-padding: $visual-header-padding
@@ -34,7 +34,7 @@ $visual-h2-font-family: $visual-header-font-family
 
 $visual-h2-font: #{$visual-h2-font-weight} #{$visual-h2-font-size}/#{$visual-h2-line-height} #{$visual-h2-font-family}, #{$visual-h2-font-weight}
 
-$visual-h2-text-shadow: $visual-header-text-shadow
+$visual-h2-text-shadow: rgba(100, 100, 100, 1) -2px 2px 0.5px
 $visual-h2-color: $visual-header-color
 
 $visual-h2-padding: $visual-header-padding
@@ -72,11 +72,17 @@ $brand-button-corner-light-color: #dcff82
 
 $brand-button-border-radius: 8px
 
+$brand-button-text-shadow: $visual-header-text-shadow
+
+
 $order-button-price-bg-color: $pink-color
 $order-button-title-bg-color: $green-color
 
 $order-button-label-corner-dark-color: #45630b
 $order-button-label-corner-light-color: #dcff82
+
+$order-button-price-text-shadow: $visual-header-text-shadow
+$order-button-title-text-shadow: $visual-header-text-shadow
 
 $large-order-button-border-radius: 8px
 

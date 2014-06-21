@@ -114,22 +114,41 @@
   //  position: relative
 
 
-
-.h1
+@mixin h1
   font: $visual-h1-font
   padding: $visual-h1-padding
+  text-shadow: $visual-h1-text-shadow
+  color: $visual-h1-color
 
-.h2
+@mixin h2
   font: $visual-h2-font
   padding: $visual-h2-padding
+  text-shadow: $visual-h2-text-shadow
+  color: $visual-h2-color
 
-.h3
+@mixin h3
   font: $visual-h3-font
   padding: $visual-h3-padding
+  text-shadow: $visual-h3-text-shadow
+  color: $visual-h3-color
 
-.h4
+@mixin h4
   font: $visual-h4-font
   padding: $visual-h4-padding
+  text-shadow: $visual-h4-text-shadow
+  color: $visual-h4-color
+
+.h1
+  @include h1
+
+.h2
+  @include h2
+
+.h3
+  @include h3
+
+.h4
+  @include h4
 
 .reset
   display: block
@@ -346,7 +365,7 @@ body a, .link
 [class*=brand-button]
   display: inline-block
   font: $visual-h2-font
-  text-shadow: -2px 1px 0px rgba(73, 80, 94, 0.6)
+  text-shadow: $brand-button-text-shadow
   font-weight: 700
   width: 100%
   height: 4rem
@@ -384,7 +403,7 @@ body a, .link
       font-weight: 700
       color: white
       text-transform: uppercase
-      text-shadow: -2px 1px 0px rgba(73, 80, 94, 0.6)
+      text-shadow: $brand-button-text-shadow
 
 
   .button-bottom
@@ -456,6 +475,7 @@ body a, .link
     background-color: $order-button-price-bg-color
     text-transform: uppercase
     display: inline-block
+    text-shadow: $order-button-price-text-shadow
 
   .button-label
 
@@ -464,6 +484,7 @@ body a, .link
 
     .button-label-title
       background-color: $order-button-title-bg-color
+      text-shadow: $order-button-title-text-shadow
 
 
 
@@ -471,7 +492,7 @@ body a, .link
 .medium-order-button
 
   font: $visual-h4-font
-  text-shadow: -2px 1px 0px rgba(73, 80, 94, 0.6)
+  text-shadow: $order-button-title-text-shadow
   font-weight: 700
   font-size: 1.2rem
   //height: 4rem
@@ -538,7 +559,7 @@ body a, .link
 .large-order-button
 
   font: $visual-h2-font
-  text-shadow: -2px 1px 0px rgba(73, 80, 94, 0.6)
+  text-shadow: $order-button-title-text-shadow
   font-weight: 700
 
   //height: 4rem
