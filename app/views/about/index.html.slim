@@ -1,5 +1,5 @@
 .page.about
-  #about-banner
+  #about-banner.page-section
     #panorama
       = image_tag('static_images/all/about/city-panorama.jpg')
     #overlay
@@ -8,7 +8,7 @@
 
 
 
-  #about-page-title
+  #about-page-title.page-section
     .h1.green-color
       |THE&nbsp;
       span.pink-color
@@ -16,8 +16,8 @@
       |&nbsp;OF LVIV APPARTMENTS
 
 
-  #features.row
-    .feature.columns.large-10.large-centered.right-image
+  #features.row.page-section
+    #intro.feature.columns.large-10.large-centered.right-image
       .large-brand-container
         .content
           .svg-container
@@ -41,7 +41,7 @@
         .large-brand-container
           .content
             .svg-container
-              = embedded_svg('static_images/all/about/lviv.svg')
+              = stub_image(250, 250, 'image')
 
             .description-container
               .title.h3
@@ -54,3 +54,10 @@
 
             .clearfix
           .brand-bottom-bg
+
+
+  #about-welcome.page-section
+    #about-welcome-row.row
+      #about-welcome-column.columns.large-8.large-push-1.large-centered
+        = embedded_svg('static_images/all/about/about-welcome.svg')
+
