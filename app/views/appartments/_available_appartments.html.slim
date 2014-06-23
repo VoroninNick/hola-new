@@ -1,11 +1,11 @@
-#home-recommended.appartments-collection
-  #home-recommended-row.row
+#appartments-list-available.appartments-collection.page-section
+  #appartments-list-available-row.row
     .large-brand-container
       .content
         .h2.columns.large-12
-          |Рекомендовані квартири
+          |Доступні квартири
 
-        - for i in 0..2
+        - for i in 1..9
           .item.columns.large-4
             .item-inner
               .item-image
@@ -26,7 +26,6 @@
                 br
                 = order_button('350 $', 'Замовити!')
         .clearfix
-
 
 
       .brand-bottom-bg

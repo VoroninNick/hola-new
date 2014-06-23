@@ -37,7 +37,7 @@ function initializeHomeMap(){
     map.mapTypes.set(HOME_MAPTYPE_ID, customMapType);
 }
 
-$(document).on('ready', function(){
+$(document).on('ready page:load', function(){
 //  var $home_form = $('#home-form')
 //  var $home_form_selects = $home_form.find('select')
 //  $home_form_selects.selectize({

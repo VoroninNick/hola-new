@@ -1,0 +1,76 @@
+.slider
+  .slide
+    position: relative
+    .slide-description-wrapper
+      position: absolute
+      height: 0
+      width: 100%
+      bottom: 0
+
+
+      .slide-description
+        -webkit-transform: translateY(-100%)
+        margin-top: -30px
+        width: auto
+        //position: absolute
+        display: inline-block
+
+        .content
+          padding: 2rem 2rem 1rem 2rem
+
+          .title
+            @include h1
+            text-transform: uppercase
+            padding: 0 0 0.5rem 0
+
+            a
+              color: white
+              text-decoration: none
+
+              &:hover
+                color: $green-color
+                text-decoration: underline
+
+          .description
+
+
+  .bullets
+    height: 2.25rem
+    background-color: #3e414a
+
+    ul
+      text-align: center
+      margin: 0
+      height: 100%
+      li
+        display: inline-block
+        height: 12px
+        width: 12px
+
+        background-color: $pink-color
+        border-radius: 50%
+        overflow: hidden
+        margin-right: 2.25rem
+        cursor: pointer
+
+
+        //@include vertical-align(25%)\
+        top: 25%
+        position: relative
+        -webkit-transform: translateY(-25%) rotate(-60deg)
+
+        &:after
+          content: ""
+          position: relative
+          display: block
+          background-color: rgba(0, 0, 0, 0.3)
+          top: 6px
+          width: 12px
+          height: 12px
+
+        &:last-child
+          margin-right: 0
+
+        &.active
+          background-color: $green-color
+          cursor: default

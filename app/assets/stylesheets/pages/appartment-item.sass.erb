@@ -1,0 +1,87 @@
+.page.appartment-item
+  .h2, .h3, .h4
+    text-transform: uppercase
+    color: white
+    text-align: center
+
+    a
+      position: relative
+
+#appartment-slider
+  height: 400px
+  .slides
+    .slide
+      .slide-description-wrapper
+        .reset
+          .row
+            .slide-description.small-brand-container.bottom-side.right.pull-1
+              -webkit-transform: translateY(-50%)
+              margin-top: -30px
+              width: auto
+              //position: absolute
+              display: inline-block
+
+
+              .content
+                padding: 1rem 2rem 1rem 2rem
+
+                .title
+                  padding: 0 0 0.5rem 0
+                  a
+                    @include h1
+                    @include white-link
+                    text-transform: uppercase
+                    padding: 0
+
+
+  .bullets
+    background: transparent
+
+
+#appartment-icons-and-description-row
+  #appartment-icons
+    #appartment-icons-column
+      .icon
+        display: inline-block
+        padding: 0 0.5rem 2rem 0.5rem
+        width: 20%
+        height: auto
+
+        svg
+          max-width: 100%
+          max-height: 100%
+          height: 100%
+
+
+#appartment-images
+  #appartment-images-row
+    .content
+      padding: 0 0.5rem 0 0.5rem
+
+      .h2
+        padding-bottom: 1.3125rem
+
+      .item
+        padding-bottom: 0.9375rem
+        padding-top: 0.9375rem
+
+        .item-inner
+          position: relative
+          img
+            max-width: 100%
+            border-radius: 10px
+
+    #link-column
+      padding: 2.25rem 2.25rem 0.3125rem 0
+      text-align: right
+      .pseudo-link
+        font-weight: 500
+        text-decoration: none
+        display: inline-block
+        border-bottom: 1px $green-color dotted
+
+
+
+#appartment-large-description
+  .h4
+    color: $green-color
