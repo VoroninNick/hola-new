@@ -26,16 +26,14 @@ $footer-links-height: 3.375rem
             padding: 1rem 0 0 0
 
             p
-              font-size: 0.7rem
+              font-size: 0.75rem
               margin: 0
               font-weight: 300
 
               a
-                text-decoration: none
-
-                &:hover
-                  color: $green-color
-                  text-decoration: underline
+                @include secondary-link
+                color: inherit
+                font-size: inherit
 
       #menu-and-social-buttons
         #menu
@@ -139,12 +137,4 @@ $footer-links-height: 3.375rem
 
         a
           line-height: $footer-links-height
-          font-size: 0.75rem
-          font-weight: 300
-          color: #666
-
-          &, &:visited, &:link
-            text-decoration: none
-          &:hover
-            text-decoration: underline
-            color: $green-color
+          @include secondary-link

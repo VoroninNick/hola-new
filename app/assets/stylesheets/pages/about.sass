@@ -1,3 +1,5 @@
+$about-feature-image-width: 250px
+
 .page.about
   #about-banner
     position: relative
@@ -7,8 +9,8 @@
     #overlay
       position: absolute
       top: 0
+      bottom: -1px
       left: 0
-      height: 100%
       width: 100%
       background-color: rgba(0, 0, 0, 0.65)
 
@@ -25,15 +27,29 @@
 
   #features
     .feature
+      .large-brand-container
+        .content
+          background: #454954
+          padding: 1.875rem 1.875rem 3.125rem 1.875rem
+
       &
         .svg-container
           display: inline-block
-          width: 250px
-          height: 250px
+          width: $about-feature-image-width
+          height: $about-feature-image-width
 
           svg
             width: 100%
             height: 100%
+
+      &.left-image
+        .svg-container
+          float: left
+          display: block
+        .description-container
+          float: none
+          margin: 0 0 0 $about-feature-image-width
+
 
       &.right-image
         .svg-container
@@ -42,9 +58,7 @@
           position: relative
 
         .description-container
-          float: right
+          float: none
           display: block
           position: relative
-
-        .description-container
-          display: inline-block
+          margin: 0 $about-feature-image-width 0 0

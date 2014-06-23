@@ -159,6 +159,35 @@ body
   position: relative
 
 
+@mixin white-link
+  &, &:visited, &:link
+    color: white
+    text-decoration: none
+  &:hover
+    color: $green-color
+    text-decoration: underline
+
+@mixin green-link
+  &, &:visited, &:link
+    color: $green-color
+    text-decoration: none
+  &:hover
+    text-decoration: underline
+
+@mixin secondary-link
+  &
+    font-size: 0.75rem
+    font-weight: 300
+  &, &:visited, &:link
+    color: #666
+    text-decoration: none
+  &:hover
+    color: $green-color
+    text-decoration: underline
+
+
+
+
 
 
 body a, .link
