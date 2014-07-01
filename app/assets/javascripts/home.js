@@ -61,4 +61,11 @@ $(document).on('ready page:load', function(){
 
     initializeHomeMap()
 
+
+    /*$(".modal-link").each(function() {
+        $link = $(this)
+        var original_href = $link.attr('href')
+    });*/
+
+
 })

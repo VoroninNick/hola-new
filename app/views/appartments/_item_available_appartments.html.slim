@@ -1,0 +1,32 @@
+#appartments-item-available.appartments-collection.page-section
+  .full-width-container
+    .content
+      .h2.columns.large-12
+        |Зараз вільні
+
+      #appartments-item-available-carousel.collection-carousel
+        .reset
+          .carousel-inner
+            - for i in 0..10
+              .item
+                .item-inner
+                  .item-image
+                    a href=appartments_item_path('item')
+                      = stub_image(420, 350, 'item 1')
+                      .image-overlay
+                        = embedded_svg('static_images/all/search.svg')
+                  .item-info
+                    .item-title.h4
+                      a href=appartments_item_path('item')
+                        |Дво-поверховий люкс
+                    .region.left
+                      |Галицький район, м. Львів
+                    .address.left
+                      |вул. Григоренка, 17
+                    .price.h1.right
+                      |250 $
+                    br
+                    = order_button('350 $', 'Замовити!')
+
+
+      .clearfix

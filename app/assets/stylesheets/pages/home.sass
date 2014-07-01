@@ -209,8 +209,7 @@
 
 
 
-$items-per-row: 5
-$items-count: 11
+
 
 #home-available
   margin-top: $section-vertical-indent
@@ -218,51 +217,9 @@ $items-count: 11
   background-color: $brand-container-bg-color
   width: 100%
   padding-bottom: 4rem
-  #home-available-carousel
-    padding-bottom: 1rem
-    overflow: auto
-    clear: left
-    width: 100%
-
-    scrollbar:
-      track-color: #2e3138
-
-    &::-webkit-scrollbar
-      width: 1rem
-      height: 1rem
-
-    &::-webkit-scrollbar-button
-      background-color: #666
-
-    &::-webkit-scrollbar-track
-      background-color: #2e3138
 
 
-    &::-webkit-scrollbar-track-piece
-      //background-color: #ffffff
 
-    &::-webkit-scrollbar-thumb
-      height: 1rem
-      width: 1rem
-      background-color: #81a31b
-      //border-radius: 3px
-
-    &::-webkit-scrollbar-corner
-      //background-color: #999
-
-    &::-webkit-resizer
-      //background-color: #666
-
-
-    .carousel-inner
-      width: #{( 100 * $items-count / $items-per-row) + '%'}
-      max-width: none
-
-      .item
-        display: inline-block
-        padding-left: 0.9375rem
-        padding-right: 0.9375rem
-        width: #{ ( 100 /  $items-count ) + '%'}
 
 
 

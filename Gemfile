@@ -54,3 +54,17 @@ gem 'devise'
 gem "selectize-rails"
 
 gem "rails_admin_map_field", :github => "beyondthestory/rails_admin_map_field"
+
+gem 'globalize'
+gem 'rails_admin_globalize_field'
+
+gem 'carrierwave'
+
+gem 'acts-as-taggable-on'
+
+gem 'rails_admin_tag_list', github: 'VoroninNick/rails_admin_tag_list', branch: 'pasha'
+
+gem 'better_errors'
+gem 'binding_of_caller'
+
+gem 'fancybox2-rails', '~> 0.2.8'

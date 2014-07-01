@@ -1,8 +1,18 @@
-a class="#{size}-order-button"
-  span.button-price
-    = price
-  span.button-label
-    span.button-label-title
-      = title
-    span.button-label-bottom-bg
+- if data_modal_id
+  a class= "#{size}-order-button" data-modal-id = data_modal_id
+    span.button-price
+      = price
+    span.button-label
+      span.button-label-title
+        = title
+      span.button-label-bottom-bg
+
+- else
+  = link_to "#{ link ? link : '#' }", class: "#{size}-order-button" do
+    span.button-price
+      = price
+    span.button-label
+      span.button-label-title
+        = title
+      span.button-label-bottom-bg
 

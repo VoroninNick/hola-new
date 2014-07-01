@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  page_id: 
+  location: MyString
+  path: MyString
+  last_mod: 2014-06-26 16:46:24
+  change_freq: MyString
+  priority: 1.5
+
+two:
+  page_id: 
+  location: MyString
+  path: MyString
+  last_mod: 2014-06-26 16:46:24
+  change_freq: MyString
+  priority: 1.5

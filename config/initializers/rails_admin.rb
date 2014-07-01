@@ -32,5 +32,5 @@ RailsAdmin.config do |config|
     # history_show
   end
 
-  config.included_models = [ Appartment ]
+  #config.included_models = [ Appartment ]
 end

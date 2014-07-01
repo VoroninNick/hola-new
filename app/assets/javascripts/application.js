@@ -11,9 +11,11 @@
 // about supported directives.
 //
 //= require jquery
+//= require fancybox
 //= require jquery_ujs
 //= require foundation
-//= require turbolinks
+
+// turbolinks
 //= require selectize
 //= require google_maps
 //= require_tree .
