@@ -1,0 +1,65 @@
+@import "config"
+
+$modal-order-window-header-bg: #454954
+$modal-order-window-header-height: 80px
+
+$modal-order-window-content-bg: #2e3138
+
+
+#modal-order-form
+  .modal-header
+    padding: 0 60px
+    background: $modal-order-window-header-bg
+    height: $modal-order-window-header-height
+
+    .h2
+      padding: 1.5rem 0
+      text-transform: uppercase
+
+    .modal-header-close-button-column
+      float: right
+      height: $modal-order-window-header-height
+
+      svg
+        top: 50%
+        position: relative
+        transform: translateY(-50%)
+        width: 36px
+        height: 36px
+
+        .bg
+          fill: transparent
+          transition-property: fill
+          transition-duration: 0.4s
+
+        .shadow
+          fill: transparent
+
+        &:hover
+          .bg
+            fill: $green-color
+
+
+  .modal-content
+    padding: 0 60px
+    background: $modal-order-window-content-bg
+
+    label
+      float: left
+      font-size: 1.4rem
+      font-weight: 600
+      line-height: $input-field-height
+      color: white
+    .input-text
+      float: none
+      padding: 0 0 0 50px
+      height: $input-field-height
+      border: none
+
+      input
+        background-color: $input-field-bg
+        border-radius: 6px
+        color: white
+        font-size: 1.4rem
+        border: none
+        height: $input-field-height

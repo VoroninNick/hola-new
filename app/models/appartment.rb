@@ -19,15 +19,19 @@ class Appartment < ActiveRecord::Base
   attr_accessible :slider_attributes
 
   belongs_to :region
-  attr_accessible :region
+  attr_accessible :region, :region_id
 
   has_many :appartment_and_appartment_icon_links
   has_many :appartment_icons, through: :appartment_and_appartment_icon_links
 
+  attr_accessible :appartment_icons
+
   has_many :appartment_images
 
   accepts_nested_attributes_for :appartment_images
-  attr_accessible :appartment_images_attributes
+  attr_accessible :appartment_images_attributes, :appartment_images
+
+  attr_accessible :lat, :lng, :price
 
 
   rails_admin do

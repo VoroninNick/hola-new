@@ -14,8 +14,8 @@ module ApplicationHelper
     render partial: 'helpers/application/brand_wrap', locals: { title: title, tag: tag, link: link }
   end
 
-  def order_button(price, title = 'Замовити!', size = 'medium', link = false, data_modal_id = false)
-    render partial: 'helpers/application/order_button', locals: { price: price, title: title, size: size, link: link, data_modal_id: data_modal_id }
+  def order_button(price, title = 'Замовити!', size = 'medium', link = false, data_modal_id = false, label = false)
+    render partial: 'helpers/application/order_button', locals: { price: price, title: title, size: size, link: link, data_modal_id: data_modal_id, label: label }
   end
 
   def self.js_embedded_svg filename, options={}

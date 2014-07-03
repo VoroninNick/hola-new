@@ -1,0 +1,103 @@
+/#modal-order-form-container style="display: none;"
+#modal-order-form.modal-wrapper
+  .modal-window-scroller
+    .modal-window-height
+      label.modal-window-overlay for="modal-order-form-window-checkbox"
+
+      .modal-window-width
+        .modal-header
+          .modal-header-row.row
+            .modal-header-title-column.columns.large-10
+              .h2
+                |Форма замовлення
+            label.modal-header-close-button-column for="modal-order-form-window-checkbox"
+              = embedded_svg('static_images/all/menu-close-button.svg')
+
+
+
+        .modal-content
+          .modal-content-row.row
+            form
+              #from-field.field.columns.large-4
+                label
+                  |з
+                .input-text
+                  input type="text" placeholder=(today = Date.today; today.day.to_s + '.' + today.month.to_s + '.' + today.year.to_s)
+
+              #to-field.field.columns.large-4.right
+                label
+                  |до
+                .input-text
+                  input type="text" placeholder=(today = Date.today; today.day.to_s + '.' + today.month.to_s + '.' + today.year.to_s)
+
+
+
+
+              #calendar.columns.large-12
+                input type="radio" for="month-1"
+                input type="radio" for="month-2"
+                input type="radio" for="month-3"
+                input type="radio" for="month-4"
+                input type="radio" for="month-5"
+                .calendar-header
+                  label.prev-month
+                    label class="month-1" for="month-1"
+                    label class="month-2" for="month-2"
+                    label class="month-3" for="month-3"
+                    label class="month-4" for="month-4"
+                    label class="month-5" for="month-5"
+
+                  .next-month
+                    label class="month-1" for="month-1"
+                    label class="month-2" for="month-2"
+                    label class="month-3" for="month-3"
+                    label class="month-4" for="month-4"
+                    label class="month-5" for="month-5"
+
+
+                  .displayed-month
+                    .span class="month-1"
+                      |Квітень 2014
+                    .span class="month-2"
+                      |Травень 2014
+                    .span class="month-3"
+                      |Червень 2014
+                    .span class="month-4"
+                      |Липень 2014
+                    .span class="month-5"
+                      |Серпень 2014
+                  .days-names
+                    ul
+                      li
+                        |Пн
+                      li
+                        |Вт
+                      li
+                        |Ср
+                      li
+                        |Чт
+                      li
+                        |Пт
+                      li
+                        |Сб
+                      li
+                        |Нд
+
+                  .days
+                    ul class="month-1"
+                      li
+                        input type="checkbox" id="day-1-4-2014"
+                        label for="day-1-4-2014"
+                          |31
+
+
+
+
+
+
+
+
+
+
+
+

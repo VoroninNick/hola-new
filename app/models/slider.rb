@@ -5,7 +5,7 @@ class Slider < ActiveRecord::Base
   attr_accessible :slides
   #nested :slides
   accepts_nested_attributes_for :slides
-  attr_accessible :slide_attributes
+  attr_accessible :slides_attributes
 
 
   rails_admin do

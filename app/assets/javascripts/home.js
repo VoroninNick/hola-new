@@ -67,5 +67,7 @@ $(document).on('ready page:load', function(){
         var original_href = $link.attr('href')
     });*/
 
+    //$('a.fancybox').fancybox();
+
 
 })

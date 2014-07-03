@@ -1,0 +1,30 @@
+/#modal-order-form-container style="display: none;"
+#modal-order-form.modal-wrapper
+  .modal-window-scroller
+
+    .modal-window-height
+      label.modal-window-overlay for="modal-order-form-window-checkbox"
+      .modal-window-width
+        .modal-header
+          .modal-header-row.row
+            .modal-header-title-column.columns.large-10
+              .h2
+                |Форма замовлення
+            .modal-header-close-button-column.columns.large-2
+              = embedded_svg('static_images/all/menu-close-button.svg')
+
+        .modal-content
+          .modal-content-row.row
+            .from-column.columns.large-4
+              input type="checkbox" id="mycb"
+              label for="mycb"
+              label for="#modal-order-form-window-checkbox" label-display-modal
+              label
+                |З
+              input type="text" placeholder=(today = Date.today; today.day.to_s + '.' + today.month.to_s + '.' + today.year.to_s)
+
+
+
+
+
+

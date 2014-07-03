@@ -19,7 +19,8 @@
   </head>
 
   <body>
-
+    <%= render partial: 'partials/modal_order_form_checkbox' %>
+    <div id="body-inner">
     <div id="wrap">
 
       <div id="main">
@@ -34,11 +35,14 @@
     <%= render partial: 'partials/footer' %>
 
 
+    </div>
+
+
 
 
     <%= render partial: 'partials/load_disqus' %>
 
-    <%= render partial: 'partials/modal_order_form' %>
+    <%= render partial: 'partials/modal_order_form_large' %>
 
     <%= javascript_include_tag "application" %>
 

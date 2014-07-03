@@ -1,6 +1,6 @@
 class Slide < ActiveRecord::Base
   attr_accessible :title
-  attr_accessible :descripton
+  attr_accessible :description
   attr_accessible :image
   mount_uploader :image, ImageUploader
 
