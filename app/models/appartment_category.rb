@@ -1,18 +1,16 @@
-class Slide < ActiveRecord::Base
-  attr_accessible :title
-  attr_accessible :description
-  attr_accessible :image
-  mount_uploader :image, ImageUploader
-
-  belongs_to :slider
-  attr_accessible :slider, :slider_id
-
-  translates :title, :description
+class AppartmentCategory < ActiveRecord::Base
+  attr_accessible :name, :description
+  translates :name, :description
   accepts_nested_attributes_for :translations
   attr_accessible :translations_attributes, :translations
 
+  has_many :appartments
+
+  accepts_nested_attributes_for :appartments
+  attr_accessible :appartments_attributes
+
   # class Translation
-  #   attr_accessible :title, :description
+  #   attr_accessible :name, :description
   #   attr_accessible :locale
   #
   #   rails_admin do
@@ -20,7 +18,7 @@ class Slide < ActiveRecord::Base
   #       field :locale do
   #         html_attributes  readonly: "readonly"
   #       end
-  #       field :title
+  #       field :name
   #       field :description
   #     end
   #   end
@@ -28,15 +26,12 @@ class Slide < ActiveRecord::Base
 
   rails_admin do
     edit do
-      field :title
+      field :name
       field :description
-      field :image
-
       # field :translations, :globalize_tabs
-
-      #field :tag_list do
-      #  partial 'tag_list_with_suggestions'
-      #end
+      field :appartments
     end
   end
+
+
 end

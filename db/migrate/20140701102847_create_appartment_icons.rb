@@ -1,5 +1,5 @@
 class CreateAppartmentIcons < ActiveRecord::Migration
-  def change
+  def up
     create_table :appartment_icons do |t|
       t.string :image
       t.string :name
@@ -12,5 +12,15 @@ class CreateAppartmentIcons < ActiveRecord::Migration
       t.belongs_to :appartment
       t.belongs_to :appartment_icon
     end
+
+    AppartmentIcon.create_translation_table!
+  end
+
+  def down
+    drop_table :appartment_icons
+
+    drop_table :appartment_and_appartment_icon_links
+
+    AppartmentIcon.drop_translation_table!
   end
 end

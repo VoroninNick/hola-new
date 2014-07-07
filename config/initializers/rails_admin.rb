@@ -32,5 +32,47 @@ RailsAdmin.config do |config|
     # history_show
   end
 
-  #config.included_models = [ Appartment ]
+  config.included_models = [ Appartment, Pages::HomePage, Slider ]
+
+  # [Image::Translation, AppartmentCategory::Translation, AppartmentIcon::Translation, AppartmentImage::Translation, Metadata::Translation, Slide::Translation, Region::Translation].each do |model|
+  #   config.model model do
+  #      nested do
+  #        configure :locale do
+  #          html_attributes  readonly: "readonly"
+  #        end
+  #
+  #        configure :globalized_model do
+  #          hide
+  #        end
+  #      end
+  #   end
+  # end
+
+  [Image, AppartmentCategory, AppartmentIcon, AppartmentImage, Metadata, Slide, Region].each do |model|
+    config.model model do
+      edit do
+        include_all_fields
+        field :translations, :globalize_tabs do
+          show
+        end
+      end
+    end
+
+    config.included_models += [model, model::Translation]
+
+    config.model model::Translation do
+      nested do
+        include_all_fields
+
+
+        field :locale do
+          html_attributes  readonly: "readonly"
+        end
+
+        field :globalized_model do
+          hide
+        end
+      end
+    end
+  end
 end

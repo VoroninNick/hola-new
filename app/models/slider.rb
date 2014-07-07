@@ -14,6 +14,14 @@ class Slider < ActiveRecord::Base
       field :slides
       field :sliderable
     end
+
+    nested do
+      field :name
+      field :slides
+      field :sliderable do
+        hide
+      end
+    end
   end
 
 end

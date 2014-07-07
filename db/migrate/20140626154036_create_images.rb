@@ -9,5 +9,7 @@ class CreateImages < ActiveRecord::Migration
 
       t.timestamps
     end
+
+    Image.create_translation_table!
   end
 end

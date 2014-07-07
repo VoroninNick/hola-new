@@ -1,0 +1,50 @@
+#home-form
+  #home-form-row
+    #home-form-column.columns
+      .h2
+        |Форма швидкого пошуку
+      form
+        #quantity-field.field.columns.large-6
+          label хочу
+
+          .select
+
+            select#quantity-select name="quantity"
+              - @appartment_categories.each do |c|
+                option value="1"
+                  = c.name
+
+
+
+
+        #region-field.field.columns.large-6
+          label for="region-select"
+            |в
+          .select
+            select id="region-select" name="region"
+            - @appartment_regions.each do |region|
+              option value="1"
+                = region.name
+
+
+        #price-from-field.field.columns.large-3
+          label for="price-from-input"
+            |від
+          .input-text
+            input id="price-from-input" type="text" name="price-from" placeholder="120$"
+
+        #price-to-field.field.columns.large-3
+          label for="price-to-input"
+            |до
+          .input-text
+            input id="price-to-input" type="text" name="price-to" placeholder="320$"
+
+        #submit.submit-field.field.columns.large-6
+          .submit-wrapper
+            .large-brand-button
+              .button-top
+              .button-value
+                input type="submit" value="Знайти"
+              .button-bottom
+
+

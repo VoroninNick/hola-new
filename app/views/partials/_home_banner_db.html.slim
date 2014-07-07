@@ -1,0 +1,28 @@
+#home-slider.slider
+  .slides
+
+    - @home_slider.slides.each do |slide|
+      .slide
+        .slide-image
+          = link_to( image_tag(slide.image.url), '#' )
+        .slide-description-wrapper
+          .reset
+            .row
+              .slide-description.small-brand-container.bottom-side.right.pull-1
+                .content
+                  .title
+                    a
+                      |Двокімнатний люкс
+                  .description
+                    |Галицький район, м. Львів
+                  br
+                    = order_button('350 $', 'Замовити!', 'large')
+                .brand-bottom-bg
+
+      .bullets
+        ul
+          li.active
+
+          li
+
+          li

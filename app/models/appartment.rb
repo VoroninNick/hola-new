@@ -18,6 +18,9 @@ class Appartment < ActiveRecord::Base
   accepts_nested_attributes_for :slider
   attr_accessible :slider_attributes
 
+  belongs_to :appartment_category
+  attr_accessible :appartment_category, :appartment_category_id
+
   belongs_to :region
   attr_accessible :region, :region_id
 
@@ -31,7 +34,11 @@ class Appartment < ActiveRecord::Base
   accepts_nested_attributes_for :appartment_images
   attr_accessible :appartment_images_attributes, :appartment_images
 
-  attr_accessible :lat, :lng, :price
+  attr_accessible :lat, :lng, :price, :address, :publish, :available, :recommended
+
+
+  mount_uploader :main_image, AppartmentAvatarUploader
+
 
 
   rails_admin do
@@ -42,10 +49,20 @@ class Appartment < ActiveRecord::Base
     #   default_longitude 151.0
     # end
 
+    field :publish
+
+    field :available
+
+    field :recommended
+
+    field :appartment_category
+
     field :region
 
     field :lat
     field :lng
+
+    field :address
 
     field :price
 
@@ -56,6 +73,10 @@ class Appartment < ActiveRecord::Base
     field :appartment_icons
 
     field :appartment_images
+
+    field :main_image do
+      label 'avatar'
+    end
 
   end
 end

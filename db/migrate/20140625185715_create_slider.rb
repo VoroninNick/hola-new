@@ -18,6 +18,8 @@ class CreateSlider < ActiveRecord::Migration
       t.timestamps
     end
 
+    Slide.create_translation_table!
+
 
 
   end

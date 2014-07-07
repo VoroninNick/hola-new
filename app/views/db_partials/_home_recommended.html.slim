@@ -1,0 +1,31 @@
+#home-recommended.appartments-collection
+  #home-recommended-row.row
+    .large-brand-container
+      .content
+        .h2.columns.large-12
+          |Рекомендовані квартири
+
+        - @home_recommended.each do |appartment|
+          .item.columns.large-4
+            .item-inner
+              .item-image
+                a href=appartment.page.path
+                  = image_tag(appartment.main_image.url )
+                  .image-overlay
+                    = embedded_svg('static_images/all/search.svg')
+              .item-info
+                .item-title.h4
+                  a href=appartment.page.path
+                    = appartment.appartment_category.name
+                .region.left
+                  = appartment.region.name
+                .address.left
+                  = appartment.address
+                .price.h1.right
+                  = "#{appartment.price} $"
+                br
+                = order_button('350 $', 'Замовити!', 'medium', '#modal-order-form', true, 'modal-order-form-window-checkbox')
+        .clearfix
+
+
+      .brand-bottom-bg
