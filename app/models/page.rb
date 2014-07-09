@@ -36,6 +36,9 @@ class Page < ActiveRecord::Base
   end
 
   translates :path, :data
+  accepts_nested_attributes_for :translations
+  attr_accessible :translations_attributes, :translations
+
   class Translation
     attr_accessible :locale, :path, :data
   end
