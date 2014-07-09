@@ -32,7 +32,7 @@ RailsAdmin.config do |config|
     # history_show
   end
 
-  config.included_models = [ Appartment, Page, SitemapRecord, Pages::HomePage, Slider, HomeSlider, AppartmentSlider ]
+  config.included_models = [ Appartment, Page, SitemapRecord, Pages::HomePage, HomeSlider, AppartmentSlider ]
 
   # [Image::Translation, AppartmentCategory::Translation, AppartmentIcon::Translation, AppartmentImage::Translation, Metadata::Translation, Slide::Translation, Region::Translation].each do |model|
   #   config.model model do
@@ -48,7 +48,7 @@ RailsAdmin.config do |config|
   #   end
   # end
 
-  [Image, AppartmentCategory, AppartmentIcon, AppartmentImage, Metadata, Region, Slide, HomeSlide, AppartmentSlide].each do |model|
+  [Image, AppartmentCategory, AppartmentIcon, AppartmentImage, Metadata, Region, HomeSlide, AppartmentSlide].each do |model|
     config.model model do
       edit do
         include_all_fields
