@@ -63,7 +63,9 @@ class Appartment < ActiveRecord::Base
     p = page
     self.translations_by_locale.keys.each do |locale|
       I18n.with_locale locale do
-        p.path ||= "/#{locale.to_s}/appartments/#{name.parameterize}"
+        if p.path.nil? || p.path.length == 0
+          p.path = "/#{locale.to_s}/appartments/#{name.parameterize}"
+        end
       end
     end
 
