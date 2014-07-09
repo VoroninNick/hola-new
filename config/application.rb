@@ -20,6 +20,13 @@ module Hola
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     config.i18n.default_locale = :en
     config.i18n.available_locales = [:uk, :ru, :pl, :en]
+    config.i18n.fallbacks = true
+
+    Globalize.fallbacks = {
+        en: [:en, :ru, :pl, :uk],
+        pl: [:pl, :en, :ru, :uk],
+        uk: [:uk, :ru, :en, :pl],
+        ru: [:ru, :uk, :en, :pl]}
 
     config.assets.precompile += %w( test.js test.css )
   end
