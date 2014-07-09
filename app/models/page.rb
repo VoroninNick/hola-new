@@ -18,7 +18,7 @@ class Page < ActiveRecord::Base
 
   has_many :page_block_links, as: :page
   has_many :page_blocks, through: :page_block_links, source: :page_block, source_type: 'PageBlock'
-
+  has_many :appartments, through: :page_block_links, source: :page_block, source_type: 'Appartment'
 
   has_one :metadata
   accepts_nested_attributes_for :metadata
@@ -27,6 +27,16 @@ class Page < ActiveRecord::Base
   has_one :sitemap_record
   accepts_nested_attributes_for :sitemap_record
   attr_accessible :sitemap_record, :sitemap_record_attributes
+
+
+  after_save :reload_routes
+
+  def reload_routes
+    DynamicRouter.reload
+  end
+
+
+
 
   rails_admin do
     nested do

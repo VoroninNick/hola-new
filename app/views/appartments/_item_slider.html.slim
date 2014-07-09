@@ -1,26 +1,27 @@
 #appartment-slider.slider
   .slides
-    .slide
-      .slide-image
-        = link_to( image_tag('http://placehold.it/2000x350&text=slide 1'), '#' )
-      .slide-description-wrapper
-        .reset
-          .row
-            .slide-description.small-brand-container.bottom-side.right.pull-1
-              .content
-                .title
-                  a
-                    |Двокімнатний люкс
-                .description
-                  |Галицький район, м. Львів
-                br
-                  = order_button('350 $', 'Замовити!', 'large')
-              .brand-bottom-bg
+    - @appartment_slider.slides.each do |slide|
+      div class="slide slide-#{slide.id}"
+        .slide-image
+          = link_to( image_tag(slide.image.appartment_slide.url), '#' )
+        .slide-description-wrapper
+          .reset
+            .row
+              .slide-description.small-brand-container.bottom-side.right.pull-1
+                .content
+                  .title
+                    a
+                      = @appartment.appartment_category.name
+                  .description
+                    = @appartment.region.name
+                  br
+                    = order_button("#{trim(@appartment.price).to_s} $", 'Замовити!', 'large')
+                .brand-bottom-bg
 
   .bullets
     ul
-      li.active
-
-      li
-
-      li
+      - @appartment_slider.slides.each_with_index do |slide, index|
+        - if index == 0
+          li.active
+        - else
+          li

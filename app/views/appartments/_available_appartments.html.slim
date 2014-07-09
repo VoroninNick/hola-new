@@ -5,26 +5,26 @@
         .h2.columns.large-12
           |Доступні квартири
 
-        - for i in 1..9
+        - @available_appartments.each do |appartment|
           .item.columns.large-4
             .item-inner
               .item-image
-                a href=appartments_item_path('item')
-                  = image_tag('http://placehold.it/420x350&text=item 1')
+                a href=appartment.page.path
+                  = appartment.main_image.url
                   .image-overlay
                     = embedded_svg('static_images/all/search.svg')
               .item-info
                 .item-title.h4
-                  a href=appartments_item_path('item')
-                    |Дво-поверховий люкс
+                  a href=appartment.page.path
+                    = appartment.appartment_category.name
                 .region.left
-                  |Галицький район, м. Львів
+                  = appartment.region.name
                 .address.left
-                  |вул. Григоренка, 17
+                  = appartment.address
                 .price.h1.right
-                  |250 $
+                  = "#{trim(appartment.price).to_s} $"
                 br
-                = order_button('350 $', 'Замовити!')
+                = order_button("#{trim(appartment.price).to_s} $", 'Замовити!')
         .clearfix
 
 

@@ -27,7 +27,7 @@ class Appartment < ActiveRecord::Base
   has_many :appartment_and_appartment_icon_links
   has_many :appartment_icons, through: :appartment_and_appartment_icon_links
 
-  attr_accessible :appartment_icons
+  attr_accessible :appartment_icons, :appartment_and_appartment_icon_links
 
   has_many :appartment_images
 
@@ -45,7 +45,7 @@ class Appartment < ActiveRecord::Base
   def check_page
     if pages.count == 0
       p = Page.new
-      p.path = "/appartments/#{name}"
+      p.path = "/appartments/#{name.parameterize}"
       p.controller = 'appartments'
       p.action = 'item'
       p.layout = 'application'

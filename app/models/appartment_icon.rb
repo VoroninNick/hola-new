@@ -3,7 +3,7 @@ class AppartmentIcon < ActiveRecord::Base
   has_many :appartments, through: :appartment_and_appartment_icon_links
 
 
-  attr_accessible :tooltip, :name, :image
+  attr_accessible :tooltip, :name, :image, :appartment_and_appartment_icon_links, :appartments
 
   mount_uploader :image, AppartmentIconUploader
 

@@ -24,7 +24,7 @@
                     .address.left
                       = appartment.address
                     .price.h1.right
-                      = "#{appartment.price} $"
+                      = "#{trim(appartment.price).to_s} $"
                     br
                     = order_button("#{trim(appartment.price).to_s} $", 'Замовити!')
 

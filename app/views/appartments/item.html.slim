@@ -1,11 +1,13 @@
 .page.appartment-item
-  = render partial: 'appartments/item_slider'
+
+  - if @appartment_slider && @appartment_slider.slides.count > 0
+    = render partial: 'appartments/item_slider'
   #appartment-icons-and-description-row.row
     #appartment-icons
       #appartment-icons-column.columns.large-6
-        - for i in 1..10
+        - @appartment_icons.each do |icon|
           .icon
-            = embedded_svg('static_images/all/DVD player.svg')
+            = embedded_svg(icon.image.url)
 
     #appartment-description
       #appartment-description-column.columns.large-6
@@ -73,4 +75,6 @@
 
   = render partial: 'appartments/item_available_appartments'
 
-  = render partial: 'appartments/item_you_have_recently_viewed'
+  - if @recently_viewed_appartments.count > 0
+
+    = render partial: 'appartments/item_you_have_recently_viewed'
