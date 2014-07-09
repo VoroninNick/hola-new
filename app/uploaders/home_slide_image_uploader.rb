@@ -37,7 +37,7 @@ class HomeSlideImageUploader < CarrierWave::Uploader::Base
   # end
 
   version :home_slide do
-    process :resize_to_fit => [2000, 520]
+    process :resize_to_fill => [2000, 520]
   end
 
   # Add a white list of extensions which are allowed to be uploaded.
