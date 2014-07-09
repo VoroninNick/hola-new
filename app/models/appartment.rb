@@ -53,10 +53,9 @@ class Appartment < ActiveRecord::Base
   def check_page
     if pages.count == 0
       p = Page.new
-      p.path = "/appartments/#{name.parameterize}"
-      p.controller = 'appartments'
-      p.action = 'item'
-      p.layout = 'application'
+      p.controller ||= 'appartments'
+      p.action ||= 'item'
+      p.layout ||= 'application'
       p.save
       pages.push p
     end
