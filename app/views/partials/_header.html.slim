@@ -6,24 +6,20 @@
 
       #languages-bar.right
         ul
-          li.active
-            span.image
-              // if 1 == 1 then "#{str = ApplicationHelper.css_svg("static_images/all/Launguage-EN color.svg").delete("\n"); raw str }"; else "<svg> \n\n </svg>".gsub ;end
-              = embedded_svg_from_assets('static_images/all/Launguage-UA color.svg', class: 'active')
-              = embedded_svg_from_assets('static_images/all/Launguage-UA.svg', class: 'inactive')
-          li
-            a.image title='Русский'
-              = embedded_svg_from_assets('static_images/all/Launguage-RU color.svg', class: 'active')
-              = embedded_svg_from_assets('static_images/all/Launguage-RU.svg', class: 'inactive')
+          - I18n.available_locales.each do |locale|
+            - if locale == I18n.locale
 
-          li
-            a.image title="Polish"
-              = embedded_svg_from_assets('static_images/all/Launguage-PL color.svg', class: 'active')
-              = embedded_svg_from_assets('static_images/all/Launguage-PL.svg', class: 'inactive')
-          li
-            a.image title="English"
-              = embedded_svg_from_assets('static_images/all/Launguage-EN color.svg', class: 'active')
-              = embedded_svg_from_assets('static_images/all/Launguage-EN.svg', class: 'inactive')
+              li.active
+                span.image
+                  // if 1 == 1 then "#{str = ApplicationHelper.css_svg("static_images/all/Launguage-EN color.svg").delete("\n"); raw str }"; else "<svg> \n\n </svg>".gsub ;end
+                  = embedded_svg_from_assets("static_images/all/language-#{locale.to_s}-color.svg", class: 'active')
+                  = embedded_svg_from_assets("static_images/all/language-#{locale.to_s}.svg", class: 'inactive')
+
+            - else
+              li
+                a.image title="#{locale.to_s}"
+                  = embedded_svg_from_assets("static_images/all/language-#{locale.to_s}-color.svg", class: 'active')
+                  = embedded_svg_from_assets("static_images/all/language-#{locale.to_s}.svg", class: 'inactive')
 
 
       #social-links-bar.right
@@ -119,23 +115,26 @@
       li
         .languages
           ul
-            li.active
-              span.toggle-image
-                // if 1 == 1 then "#{str = ApplicationHelper.css_svg("static_images/all/Launguage-EN color.svg").delete("\n"); raw str }"; else "<svg> \n\n </svg>".gsub ;end
-                = embedded_svg_from_assets('static_images/all/Launguage-UA color.svg', class: 'active')
-                = embedded_svg_from_assets('static_images/all/Launguage-UA.svg', class: 'inactive')
-            li
-              a.toggle-image title='Русский'
-                = embedded_svg_from_assets('static_images/all/Launguage-RU color.svg', class: 'active')
-                = embedded_svg_from_assets('static_images/all/Launguage-RU.svg', class: 'inactive')
+            - I18n.available_locales.each do |locale|
+              - if locale == I18n.locale
+                li.active
+                  span.toggle-image
+                    // if 1 == 1 then "#{str = ApplicationHelper.css_svg("static_images/all/Launguage-EN color.svg").delete("\n"); raw str }"; else "<svg> \n\n </svg>".gsub ;end
+                    = embedded_svg_from_assets("static_images/all/language-#{locale.to_s}-color.svg", class: 'active')
+                    = embedded_svg_from_assets("static_images/all/language-#{locale.to_s}.svg", class: 'inactive')
 
-            li
-              a.toggle-image title="Polish"
-                = embedded_svg_from_assets('static_images/all/Launguage-PL color.svg', class: 'active')
-                = embedded_svg_from_assets('static_images/all/Launguage-PL.svg', class: 'inactive')
-            li
-              a.toggle-image title="English"
-                = embedded_svg_from_assets('static_images/all/Launguage-EN color.svg', class: 'active')
-                = embedded_svg_from_assets('static_images/all/Launguage-EN.svg', class: 'inactive')
+              - else
+                li
+                  a.toggle-image title="#{locale.to_s}"
+                    = embedded_svg_from_assets("static_images/all/language-#{locale.to_s}-color.svg", class: 'active')
+                    = embedded_svg_from_assets("static_images/all/language-#{locale.to_s}.svg", class: 'inactive')
+
+
+
+
+
+
+
+
 
 

@@ -35,6 +35,12 @@ class Page < ActiveRecord::Base
     DynamicRouter.reload
   end
 
+  translates :path, :data
+  class Translation
+    attr_accessible :locale, :path, :data
+  end
+
+
 
 
 

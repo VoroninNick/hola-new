@@ -8,7 +8,12 @@ class DynamicRouter
           to = "#{page.controller}##{page.action}"
         end
 
-        get page.path, :to => to, defaults: { page_id: page.id }
+        page.translations_by_locale.keys.each do |locale|
+          I18n.with_locale locale do
+            get page.path, :to => to, defaults: { page_id: page.id, locale: locale }
+          end
+        end
+
       end
     end
   end

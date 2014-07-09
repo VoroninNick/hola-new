@@ -1,5 +1,5 @@
 class CreatePages < ActiveRecord::Migration
-  def change
+  def up
     create_table :pages do |t|
       t.string :name
       t.string :path
@@ -13,5 +13,13 @@ class CreatePages < ActiveRecord::Migration
 
       t.timestamps
     end
+
+   Page.create_translation_table!
+  end
+
+  def down
+    drop_table :pages
+
+    Page.drop_translation_table!
   end
 end

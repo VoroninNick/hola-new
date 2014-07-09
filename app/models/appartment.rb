@@ -37,7 +37,12 @@ class Appartment < ActiveRecord::Base
   accepts_nested_attributes_for :appartment_images
   attr_accessible :appartment_images_attributes, :appartment_images
 
-  attr_accessible :lat, :lng, :price, :address, :publish, :available, :recommended, :name
+  attr_accessible :lat, :lng, :price, :address, :publish, :available, :recommended, :name, :intro_text, :description
+
+  translates :intro_text, :description
+  class Translation
+    attr_accessible :locale, :intro_text, :description
+  end
 
 
   mount_uploader :main_image, AppartmentAvatarUploader
@@ -55,6 +60,15 @@ class Appartment < ActiveRecord::Base
       p.save
       pages.push p
     end
+
+    p = page
+    self.translations_by_locale.keys.each do |locale|
+      I18n.with_locale locale do
+        p.path ||= "/#{locale.to_s}/appartments/#{name.parameterize}"
+      end
+    end
+
+    p.save
   end
 
 
