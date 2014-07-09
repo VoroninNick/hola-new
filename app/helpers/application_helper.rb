@@ -1,8 +1,28 @@
 module ApplicationHelper
+  #def stub_image(width = 420, height = 350, text = 'item 1', options = {})
 
+    #ActionView::Helpers::AssetTagHelper.image_tag(image_url, options)
+    #"<img src='' />".html_safe
 
-  def stub_image(width = 420, height = 350, text = 'item 1')
-    "<img src='http://placehold.it/#{width}x#{height}&text=#{text}' />".html_safe
+  #end
+
+  #spec = Gem::Specification.find_by_name("actionview")
+  #gem_root = spec.gem_dir
+  #yaml_obj = YAML.load(gem_root + "/file_name.yaml")
+  #require "#{gem_root}/lib/action_view/helpers/asset_tag_helper"
+
+  #include ActionView::Helpers::AssetTagHelper
+  #ActionView::Helpers::AssetTagHelper.image_tag
+
+  def stub_image(width = 420, height = 350, text = 'item 1', options = {})
+    image_url = "http://placehold.it/#{width}x#{height}&text=#{text}"
+    options[:src] = image_url
+    output = "<img "
+    options.each_pair do |key, value|
+      output += "#{key}='#{value}' "
+    end
+    output += "/>"
+    output.html_safe
   end
 
   def developed_by
@@ -33,8 +53,16 @@ module ApplicationHelper
     minimized_source
   end
 
+  def embedded_svg_from_assets filename, options = {}
+    embedded_svg("/app/assets/images/#{filename}", options)
+  end
+
+  def embedded_svg_from_public filename, options = {}
+    embedded_svg("/public/#{filename}", options)
+  end
+
   def embedded_svg filename, options={}
-    file = File.read(Rails.root.join('app', 'assets', 'images', filename))
+    file = File.read(Rails.root.to_s + filename.to_s)
     doc = Nokogiri::HTML::DocumentFragment.parse file
     svg = doc.at_css 'svg'
     if options[:class].present?
@@ -70,3 +98,6 @@ module ApplicationHelper
     i == f ? i : f
   end
 end
+
+
+

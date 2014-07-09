@@ -24,10 +24,13 @@ class Appartment < ActiveRecord::Base
   belongs_to :region
   attr_accessible :region, :region_id
 
-  has_many :appartment_and_appartment_icon_links
-  has_many :appartment_icons, through: :appartment_and_appartment_icon_links
+  #has_many :appartment_and_appartment_icon_links
+  #has_many :appartment_icons, through: :appartment_and_appartment_icon_links
+  has_and_belongs_to_many :appartment_icons, join_table: 'appartment_and_appartment_icon_links'
 
-  attr_accessible :appartment_icons, :appartment_and_appartment_icon_links
+  attr_accessible :appartment_icons#, :appartment_and_appartment_icon_links
+
+  attr_accessible :appartment_icon_ids, :main_image_cache
 
   has_many :appartment_images
 

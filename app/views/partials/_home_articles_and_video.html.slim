@@ -13,7 +13,7 @@
           .item-inner.medium-brand-container.right-side
             .content
               .item-image
-                = link_to( image_tag('http://placehold.it/200x200&text=article 1'), '#' )
+                = link_to( stub_image( 200, 200, 'article 1', class: 'myclass myclass2', :'data-value' => [5, 5]), '#' )
 
               .item-info
                 .item-title.h4

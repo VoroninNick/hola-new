@@ -1,6 +1,8 @@
 class AppartmentIcon < ActiveRecord::Base
-  has_many :appartment_and_appartment_icon_links
-  has_many :appartments, through: :appartment_and_appartment_icon_links
+  #has_many :appartment_and_appartment_icon_links
+  #has_many :appartments, through: :appartment_and_appartment_icon_links
+
+  has_and_belongs_to_many :appartments, join_table: 'appartment_and_appartment_icon_links'
 
 
   attr_accessible :tooltip, :name, :image, :appartment_and_appartment_icon_links, :appartments

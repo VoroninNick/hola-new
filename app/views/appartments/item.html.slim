@@ -7,7 +7,7 @@
       #appartment-icons-column.columns.large-6
         - @appartment_icons.each do |icon|
           .icon
-            = embedded_svg(icon.image.url)
+            = embedded_svg_from_public(icon.image.url)
 
     #appartment-description
       #appartment-description-column.columns.large-6
@@ -29,10 +29,10 @@
           .h2
             |Фотографії квартири
           .items
-            - for i in 1..8
+            - @appartment_images.each do |image|
               .item.columns.large-3
                 .item-inner
-                  = stub_image(500, 500, 'image')
+                  = image_tag(image.image.thumb.url)
 
           #link-column.columns.large-12
             a.pseudo-link
