@@ -13,6 +13,8 @@ class AppartmentSlide < ActiveRecord::Base
   accepts_nested_attributes_for :translations
   attr_accessible :translations_attributes, :translations
 
+  attr_accessible :remove_image, :image_cache, :slider_type
+
   class Translation
     attr_accessible :title, :description, :locale
   end

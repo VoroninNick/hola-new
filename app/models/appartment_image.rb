@@ -9,6 +9,8 @@ class AppartmentImage < ActiveRecord::Base
 
   mount_uploader :image, AppartmentImageUploader
 
+  attr_accessible :remove_image, :image_cache
+
   class Translation
     attr_accessible :locale, :alt, :description, :title
   end

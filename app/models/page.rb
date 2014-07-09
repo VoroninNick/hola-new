@@ -16,6 +16,8 @@ class Page < ActiveRecord::Base
 
   belongs_to :custom_page, polymorphic: true
 
+
+
   has_many :page_block_links, as: :page
   has_many :page_blocks, through: :page_block_links, source: :page_block, source_type: 'PageBlock'
   has_many :appartments, through: :page_block_links, source: :page_block, source_type: 'Appartment'
@@ -27,6 +29,10 @@ class Page < ActiveRecord::Base
   has_one :sitemap_record
   accepts_nested_attributes_for :sitemap_record
   attr_accessible :sitemap_record, :sitemap_record_attributes
+
+
+
+  attr_accessible :custom_page, :custom_page_id, :custom_page_type, :appartment_ids
 
 
   after_save :reload_routes

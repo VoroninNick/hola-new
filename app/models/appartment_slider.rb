@@ -6,7 +6,7 @@ class AppartmentSlider < ActiveRecord::Base
 
   has_many :slides, as: :slider, class_name: 'AppartmentSlide'
 
-  attr_accessible :slides
+  attr_accessible :slides, :name
   #nested :slides
   accepts_nested_attributes_for :slides
   attr_accessible :slides_attributes
