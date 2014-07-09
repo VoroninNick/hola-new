@@ -39,9 +39,9 @@ class Appartment < ActiveRecord::Base
 
   attr_accessible :lat, :lng, :price, :address, :publish, :available, :recommended, :name, :intro_text, :description
 
-  translates :intro_text, :description
+  translates :intro_text, :description, :address
   class Translation
-    attr_accessible :locale, :intro_text, :description
+    attr_accessible :locale, :intro_text, :description, :address
   end
 
 
