@@ -11,6 +11,10 @@ class Metadata < ActiveRecord::Base
   accepts_nested_attributes_for :translations
   attr_accessible :translations_attributes, :translations
 
+  class Translation
+    attr_accessible :locale, :head_title, :meta_description
+  end
+
   # class Translation
   #   attr_accessible :head_title, :meta_description
   #   attr_accessible :locale

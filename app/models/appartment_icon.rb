@@ -11,6 +11,10 @@ class AppartmentIcon < ActiveRecord::Base
   accepts_nested_attributes_for :translations
   attr_accessible :translations_attributes, :translations
 
+  class Translation
+    attr_accessible :locale, :name, :tooltip
+  end
+
   rails_admin do
     edit do
       include_all_fields

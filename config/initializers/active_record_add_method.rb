@@ -5,6 +5,12 @@ def acts_as_page_block
 
   accepts_nested_attributes_for :pages
   attr_accessible :pages_attributes
+
+  define_method :page do
+    pages.first
+  end
+
+
 end
 
 #def nested(attr)

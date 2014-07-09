@@ -9,6 +9,10 @@ class AppartmentImage < ActiveRecord::Base
 
   mount_uploader :image, AppartmentImageUploader
 
+  class Translation
+    attr_accessible :locale, :alt, :description, :title
+  end
+
 
   rails_admin do
     edit do

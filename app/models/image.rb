@@ -11,6 +11,10 @@ class Image < ActiveRecord::Base
   attr_accessible :title, :alt, :path, :file_name, :image
   mount_uploader :image, ImageUploader
 
+  class Translation
+    attr_accessible :locale, :title, :alt
+  end
+
   rails_admin do
     edit do
       include_all_fields

@@ -68,3 +68,9 @@ gem 'better_errors'
 gem 'binding_of_caller'
 
 gem 'fancybox2-rails', '~> 0.2.8'
+
+gem 'mini_magick'
+
+group :development do
+  gem 'thin'
+end

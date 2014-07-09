@@ -9,9 +9,9 @@ class AppartmentCategory < ActiveRecord::Base
   accepts_nested_attributes_for :appartments
   attr_accessible :appartments_attributes
 
-  # class Translation
-  #   attr_accessible :name, :description
-  #   attr_accessible :locale
+  class Translation
+    attr_accessible :name, :description
+    attr_accessible :locale
   #
   #   rails_admin do
   #     edit do
@@ -22,7 +22,7 @@ class AppartmentCategory < ActiveRecord::Base
   #       field :description
   #     end
   #   end
-  # end
+  end
 
   rails_admin do
     edit do

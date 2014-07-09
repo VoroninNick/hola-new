@@ -3,21 +3,39 @@
 
     - @home_slider.slides.each do |slide|
       .slide
-        .slide-image
-          = link_to( image_tag(slide.image.url), '#' )
-        .slide-description-wrapper
-          .reset
-            .row
-              .slide-description.small-brand-container.bottom-side.right.pull-1
-                .content
-                  .title
-                    a
-                      |Двокімнатний люкс
-                  .description
-                    |Галицький район, м. Львів
-                  br
-                    = order_button('350 $', 'Замовити!', 'large')
-                .brand-bottom-bg
+
+        - if slide.render_from_appartment
+          .slide-image
+            = link_to( image_tag(slide.image.home_slide.url), slide.appartment.page.path )
+          .slide-description-wrapper
+            .reset
+              .row
+                .slide-description.small-brand-container.bottom-side.right.pull-1
+                  .content
+                    .title
+                      a href=slide.appartment.page.path
+                        = slide.appartment.appartment_category.name
+                    .description
+                      = slide.appartment.region.name
+                    br
+                      = order_button( trim(slide.appartment.price).to_s, 'Замовити!', 'large')
+                  .brand-bottom-bg
+
+        - else
+          .slide-image
+            = link_to( image_tag(slide.image.home_slide.url), '#' )
+            .slide-description-wrapper
+              .reset
+                .row
+                  .slide-description.small-brand-container.bottom-side.right.pull-1
+                    .content
+                      .title
+                        a
+                          = slide.title
+                      .description
+                        = slide.description
+                    .brand-bottom-bg
+
 
       .bullets
         ul

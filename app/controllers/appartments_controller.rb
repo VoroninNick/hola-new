@@ -3,5 +3,7 @@ class AppartmentsController < ApplicationController
   end
 
   def item
+    item_url = params[:item]
+    item =
   end
 end

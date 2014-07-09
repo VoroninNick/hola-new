@@ -4,16 +4,16 @@ class Slide < ActiveRecord::Base
   attr_accessible :image
   mount_uploader :image, ImageUploader
 
-  belongs_to :slider
-  attr_accessible :slider, :slider_id
+  belongs_to :slider, polymorphic: true
+  attr_accessible :slider, :slider_id, :slider_type
 
   translates :title, :description
   accepts_nested_attributes_for :translations
   attr_accessible :translations_attributes, :translations
 
-  # class Translation
-  #   attr_accessible :title, :description
-  #   attr_accessible :locale
+  class Translation
+    attr_accessible :title, :description
+    attr_accessible :locale
   #
   #   rails_admin do
   #     edit do
@@ -24,7 +24,7 @@ class Slide < ActiveRecord::Base
   #       field :description
   #     end
   #   end
-  # end
+  end
 
   rails_admin do
     edit do
@@ -37,6 +37,12 @@ class Slide < ActiveRecord::Base
       #field :tag_list do
       #  partial 'tag_list_with_suggestions'
       #end
+    end
+
+    nested do
+      field :slider do
+        hide
+      end
     end
   end
 end

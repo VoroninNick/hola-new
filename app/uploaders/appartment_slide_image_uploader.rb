@@ -1,10 +1,10 @@
 # encoding: utf-8
 
-class AppartmentAvatarUploader < CarrierWave::Uploader::Base
+class AppartmentSlideImageUploader < CarrierWave::Uploader::Base
 
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
-  # include CarrierWave::MiniMagick
+  include CarrierWave::MiniMagick
 
   # Choose what kind of storage to use for this uploader:
   storage :file
@@ -32,8 +32,12 @@ class AppartmentAvatarUploader < CarrierWave::Uploader::Base
   # end
 
   # Create different versions of your uploaded files:
-  version :thumb do
-    process :resize_to_fit => [420, 350]
+  # version :thumb do
+  #   process :resize_to_fit => [50, 50]
+  # end
+
+  version :appartment_slide do
+    process :resize_to_fit => [2000, 350]
   end
 
   # Add a white list of extensions which are allowed to be uploaded.

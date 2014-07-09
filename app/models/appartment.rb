@@ -11,7 +11,7 @@ class Appartment < ActiveRecord::Base
 
   #attr_accessible :lat, :lng
 
-  has_slider
+  has_one :slider, as: :sliderable, class_name: 'AppartmentSlider'
 
   attr_accessible :slider
 
@@ -34,10 +34,25 @@ class Appartment < ActiveRecord::Base
   accepts_nested_attributes_for :appartment_images
   attr_accessible :appartment_images_attributes, :appartment_images
 
-  attr_accessible :lat, :lng, :price, :address, :publish, :available, :recommended
+  attr_accessible :lat, :lng, :price, :address, :publish, :available, :recommended, :name
 
 
   mount_uploader :main_image, AppartmentAvatarUploader
+
+
+  before_save :check_page
+
+  def check_page
+    if pages.count == 0
+      p = Page.new
+      p.path = "/appartments/#{name}"
+      p.controller = 'appartments'
+      p.action = 'item'
+      p.layout = 'application'
+      p.save
+      pages.push p
+    end
+  end
 
 
 
@@ -48,6 +63,8 @@ class Appartment < ActiveRecord::Base
     #   default_latitude -34.0  # Sydney, Australia
     #   default_longitude 151.0
     # end
+
+    field :name
 
     field :publish
 

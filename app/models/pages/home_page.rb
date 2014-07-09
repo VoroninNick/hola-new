@@ -7,7 +7,7 @@ class Pages::HomePage < ActiveRecord::Base
   accepts_nested_attributes_for :page
   attr_accessible :page_attributes
 
-  has_slider
+  has_one :slider, class_name: 'HomeSlider', as: :sliderable
 
   attr_accessible :slider
 

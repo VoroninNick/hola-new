@@ -22,9 +22,9 @@
                 .address.left
                   = appartment.address
                 .price.h1.right
-                  = "#{appartment.price} $"
+                  = "#{trim(appartment.price).to_s} $"
                 br
-                = order_button('350 $', 'Замовити!', 'medium', '#modal-order-form', true, 'modal-order-form-window-checkbox')
+                = order_button("#{trim(appartment.price).to_s} $", 'Замовити!', 'medium', '#modal-order-form', true, 'modal-order-form-window-checkbox')
         .clearfix
 
 

@@ -10,8 +10,8 @@
           .select
 
             select#quantity-select name="quantity"
-              - @appartment_categories.each do |c|
-                option value="1"
+              - @appartment_categories.each_with_index do |c, index|
+                option value="#{index}"
                   = c.name
 
 
@@ -21,10 +21,10 @@
           label for="region-select"
             |в
           .select
-            select id="region-select" name="region"
-            - @appartment_regions.each do |region|
-              option value="1"
-                = region.name
+            select id="region-select" name="region" data-count=@appartment_regions.count
+              - @appartment_regions.each_with_index do |region, index|
+                option value="#{index}"
+                  = region.name
 
 
         #price-from-field.field.columns.large-3
