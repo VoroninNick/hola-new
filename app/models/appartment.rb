@@ -30,7 +30,7 @@ class Appartment < ActiveRecord::Base
 
   attr_accessible :appartment_icons#, :appartment_and_appartment_icon_links
 
-  attr_accessible :appartment_icon_ids, :main_image_cache
+  attr_accessible :appartment_icon_ids, :main_image, :main_image_cache
 
   has_many :appartment_images
 
