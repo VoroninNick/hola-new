@@ -1,7 +1,13 @@
 #appartment-slider.slider
+  - @appartment_slider.slides.each_with_index do |slide, index|
+    input.slide-flag type="radio" name="appartment-slide-flag" id="slide-#{(index+1).to_s}-flag" *(index == 0? {checked: 'checked'} : {})
+
   .slides
-    - @appartment_slider.slides.each do |slide|
-      div class="slide slide-#{slide.id}"
+
+
+
+    - @appartment_slider.slides.each_with_index do |slide, index|
+      div class="slide slide-#{(index+1).to_s}"
         .slide-image
           = link_to( image_tag(slide.image.appartment_slide.url), '#' )
         .slide-description-wrapper
@@ -18,10 +24,9 @@
                     = order_button("#{trim(@appartment.price).to_s} $", 'Замовити!', 'large')
                 .brand-bottom-bg
 
-  .bullets
-    ul
-      - @appartment_slider.slides.each_with_index do |slide, index|
-        - if index == 0
-          li.active
-        - else
-          li
+  - if @appartment_slider.slides.count > 1
+    .bullets
+      ul
+        - @appartment_slider.slides.each_with_index do |slide, index|
+          li class="slide-#{(index + 1).to_s}"
+            label for="slide-#{(index+1).to_s}-flag"
