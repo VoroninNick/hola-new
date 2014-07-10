@@ -24,8 +24,34 @@ function initializeHomeMap(){
         mapTypeId: HOME_MAPTYPE_ID
     };
 
-    map = new google.maps.Map(document.getElementById('home-map-container'),
+    var map_container = $('.map-container').get(0)
+
+    map = new google.maps.Map(map_container,
         mapOptions);
+
+    var $map_wrapper = $('.map-wrapper')
+    var data_markers_str = $map_wrapper.attr('data-markers')
+    if(data_markers_str){
+        var markers = []
+
+        //var pairs = data_markers.split(';')
+        var data_markers = $.parseJSON(data_markers_str)
+        alert(data_markers[0])
+
+        for(var i=0; i<data_markers.length;i++){
+            var m = data_markers[i]
+            var icon = ''
+            if(m.icon_type == 'available'){
+                icon = "<%= asset_path('czmk-map-pointer.png') %>"
+            }
+            new google.maps.Marker({
+                position: new google.maps.LatLng(m.lat, m.lng),
+                map: map,
+                title: m.title,
+                icon: icon
+            })
+        }
+    }
 
     var styledMapOptions = {
         //name: 'Custom Style'

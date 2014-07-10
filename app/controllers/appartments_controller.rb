@@ -18,6 +18,9 @@ class AppartmentsController < ApplicationController
       @appartment_images = @appartment.appartment_images
 
       @appartment_slider = @appartment.slider
+
+      @appartment_markers = [{lat: @appartment.lat, lng: @appartment.lng, title: @appartment.name, icon_type: 'available'}]
+
     end
   end
 end
