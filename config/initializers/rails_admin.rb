@@ -21,13 +21,13 @@ RailsAdmin.config do |config|
     index                         # mandatory
     new
 
-    multiple_upload do
-      #only Album
-    end
-
-    my_action do
-      only Album
-    end
+    # multiple_upload do
+    #   #only Album
+    # end
+    #
+    # my_action do
+    #   only Album
+    # end
 
     export
     bulk_delete
