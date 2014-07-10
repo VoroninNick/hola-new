@@ -113,7 +113,7 @@ $appartment-images-pages-count: 10
 
 
 
-  @for $i from 1 through #{$appartment-images-pages-count - 1}
+  @for $i from 1 through ($appartment-images-pages-count - 1)
     input.appartment-images-page#appartment-images-page-#{$i}:checked
       ~
         #link-column
