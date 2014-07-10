@@ -29,8 +29,8 @@
           .h2
             |Фотографії квартири
           .items
-            - @appartment_images.each do |image|
-              .item.columns.large-3
+            - @appartment_images.each_with_index do |image, index|
+              div class="item columns large-3 belongs-to-page-#{( (index+1) / 8).ceil.to_s}"
                 .item-inner
                   = image_tag(image.image.thumb.url)
 
