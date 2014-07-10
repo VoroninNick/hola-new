@@ -28,15 +28,22 @@
         .content
           .h2
             |Фотографії квартири
+          - if @appartment_images.count > 8
+            - for page_number in 1..((@appartment_images.count / 8).ceil()+1)
+              input.appartment-images-page type="radio" name="appartment-images-page" id="appartment-images-page-#{page_number}" *( page_number == 1? {checked: 'checked'} : {} )
+
+
           .items
             - @appartment_images.each_with_index do |image, index|
-              div class="item columns large-3 belongs-to-page-#{( (index+1) / 8).ceil.to_s}"
+              div class="item columns large-3 belongs-to-page-#{( ( (index) / 8).ceil() +1).to_s}"
                 .item-inner
                   = image_tag(image.image.thumb.url)
 
           #link-column.columns.large-12
-            a.pseudo-link
-              |Показати більше...
+            - if @appartment_images.count > 8
+              - for page_number in 2..((@appartment_images.count / 8).ceil()+1)
+                label.pseudo-link.show-more for="appartment-images-page-#{page_number}"
+                  |Показати більше...
 
 
           .clearfix

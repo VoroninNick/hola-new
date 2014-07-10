@@ -63,7 +63,7 @@
           max-height: 100%
           height: 100%
 
-
+$appartment-images-pages-count: 10
 #appartment-images
   #appartment-images-row
     .content
@@ -77,11 +77,17 @@
         padding-top: 0.9375rem
         float: left
 
+
+
+
+
         .item-inner
           position: relative
           img
             max-width: 100%
             border-radius: 10px
+
+
 
     #link-column
       padding: 2.25rem 2.25rem 0.3125rem 0
@@ -91,6 +97,18 @@
         text-decoration: none
         display: inline-block
         border-bottom: 1px $green-color dotted
+
+
+  @for $i from 2 through $appartment-images-pages-count
+    .belongs-to-page-#{$i}
+      display: none
+
+  @for $i from 2 through $appartment-images-pages-count
+    @for $j from 2 through $i
+      input.appartment-images-page#appartment-images-page-#{$i}
+        ~
+          .belongs-to-page-#{$j}
+            display: block
 
 
 
