@@ -95,7 +95,7 @@ $appartment-images-pages-count: 10
       .pseudo-link
         font-weight: 500
         text-decoration: none
-        display: inline-block
+        display: none
         border-bottom: 1px $green-color dotted
 
 
@@ -105,11 +105,22 @@ $appartment-images-pages-count: 10
 
   @for $i from 2 through $appartment-images-pages-count
     @for $j from 2 through $i
-      input.appartment-images-page#appartment-images-page-#{$i}
+      input.appartment-images-page#appartment-images-page-#{$i}:checked
         ~
           .items
             .belongs-to-page-#{$j}
               display: block
+
+
+
+  @for $i from 1 through #{$appartment-images-pages-count - 1}
+    input.appartment-images-page#appartment-images-page-#{$i}:checked
+      ~
+        #link-column
+          label.show-more.pseudo-link
+            &.page-#{$i}-next
+              display: inline-block
+
 
 
 

@@ -41,8 +41,8 @@
 
           #link-column.columns.large-12
             - if @appartment_images.count > 8
-              - for page_number in 2..((@appartment_images.count / 8).ceil()+1)
-                label.pseudo-link.show-more for="appartment-images-page-#{page_number}"
+              - for page_number in 1..((@appartment_images.count / 8).ceil()+1)
+                label class="pseudo-link show-more page-#{page_number.to_s}-next" for="appartment-images-page-#{page_number+1}"
                   |Показати більше...
 
 
