@@ -74,3 +74,7 @@ gem 'mini_magick'
 group :development do
   gem 'thin'
 end
+
+gem 'rails_admin_multiple_upload', :path => '/media/sda5/pasha/gems/rails_admin_multiple_upload'
+
+gem 'rails_admin_my_action', :path => '../rails_admin_my_action'

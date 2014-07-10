@@ -20,12 +20,23 @@ RailsAdmin.config do |config|
     dashboard                     # mandatory
     index                         # mandatory
     new
+
+    multiple_upload do
+      #only Album
+    end
+
+    my_action do
+      only Album
+    end
+
     export
     bulk_delete
     show
     edit
     delete
     show_in_app
+
+
 
     ## With an audit adapter, you can add:
     # history_index

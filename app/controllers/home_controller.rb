@@ -1,6 +1,6 @@
 class HomeController < ApplicationController
   def index
-    str = css_svg('static_images/all/Launguage-EN color.svg')
+    str = css_svg('static_images/all/language-en-color.svg')
     base64 = Base64.encode64( str )
     result = base64
     #render inline: result #str.delete("\n")
