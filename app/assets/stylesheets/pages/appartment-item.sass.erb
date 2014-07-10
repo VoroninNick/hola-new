@@ -107,8 +107,9 @@ $appartment-images-pages-count: 10
     @for $j from 2 through $i
       input.appartment-images-page#appartment-images-page-#{$i}
         ~
-          .belongs-to-page-#{$j}
-            display: block
+          .items
+            .belongs-to-page-#{$j}
+              display: block
 
 
 
