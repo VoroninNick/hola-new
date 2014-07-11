@@ -109,36 +109,5 @@ RailsAdmin.config do |config|
 
 
 
-  config.model Appartment do
-    field :name
 
-    field :publish
-
-    field :available
-
-    field :recommended
-
-    field :appartment_category
-
-    field :region
-
-    field :lat
-    field :lng
-
-    field :address
-
-    field :price
-
-    field :pages
-
-    field :slider
-
-    field :appartment_icons
-
-    field :appartment_images
-
-    field :main_image do
-      label 'avatar'
-    end
-  end
 end
