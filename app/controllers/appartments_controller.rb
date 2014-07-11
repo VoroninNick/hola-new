@@ -1,5 +1,6 @@
 class AppartmentsController < ApplicationController
   def list
+    @available_appartments = Appartment.where("available = 't' AND publish = 't' ").order('id desc')
   end
 
   def item

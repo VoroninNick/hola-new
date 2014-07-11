@@ -97,6 +97,49 @@ module ApplicationHelper
     i, f = num.to_i, num.to_f
     i == f ? i : f
   end
+
+  def price_to_currency_string(price)
+    require 'money'
+    require 'money/bank/google_currency'
+
+    Money.default_bank = Money::Bank::GoogleCurrency.new
+
+    usd = Money.new(price, :usd)
+    #usd2 = price.to_money(:usd)
+    converted_price = usd
+
+    output_string = "#{converted_price.fractional} $"
+
+    locale = I18n.locale
+
+    if locale == :ru
+      converted_price = usd.exchange_to(:RUB)
+      output_string = "#{converted_price.fractional} р."
+    elsif locale == :uk
+      converted_price = usd.exchange_to(:UAH)
+      output_string = "#{converted_price.fractional} грн."
+    elsif locale == :pl
+      converted_price = usd.exchange_to(:PLN)
+      output_string = "#{converted_price.fractional} zl."
+    end
+
+    output_string
+  end
+
+  def page
+
+    if params[:source_route] != true
+      Page.find(params[:page_id])
+    end
+  end
+
+  def page_type
+    if params[:source_route] != true
+      :db_page
+    else
+      :source_route
+    end
+  end
 end
 
 

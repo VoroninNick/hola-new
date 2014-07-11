@@ -65,9 +65,17 @@ class Appartment < ActiveRecord::Base
 
     p = page
     self.translations_by_locale.keys.each do |locale|
+      if self.name.nil?
+        self.name = "appartment-#{id}"
+      end
+
       I18n.with_locale locale do
-        if p.path.nil? || p.path.length == 0
-          p.path = "/#{locale.to_s}/appartments/#{name.parameterize}"
+        # if p.path.nil? || p.path.length == 0
+        #   p.path = "/#{locale.to_s}/appartments/#{self.name.parameterize}"
+        # end
+
+        if !p.translations_by_locale.keys.include?(locale)
+          p.path = "/#{locale.to_s}/appartments/#{self.name.parameterize}"
         end
       end
     end
@@ -115,6 +123,8 @@ class Appartment < ActiveRecord::Base
     field :main_image do
       label 'avatar'
     end
+
+    field :translations, :globalize_tabs
 
   end
 end

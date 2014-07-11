@@ -43,7 +43,27 @@ RailsAdmin.config do |config|
     # history_show
   end
 
-  config.included_models = [ Appartment,  SitemapRecord, Pages::HomePage, HomeSlider, AppartmentSlider ]
+  config.included_models = [ SitemapRecord, Pages::HomePage, HomeSlider, AppartmentSlider ]
+
+  # add translatable pages
+  [Page, Appartment, Article].each do |model|
+    config.included_models += [model, model::Translation]
+
+    config.model model::Translation do
+      nested do
+        include_all_fields
+
+
+        field :locale do
+          html_attributes  readonly: "readonly"
+        end
+
+        field :globalized_model do
+          hide
+        end
+      end
+    end
+  end
 
   # [Image::Translation, AppartmentCategory::Translation, AppartmentIcon::Translation, AppartmentImage::Translation, Metadata::Translation, Slide::Translation, Region::Translation].each do |model|
   #   config.model model do
@@ -59,7 +79,7 @@ RailsAdmin.config do |config|
   #   end
   # end
 
-  [Image, Appartment, AppartmentCategory, AppartmentIcon, AppartmentImage, Page, Metadata, Region, HomeSlide, AppartmentSlide].each do |model|
+  [Image, AppartmentCategory, AppartmentIcon, AppartmentImage, Metadata, Region, HomeSlide, AppartmentSlide].each do |model|
     config.model model do
       edit do
         include_all_fields

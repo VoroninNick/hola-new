@@ -54,6 +54,23 @@ class Page < ActiveRecord::Base
 
 
   rails_admin do
+    edit do
+      include_all_fields
+      field :name do
+        #hide
+      end
+
+      field :path
+      field :data
+      field :controller
+      field :action
+      field :layout
+      field :metadata
+      field :sitemap_record
+      field :translations, :globalize_tabs
+
+    end
+
     nested do
 
       field :name do
@@ -67,6 +84,7 @@ class Page < ActiveRecord::Base
       field :layout
       field :metadata
       field :sitemap_record
+      field :translations, :globalize_tabs
 
     end
   end
