@@ -124,8 +124,12 @@ class Appartment < ActiveRecord::Base
       label 'avatar'
     end
 
-    field :intro_text
-    field :description
+    field :intro_text do
+      show
+    end
+    field :description do
+      show
+    end
 
     field :translations, :globalize_tabs
 
