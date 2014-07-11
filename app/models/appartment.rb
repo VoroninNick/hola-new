@@ -96,7 +96,9 @@ class Appartment < ActiveRecord::Base
 
       field :name
 
-      field :publish
+      field :publish do
+        label 'publish it?'
+      end
 
       field :available
 
