@@ -65,7 +65,7 @@ class Appartment < ActiveRecord::Base
 
     p = page
     self.translations_by_locale.keys.each do |locale|
-      if self.name.nil?
+      if self.name.nil? || self.name.length == 0
         self.name = "appartment-#{id}"
       end
 
