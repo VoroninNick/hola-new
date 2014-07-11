@@ -86,52 +86,53 @@ class Appartment < ActiveRecord::Base
 
 
   rails_admin do
-    # field :lat, :map do
-    #   longitude_field :lng
-    #   #google_api_key "a1b2c3d4e5f6deadbeef"
-    #   default_latitude -34.0  # Sydney, Australia
-    #   default_longitude 151.0
-    # end
+    edit do
+      # field :lat, :map do
+      #   longitude_field :lng
+      #   #google_api_key "a1b2c3d4e5f6deadbeef"
+      #   default_latitude -34.0  # Sydney, Australia
+      #   default_longitude 151.0
+      # end
 
-    field :name
+      field :name
 
-    field :publish
+      field :publish
 
-    field :available
+      field :available
 
-    field :recommended
+      field :recommended
 
-    field :appartment_category
+      field :appartment_category
 
-    field :region
+      field :region
 
-    field :lat
-    field :lng
+      field :lat
+      field :lng
 
-    field :address
+      field :address
 
-    field :price
+      field :price
 
-    field :pages
+      field :pages
 
-    field :slider
+      field :slider
 
-    field :appartment_icons
+      field :appartment_icons
 
-    field :appartment_images
+      field :appartment_images
 
-    field :main_image do
-      label 'avatar'
+      field :main_image do
+        label 'avatar'
+      end
+
+      field :intro_text do
+        show
+      end
+      field :description do
+        show
+      end
+
+      field :translations, :globalize_tabs
     end
-
-    field :intro_text do
-      show
-    end
-    field :description do
-      show
-    end
-
-    field :translations, :globalize_tabs
-
   end
 end
