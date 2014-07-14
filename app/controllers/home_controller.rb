@@ -5,12 +5,19 @@ class HomeController < ApplicationController
     result = base64
     #render inline: result #str.delete("\n")
 
-    @home_recommended = Appartment.where(recommended: 't', publish: 't', available: 't').order('id desc').limit(3)
-    @home_available = Appartment.where(available: 't', publish: 't').order('id desc')
+    @recommended_appartments = Appartment.recommended.limit(3)
+    @available_appartments = Appartment.available
     @home_slider = Pages::HomePage.first.slider
 
     @appartment_categories = AppartmentCategory.all
     @appartment_regions = Region.all
+
+    @appartment_markers = []
+
+    Appartment.available.each do |appartment|
+      m = {lat: appartment.lat, lng: appartment.lng, title: appartment.name, icon_type: 'available'}
+      @appartment_markers.push m
+    end
 
   end
 

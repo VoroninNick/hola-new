@@ -209,7 +209,8 @@
 
 
 
-
+$home-available-items-count: <%= Appartment.available.count * 5 %>
+$home-available-items-per-row: 5
 
 #home-available
   margin-top: $section-vertical-indent
@@ -217,6 +218,14 @@
   background-color: $brand-container-bg-color
   width: 100%
   padding-bottom: 4rem
+
+  .carousel-inner
+    width: #{( 100 * $home-available-items-count / $home-available-items-per-row) + '%'}
+
+    .item
+      width: #{ ( 100 /  $home-available-items-count ) + '%'}
+
+
 
 
 

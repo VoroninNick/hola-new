@@ -33,8 +33,13 @@ $footer-links-height: 3.375rem
 
               a
                 @include secondary-link
-                color: inherit
-                font-size: inherit
+
+                &, &:visited, &:link
+                  color: inherit
+                  font-size: inherit
+
+                &:hover
+                  color: $green-color
 
       #menu-and-social-buttons
         #menu

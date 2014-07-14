@@ -50,6 +50,10 @@ class Appartment < ActiveRecord::Base
 
   mount_uploader :main_image, AppartmentAvatarUploader
 
+  scope :published, -> { where(publish: 't').order('id desc') }
+  scope :available, -> { published.where(available: 't').order('id desc') }
+  scope :recommended, -> { available.where(recommended: 't').order('id desc') }
+
 
   before_save :check_page
 

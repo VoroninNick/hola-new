@@ -1,6 +1,15 @@
 class AppartmentsController < ApplicationController
   def list
-    @available_appartments = Appartment.where("available = 't' AND publish = 't' ").order('id desc')
+    @available_appartments = Appartment.available
+
+    @appartment_markers = []
+
+    @available_appartments.each do |appartment|
+      m = {lat: appartment.lat, lng: appartment.lng, title: appartment.name, icon_type: 'available'}
+      @appartment_markers.push m
+    end
+
+
   end
 
   def item
@@ -10,7 +19,7 @@ class AppartmentsController < ApplicationController
     if page.appartments.count == 1
       @appartment = page.appartments.first
 
-      @available_appartments = Appartment.where("available = 't' AND publish = 't' AND id <> #{@appartment.id}").order('id desc')
+      @available_appartments = Appartment.available
 
       @recently_viewed_appartments = []
 
