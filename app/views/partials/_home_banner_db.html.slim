@@ -18,7 +18,7 @@
                     .description
                       = slide.appartment.region.name
                     br
-                      = order_button( trim(slide.appartment.price).to_s, 'Замовити!', 'large')
+                      = order_button( price_to_currency_string(slide.appartment.price), 'Замовити!', 'large')
                   .brand-bottom-bg
 
         - else
@@ -34,6 +34,9 @@
                           = slide.title
                       .description
                         = slide.description
+                      - if slide.price > 0
+                        br
+                          = order_button( trim(slide.price).to_s, 'Замовити!', 'large')
                     .brand-bottom-bg
 
 

@@ -1,0 +1,11 @@
+en:
+  layout:
+    header:
+      address: "Sakharova str., 17, Lviv, Ukraine"
+      secondary-menu:
+        about:
+          title: "About us"
+          link: "%{Appartment.first.page.path}"
+
+        news: "News"
+        articles: "Useful articles"

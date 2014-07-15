@@ -7,27 +7,26 @@
       #home-available-carousel.collection-carousel
         .reset
           .carousel-inner
-            - for i in 1..5
-              - @available_appartments.each do |appartment|
-                .item
-                  .item-inner
-                    .item-image
+            - @available_appartments.each do |appartment|
+              .item
+                .item-inner
+                  .item-image
+                    a href=appartment.page.path
+                      = image_tag(appartment.main_image.url )
+                      .image-overlay
+                        = embedded_svg_from_assets('static_images/all/search.svg')
+                  .item-info
+                    .item-title.h4
                       a href=appartment.page.path
-                        = image_tag(appartment.main_image.url )
-                        .image-overlay
-                          = embedded_svg_from_assets('static_images/all/search.svg')
-                    .item-info
-                      .item-title.h4
-                        a href=appartment.page.path
-                          = appartment.appartment_category.name
-                      .region.left
-                        = appartment.region.name
-                      .address.left
-                        = appartment.address
-                      .price.h1.right
-                        = "#{trim(appartment.price).to_s} $"
-                      br
-                      = order_button("#{trim(appartment.price).to_s} $", 'Замовити!')
+                        = appartment.appartment_category.name
+                    .region.left
+                      = appartment.region.name
+                    .address.left
+                      = appartment.address
+                    .price.h1.right
+                      = price_to_currency_string(appartment.price)
+                    br
+                    = order_button(price_to_currency_string(appartment.price), 'Замовити!')
 
 
       .clearfix

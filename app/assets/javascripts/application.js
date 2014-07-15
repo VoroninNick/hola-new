@@ -14,10 +14,14 @@
 //= require fancybox
 //= require jquery_ujs
 //= require foundation
-
+//= require moment.min
+//= require jquery.daterangepicker
+//= require my_daterangepicker_languages
 // turbolinks
-//= require selectize
+// selectize
 //= require google_maps
-//= require_tree .
+//= require forms
+//= require home
+//= require order_form
 
 $(document).foundation();

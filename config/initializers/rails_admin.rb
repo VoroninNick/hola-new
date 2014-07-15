@@ -43,10 +43,10 @@ RailsAdmin.config do |config|
     # history_show
   end
 
-  config.included_models = [ SitemapRecord, Pages::HomePage, HomeSlider, AppartmentSlider ]
+  config.included_models = [ SitemapRecord, Pages::HomePage, HomeSlider, AppartmentSlider, Menu ]
 
   # add translatable pages
-  [Page, Appartment, Article].each do |model|
+  [Page, Appartment, Article, Dictionary, MenuItem].each do |model|
     config.included_models += [model, model::Translation]
 
     config.model model::Translation do

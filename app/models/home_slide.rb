@@ -3,6 +3,8 @@ class HomeSlide < ActiveRecord::Base
 
   attr_accessible :title
   attr_accessible :description
+  attr_accessible :price
+  attr_accessible :link
   attr_accessible :image
   mount_uploader :image, HomeSlideImageUploader
 
@@ -18,13 +20,15 @@ class HomeSlide < ActiveRecord::Base
   attr_accessible :appartment, :appartment_id
 
   class Translation
-    attr_accessible :title, :description, :locale
+    attr_accessible :title, :description, :locale, :link
   end
 
   rails_admin do
     edit do
       field :title
       field :description
+      field :price
+      field :link
       field :image
 
       field :render_from_appartment

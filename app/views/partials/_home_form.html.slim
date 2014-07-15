@@ -39,13 +39,13 @@
           label for="price-from-input"
             |від
           .input-text
-            input id="price-from-input" type="text" name="price-from" placeholder="120$"
+            input id="price-from-input" type="text" name="price-from" placeholder=price_to_currency_string(120)
 
         #price-to-field.field.columns.large-3
           label for="price-to-input"
             |до
           .input-text
-            input id="price-to-input" type="text" name="price-to" placeholder="320$"
+            input id="price-to-input" type="text" name="price-to" placeholder=price_to_currency_string(320)
 
         #submit.submit-field.field.columns.large-6
           .submit-wrapper

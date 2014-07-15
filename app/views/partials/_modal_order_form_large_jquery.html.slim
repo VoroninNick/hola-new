@@ -1,0 +1,46 @@
+/#modal-order-form-container style="display: none;"
+#modal-order-form.modal-wrapper
+  .modal-window-scroller
+    .modal-window-height
+      label.modal-window-overlay for="modal-order-form-window-checkbox"
+
+      .modal-window-width
+        .modal-header
+          .modal-header-row.row
+            .modal-header-title-column.columns.large-10
+              .h2
+                |Форма замовлення
+            label.modal-header-close-button-column for="modal-order-form-window-checkbox"
+              = embedded_svg_from_assets('static_images/all/menu-close-button.svg')
+
+
+
+        .modal-content
+          .modal-content-row.row
+            form
+              #from-field.field.columns.large-4
+                label
+                  |з
+                .input-text
+                  input type="text" placeholder=(today = Date.today; today.day.to_s + '.' + today.month.to_s + '.' + today.year.to_s)
+
+              #to-field.field.columns.large-4.right
+                label
+                  |до
+                .input-text
+                  input type="text" placeholder=(today = Date.today; today.day.to_s + '.' + today.month.to_s + '.' + today.year.to_s)
+
+
+
+
+              #calendar.columns.large-12
+
+
+
+
+
+
+
+
+
+

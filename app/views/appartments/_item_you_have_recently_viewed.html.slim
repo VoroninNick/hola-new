@@ -21,7 +21,7 @@
             .address.left
               |вул. Григоренка, 17
             .price.h1.right
-              |250 $
+              = price_to_currency_string(250)
             br
             = order_button('350 $', 'Замовити!')
 

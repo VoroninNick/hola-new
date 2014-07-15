@@ -25,7 +25,7 @@
                         = slide.appartment.region.name
                       br
                         // order_button("#{trim(@appartment.price).to_s} $", 'Замовити!', 'large')
-                        = order_button( trim(slide.appartment.price).to_s, 'Замовити!', 'large')
+                        = order_button( price_to_currency_string(slide.appartment.price), 'Замовити!', 'large')
                     .brand-bottom-bg
 
           - else
@@ -38,7 +38,7 @@
                   .slide-description.small-brand-container.bottom-side.right.pull-1
                     .content
                       .title
-                        a href=slide.appartment.page.path
+                        a href=((!slide.link.nil? && slide.link.length>0)? slide.link : false)
                           // @appartment.appartment_category.name
                           = slide.title
                       .description
@@ -46,7 +46,7 @@
                         = slide.description
                       br
                         // order_button("#{trim(@appartment.price).to_s} $", 'Замовити!', 'large')
-                        = order_button( trim(slide.appartment.price).to_s, 'Замовити!', 'large')
+                        = order_button( price_to_currency_string(slide.appartment.price), 'Замовити!', 'large')
                     .brand-bottom-bg
 
 

@@ -63,8 +63,8 @@
       #primary-header-menu.right
         ul
           li
-            a.title href=about_path
-              |Про нас
+            a.title href=t('layout.header.secondary-menu.about.link', name: 'my_name')
+              = t('layout.header.secondary-menu.about.title')
 
           li
             a.title href=news_path
