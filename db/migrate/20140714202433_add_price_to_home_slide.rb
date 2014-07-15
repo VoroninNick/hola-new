@@ -5,7 +5,7 @@ class AddPriceToHomeSlide < ActiveRecord::Migration
       t.string :link
     end
 
-    change_table HomeSlide.translation_class.table_name do
+    change_table HomeSlide.translation_class.table_name do |t|
       t.string :link
     end
   end
