@@ -9,10 +9,10 @@ class MenuItem < ActiveRecord::Base
 
 
 
-  if self.has_children?
-    accepts_nested_attributes_for :children
-    attr_accessible :children_attributes
-  end
+  # if self.has_children?
+  #   accepts_nested_attributes_for :children
+  #   attr_accessible :children_attributes
+  # end
 
   translates :name, :link
   accepts_nested_attributes_for :translations
@@ -40,18 +40,18 @@ class MenuItem < ActiveRecord::Base
       field :linked_to_page
       field :page
 
-      field :children
+      # field :children
     end
 
     nested do
       field :parent_id, :hidden
 
-      field :ancestry, :enum do
-        enum do
-          except = bindings[:object].id
-          Article.where("id != ?", except).map { |c| [ c.title, c.id ] }
-        end
-      end
+      # field :ancestry, :enum do
+      #   enum do
+      #     except = bindings[:object].id
+      #     Article.where("id != ?", except).map { |c| [ c.title, c.id ] }
+      #   end
+      # end
     end
   end
 end
