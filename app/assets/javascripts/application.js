@@ -16,7 +16,6 @@
 //= require foundation
 //= require moment.min
 //= require jquery.daterangepicker
-//= require my_daterangepicker_languages
 // turbolinks
 // selectize
 //= require google_maps
