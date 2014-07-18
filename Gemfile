@@ -83,3 +83,5 @@ end
 gem 'google_currency'
 
 gem 'ancestry'
+
+gem 'http_accept_language'
