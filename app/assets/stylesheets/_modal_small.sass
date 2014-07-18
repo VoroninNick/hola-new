@@ -1,4 +1,5 @@
 @import "config"
+@import "functions"
 
 .modal-window-checkbox
   display: none
@@ -73,7 +74,8 @@
     width: $modal-window-width
     max-width: 90%
     left: 50%
-    transform: translateX(-50%)
+
+    @include transform( translateX(-50%) )
     position: relative
 
 

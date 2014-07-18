@@ -1,4 +1,5 @@
 @import "config"
+@import "functions"
 //#test ul li
   list-style: none
   //display: inline-block
@@ -521,50 +522,29 @@ body a, .link
     display: inline-block
 
     .button-label-title, .button-label-bottom-bg, .button-label-bottom-bg:before, .button-label-bottom-bg:after
-      -webkit-transition-duration: 0.2s
-        -moz-transition-duration: 0.2s
-        -ms-transition-duration: 0.2s
-        -o-transition-duration: 0.2s
-        transition-duration: 0.2s
+      @include transition-duration( 0.2s )
+      @include transition-property( "opacity, bottom" )
 
 
     .button-label-bottom-bg
 
 
       &
-        -webkit-transition-property: height, right, border-radius
-        -moz-transition-property: height, right, border-radius
-        -ms-transition-property: height, right, border-radius
-        -o-transition-property: height, right, border-radius
-        transition-property: height, right, border-radius
+        @include transition-property( "height, right, border-radius" )
 
 
       &:before
-
-        -webkit-transition-property: border-width
-        -moz-transition-property: border-width
-        -ms-transition-property: border-width
-        -o-transition-property: border-width
-        transition-property:  border-width
+        @include transition-property( border-width )
 
 
       &:after
-
-        -webkit-transition-property: right, border-width
-        -moz-transition-property: right, border-width
-        -ms-transition-property: right, border-width
-        -o-transition-property: right, border-width
-        transition-property: right, border-width
+        @include transition-property( "right, border-width" )
 
     .button-label-title
       background-color: $order-button-title-bg-color
       text-shadow: $order-button-title-text-shadow
 
-      -webkit-transition-property: border-radius, height
-      -moz-transition-property: border-radius, height
-      -ms-transition-property: border-radius, height
-      -o-transition-property: border-radius, height
-      transition-property: border-radius, height
+      @include transition-property( "border-radius, height" )
 
 
 

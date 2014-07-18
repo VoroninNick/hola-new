@@ -22,15 +22,8 @@ $desktop-secondary-header-menu-item-color: #eeeeee
     left: 0
     position: absolute
 
-    -webkit-transition-property: opacity
-    -moz-transition-property: opacity
-    -o-transition-property: opacity
-    transition-property: opacity
-
-    -webkit-transition-duration: 0.4s
-    -moz-transition-duration: 0.4s
-    -o-transition-duration: 0.4s
-    transition-duration: 0.4s
+    @include transition-duration( 0.4s )
+    @include transition-property( opacity )
 
 
   svg.active
@@ -52,15 +45,8 @@ $desktop-secondary-header-menu-item-color: #eeeeee
     max-height: 100%
 
     .bg, .shadow
-      -webkit-transition-property: fill
-      -moz-transition-property: fill
-      -o-transition-property: fill
-      transition-property: fill
-
-      -webkit-transition-duration: 0.4s
-      -moz-transition-duration: 0.4s
-      -o-transition-duration: 0.4s
-      transition-duration: 0.4s
+      @include transition-duration( 0.4s )
+      @include transition-property( fill )
 
   &:hover
     svg
@@ -127,16 +113,8 @@ $desktop-secondary-header-menu-item-color: #eeeeee
               opacity: 0
               z-index: 3
 
-              -webkit-transition-property: opacity
-              -moz-transition-property: opacity
-              -o-transition-property: opacity
-              transition-property: opacity
-
-              -webkit-transition-duration: 0.4s
-              -moz-transition-duration: 0.4s
-              -o-transition-duration: 0.4s
-              transition-duration: 0.4s
-
+              @include transition-duration( 0.4s )
+              @include transition-property( opacity )
 
 
 
@@ -256,15 +234,8 @@ $desktop-secondary-header-menu-item-color: #eeeeee
       #mobile-close-button
         display: none
 
-        -webkit-transition-property: opacity
-        -moz-transition-property: opacity
-        -o-transition-property: opacity
-        transition-property: opacity
-
-        -webkit-transition-duration: 0.4s
-        -moz-transition-duration: 0.4s
-        -o-transition-duration: 0.4s
-        transition-duration: 0.4s
+        @include transition-duration( 0.4s )
+        @include transition-property( opacity )
 
 
       #logo
@@ -275,15 +246,8 @@ $desktop-secondary-header-menu-item-color: #eeeeee
         //padding-top: 14px
         @include vertical-align(100%)
 
-        -webkit-transition-property: opacity
-        -moz-transition-property: opacity
-        -o-transition-property: opacity
-        transition-property: opacity
-
-        -webkit-transition-duration: 0.4s
-        -moz-transition-duration: 0.4s
-        -o-transition-duration: 0.4s
-        transition-duration: 0.4s
+        @include transition-duration( 0.4s )
+        @include transition-property( opacity )
 
         svg
           width: 100%

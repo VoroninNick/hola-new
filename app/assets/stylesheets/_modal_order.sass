@@ -1,4 +1,5 @@
 @import "config"
+@import "functions"
 
 $modal-order-window-header-bg: #454954
 $modal-order-window-header-height: 80px
@@ -37,14 +38,15 @@ $modal-order-window-content-bg: #2e3138
       svg
         top: 50%
         position: relative
-        transform: translateY(-50%)
+        @include transform( translateY(-50%) )
         width: 36px
         height: 36px
 
         .bg
           fill: transparent
-          transition-property: fill
-          transition-duration: 0.4s
+
+          @include transition-duration( 0.4s )
+          @include transition-property( fill )
 
         .shadow
           fill: transparent
@@ -130,13 +132,13 @@ $modal-order-window-content-bg: #2e3138
 
             .bg
               //fill: transparent
-              transition-property: fill
-              transition-duration: 0.4s
+              @include transition-duration( 0.4s )
+              @include transition-property( fill )
 
             .shadow
               //fill: transparent
-              transition-property: fill
-              transition-duration: 0.4s
+              @include transition-duration( 0.4s )
+              @include transition-property( fill )
 
             &:hover
               .bg

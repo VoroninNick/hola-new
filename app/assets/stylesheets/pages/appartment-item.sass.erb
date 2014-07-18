@@ -1,3 +1,5 @@
+@import "../functions"
+
 .page.appartment-item
   .h2, .h3, .h4
     text-transform: uppercase
@@ -26,7 +28,8 @@
         .reset
           .row
             .slide-description.small-brand-container.bottom-side.right.pull-1
-              -webkit-transform: translateY(-50%)
+
+              @include transform( translateY(-50%) )
               margin-top: -30px
               width: auto
               //position: absolute

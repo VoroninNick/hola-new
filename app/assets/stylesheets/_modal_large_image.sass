@@ -1,3 +1,5 @@
+@import "functions"
+
 $appartment-images-count: 50
 
 .appartment-item-image-flag.modal-window-checkbox
@@ -72,7 +74,8 @@ input.modal-window-checkbox.modal-window-close#appartment-item-image-window-clos
     left: 50%
     right: auto
     bottom: auto
-    transform: translate(-50%, -50%)
+
+    @include transform( translate(-50%, -50%) )
 
   //.modal-content
   //  min-height: 0
@@ -108,11 +111,13 @@ input.modal-window-checkbox.modal-window-close#appartment-item-image-window-clos
 
         left: 0
         margin-left: -50px
-        transform: rotate(-90deg)
+
+        @include transform( rotate(-90deg) )
       label.next
         right: 0
         margin-right: -50px
-        transform: rotate(90deg)
+        @include transform( rotate(90deg) )
+
 
       label.prev, label.next
         position: absolute
