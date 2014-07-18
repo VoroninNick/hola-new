@@ -5,6 +5,20 @@ $modal-order-window-header-height: 80px
 
 $modal-order-window-content-bg: #2e3138
 
+#modal-order-form-window-checkbox.modal-window-checkbox
+
+
+  &:checked
+    //~ .modal-window-overlay, ~ .modal-window
+    //  display: block
+
+    ~ #modal-order-form.modal-wrapper
+      display: block
+
+    ~ #body-inner
+      //overflow: auto
+      //height: 100%
+      overflow: hidden
 
 #modal-order-form
   .modal-header
@@ -41,6 +55,7 @@ $modal-order-window-content-bg: #2e3138
 
 
   .modal-content
+    min-height: 0
     padding: 0 60px
     background: $modal-order-window-content-bg
 
@@ -63,3 +78,225 @@ $modal-order-window-content-bg: #2e3138
         font-size: 1.4rem
         border: none
         height: $input-field-height
+
+    .total-price
+      margin-top: 2.5rem
+
+
+      .large-brand-button
+        .button-top
+          background: $pink-color
+        .button-bottom
+          background: $pink-color
+
+          &:before
+            border-bottom-color: $pink-corner-dark
+          &:after
+            border-top-color: $pink-corner-light
+
+        .button-value
+          span
+            background: transparent
+            border: none
+            outline: none
+            display: block
+            height: 4rem
+            line-height: 4rem
+            text-align: center
+            font-size: 1.8rem
+
+
+    .order-options
+      width: auto
+      margin-top: 2.5rem
+
+      .order-option
+        width: 4rem
+        height: 4rem
+        float: left
+        margin-left: 1.5rem
+
+
+        input
+          display: none
+        label
+          margin: 0
+          height: 4rem
+          width: 4rem
+          svg
+            width: 4rem
+            height: 4rem
+            border-radius: 20%
+
+            .bg
+              //fill: transparent
+              transition-property: fill
+              transition-duration: 0.4s
+
+            .shadow
+              //fill: transparent
+              transition-property: fill
+              transition-duration: 0.4s
+
+            &:hover
+              .bg
+                fill: $pink-color
+
+              .shadow
+                fill: rgba(70, 77, 83, 0.3) !important
+
+        input:checked
+          ~
+            label
+              svg
+                .bg
+                  fill: $pink-color
+                .shadow
+                  fill: rgba(70, 77, 83, 0.3) !important
+
+
+
+    .separator
+      height: 2px
+      border-top: 1px #414141 solid
+      border-bottom: 1px #232323 solid
+      margin: 2rem 0
+
+
+
+
+    .field
+      &.form-field
+        height: $input-field-height
+        line-height: $input-field-height
+        //background: #454954
+        margin-bottom: 2rem
+
+        &.input-field
+          .button-top, .button-bottom
+            background: #454954
+
+          .button-bottom
+            &:before
+              border-bottom-color: #27282d
+            &:after
+              border-top-color: #636b78
+
+          input
+            margin: 0
+            background: transparent
+            border: none
+            color: white
+            font-weight: 300
+            text-transform: none
+            font-size: 1.3rem
+            cursor: text
+            padding: 1rem 1.5rem
+
+            &::-webkit-input-placeholder
+              color: white
+
+            &:-moz-placeholder /* Firefox 18- */
+              color: white
+
+            &::-moz-placeholder   /* Firefox 19+ */
+              color: white
+
+            &:-ms-input-placeholder
+              color: white
+
+
+            &:focus
+              box-shadow: none
+
+
+
+        &.textarea-field
+          height: 16rem
+          .textarea-wrapper
+            height: 16rem
+            .large-brand-button
+              height: 16rem
+
+              .button-top, .button-bottom
+                background: #454954
+
+
+              .button-bottom
+                &:before
+                  border-bottom-color: #27282d
+                &:after
+                  border-top-color: #636b78
+
+              textarea
+                height: 16rem
+                padding: 1rem 1.5rem
+                resize: none
+                border: none
+                background: transparent
+                box-shadow: none
+
+                color: white
+                font-weight: 300
+                text-transform: none
+                font-size: 1.3rem
+                cursor: text
+
+
+                &::-webkit-input-placeholder
+                  color: white
+
+                &:-moz-placeholder /* Firefox 18- */
+                  color: white
+
+                &::-moz-placeholder   /* Firefox 19+ */
+                  color: white
+
+                &:-ms-input-placeholder
+                  color: white
+
+                scrollbar:
+                  track-color: #2e3138
+
+
+
+                &::-webkit-scrollbar
+                  width: 1rem
+                  height: 1rem
+
+                &::-webkit-scrollbar-button
+                  background-color: #666
+
+                &::-webkit-scrollbar-track
+                  background-color: #2e3138
+
+
+                &::-webkit-scrollbar-track-piece
+                  //background-color: #ffffff
+
+                &::-webkit-scrollbar-thumb
+                  height: 1rem
+                  width: 1rem
+                  background-color: #81a31b
+                  //border-radius: 3px
+
+                &::-webkit-scrollbar-corner
+                  background-color: transparent
+
+                &::-webkit-resizer
+                  //background-color: #666
+
+
+
+        &.submit-field
+          input
+            background: transparent
+            border: none
+            outline: none
+
+
+
+
+
+
+

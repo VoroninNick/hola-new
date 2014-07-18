@@ -1,3 +1,6 @@
+@import "config"
+@import "functions"
+
 #calendar
   .date-picker-wrapper
     width: 100%
@@ -6,33 +9,56 @@
     box-shadow: none
     padding: 0
 
-  .month2
-    display: none
+
   .gap
-    display: none
+    display: none !important
 
   .month1
-    width: 100%
+    display: none
 
   .month-name
     color: white
 
-  .day
-    color: #434a54
-    background: #e6e6e6
+  .month-wrapper
+    padding: 0
+    border: none
+    table
+      border: none
+      margin: 0
+      width: 100%
+      td
+        width: 14%
+        .day
+          color: #434a54
+          background: #e6e6e6
+          height: rem-calc(64)
+          width: 100%
+          margin: 0
+          font: $visual-h1-font
+          line-height: rem-calc(64)
 
-    &:hover
-      background: #cccccc
+          &.lastMonth, &.nextMonth
+            color: #b2b2b2
 
-    &.checked
-      background: #8ab71c
-      color: white
+
+          &:hover
+            background: #cccccc
+
+          &.checked
+            background: #8ab71c
+            color: white
+
+            &.lastMonth, &.nextMonth
+              color: #b2b2b2
+
 
   .caption
     background: #787f91
+    height: rem-calc(85)
 
   .week-name
     background: #454954
+    height: rem-calc(45)
 
     th
       color: white
@@ -46,5 +72,21 @@
     height: 4rem
     margin: 0 0 1rem 0
     padding: 0.5rem
+    font-weight: 300
 
+  .drp_top-bar.normal
+    height: 4rem
+    line-height: 4rem
+    margin-bottom: 2.5rem
+
+    .normal-top
+      .info-selected-date-from-label
+        width: rem-calc(50)
+        font-size: 1.4rem
+        font-weight: 600
+        line-height: 4rem
+        color: white !important
+
+  .footer
+    display: none
 

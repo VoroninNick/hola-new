@@ -20,6 +20,9 @@
 
   <body>
     <%= render partial: 'partials/modal_order_form_checkbox' %>
+    <% if params[:controller] == 'appartments' && params[:action] == 'item' && !@appartment_images.nil? && @appartment_images.count > 0 %>
+        <%= render partial: 'appartments/modal_large_image_checkbox' %>
+    <% end %>
     <div id="body-inner">
     <div id="wrap">
 
@@ -43,6 +46,11 @@
     <%= render partial: 'partials/load_disqus' %>
 
     <%= render partial: 'partials/modal_order_form_large_jquery' %>
+
+    <% if params[:controller] == 'appartments' && params[:action] == 'item' && !@appartment_images.nil? && @appartment_images.count > 0 %>
+      <%# render partial: 'appartments/modal_large_image' %>
+      <%= render partial: 'appartments/modal_large_image_version2' %>
+    <% end %>
 
     <%= javascript_include_tag "application" %>
 

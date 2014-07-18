@@ -290,9 +290,9 @@
                 var month = isMonth2 ? opt.month2 : opt.month1;
                 month = prevMonth(month);
                 //if (isMonth2 && month.getFullYear()+''+month.getMonth() <= opt.month1.getFullYear()+''+opt.month1.getMonth()) return;
-                if (isMonth2 && compare_month(month,opt.month1) <= 0) return;
+                //if (isMonth2 && compare_month(month,opt.month1) <= 0) return;
                 showMonth(month,isMonth2 ? 'month2' : 'month1');
-                showGap();
+                //showGap();
             });
 
 
@@ -920,7 +920,7 @@
             html += '">'
                 +'<div class="drp_top-bar">\
 					<div class="normal-top">\
-						<span style="color:#333">'+lang('selected')+' </span> <b class="start-day">...</b>'
+						<span style="color:#333" class="info-selected-date-from-label">'+lang('selected')+' </span> <b class="start-day">...</b>'
             if ( ! opt.singleDate ) {
                 html += ' <span class="separator-day">'+opt.separator+'</span> <b class="end-day">...</b> <i class="selected-days">(<span class="selected-days-num">3</span> '+lang('days')+')</i>'
             }

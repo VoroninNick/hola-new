@@ -18,29 +18,91 @@
         .modal-content
           .modal-content-row.row
             form
-              #from-field.field.columns.large-4
-                label
-                  |з
-                .input-text
-                  input type="text" placeholder=(today = Date.today; today.day.to_s + '.' + today.month.to_s + '.' + today.year.to_s)
+              .columns.large-12
+                #from-field.field.calendar-field.columns.large-4
+                  label
+                    |з
+                  .input-text
+                    input type="text" placeholder=(today = Date.today; today.day.to_s + '.' + today.month.to_s + '.' + today.year.to_s)
 
-              #to-field.field.columns.large-4.right
-                label
-                  |до
-                .input-text
-                  input type="text" placeholder=(today = Date.today; today.day.to_s + '.' + today.month.to_s + '.' + today.year.to_s)
-
-
-
-
-              #calendar.columns.large-12
+                #to-field.field.calendar-field.columns.large-4.right
+                  label
+                    |до
+                  .input-text
+                    input type="text" placeholder=(today = Date.today; today.day.to_s + '.' + today.month.to_s + '.' + today.year.to_s)
 
 
+                #calendar.columns.large-12
+
+                .total-price.columns.large-4
+                  .large-brand-button
+                    .button-top
+                    .button-value
+                      span
+                        = price_to_currency_string(600)
+                    .button-bottom
+
+                .order-options.columns.large-4.right
+                  .order-option
+                    input type="checkbox" id="order-option-1-checkbox"
+                    label for="order-option-1-checkbox"
+                      = embedded_svg_from_assets('static_images/all/taxi.svg')
+                  .order-option
+                    input type="checkbox" id="order-option-2-checkbox"
+                    label for="order-option-2-checkbox"
+                      = embedded_svg_from_assets('static_images/all/taxi.svg')
+
+                .separator.columns.large-12
+              .columns.large-6
+
+                #field-name.field.form-field.input-field.columns.large-12.required
+                  .input-wrapper
+                    .large-brand-button
+                      .button-top
+                      .button-value
+                        input#field-name-input placeholder="Ваше ім'я*" type="text"
+                      .button-bottom
 
 
+                #field-name.field.form-field.input-field.columns.large-12.required
+                  .input-wrapper
+                    .large-brand-button
+                      .button-top
+                      .button-value
+                        input#field-name-input placeholder="Телефон контактний*" type="text"
+                      .button-bottom
+
+                #field-name.field.form-field.input-field.columns.large-12.required
+                  .input-wrapper
+                    .large-brand-button
+                      .button-top
+                      .button-value
+                        input#field-name-input placeholder="Електронна пошта*" type="text"
+                      .button-bottom
+
+              .columns.large-6
+
+                #field-name.field.form-field.textarea-field.columns.large-12.required
+                  .textarea-wrapper
+                    .large-brand-button
+                      .button-top
+                      .button-value
+                        textarea#field-name-input placeholder="Текст Вашого повідомлення*"
+                      .button-bottom
+
+              /#submit-field.field.form-field.submit-field.columns.large-6.required
+              /  .input-wrapper
+              /    .large-brand-button
+              /      .button-top
+              /      .button-value
+              /        input#field-name-input placeholder="Замовити" type="submit"
+              /      .button-bottom
 
 
-
-
-
-
+              .columns.large-12
+                #submit-field.field.form-field.submit-field.columns.large-12
+                  .large-brand-button
+                    .button-top
+                    .button-value
+                      input type="submit" value="Замовити"
+                    .button-bottom

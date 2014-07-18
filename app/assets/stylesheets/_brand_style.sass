@@ -520,9 +520,70 @@ body a, .link
     text-transform: uppercase
     display: inline-block
 
+    .button-label-title, .button-label-bottom-bg, .button-label-bottom-bg:before, .button-label-bottom-bg:after
+      -webkit-transition-duration: 0.2s
+        -moz-transition-duration: 0.2s
+        -ms-transition-duration: 0.2s
+        -o-transition-duration: 0.2s
+        transition-duration: 0.2s
+
+
+    .button-label-bottom-bg
+
+
+      &
+        -webkit-transition-property: height, right, border-radius
+        -moz-transition-property: height, right, border-radius
+        -ms-transition-property: height, right, border-radius
+        -o-transition-property: height, right, border-radius
+        transition-property: height, right, border-radius
+
+
+      &:before
+
+        -webkit-transition-property: border-width
+        -moz-transition-property: border-width
+        -ms-transition-property: border-width
+        -o-transition-property: border-width
+        transition-property:  border-width
+
+
+      &:after
+
+        -webkit-transition-property: right, border-width
+        -moz-transition-property: right, border-width
+        -ms-transition-property: right, border-width
+        -o-transition-property: right, border-width
+        transition-property: right, border-width
+
     .button-label-title
       background-color: $order-button-title-bg-color
       text-shadow: $order-button-title-text-shadow
+
+      -webkit-transition-property: border-radius, height
+      -moz-transition-property: border-radius, height
+      -ms-transition-property: border-radius, height
+      -o-transition-property: border-radius, height
+      transition-property: border-radius, height
+
+
+
+  &:hover
+    .button-label
+      .button-label-title
+
+      .button-label-bottom-bg
+        right: 0
+        //height: 0
+
+
+        &:before
+          border-width: 0
+        &:after
+          border-width: 0
+          right: 0
+
+
 
 
 
@@ -552,6 +613,7 @@ body a, .link
       height: 2.5rem
       display: block
       border-radius: 0 $large-order-button-border-radius 0 0
+
 
     .button-label-bottom-bg
       position: absolute
@@ -660,6 +722,18 @@ body a, .link
 
 
     .brand-bottom-bg
+
+
+  &:hover
+    .button-label
+      .button-label-title
+        height: 4.25rem
+        border-radius: 0 $large-order-button-border-radius $large-order-button-border-radius 0
+
+      .button-label-bottom-bg
+        border-radius: 0 0 $large-order-button-border-radius 0
+
+
 
 
 

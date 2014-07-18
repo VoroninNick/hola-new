@@ -14,6 +14,17 @@ module ApplicationHelper
   #include ActionView::Helpers::AssetTagHelper
   #ActionView::Helpers::AssetTagHelper.image_tag
 
+  def get_image_orientation(image_version)
+    img = Magick::Image.read(image_version.path).first
+    orientation = 'horizontal'
+    if img.rows > img.columns
+      orientation = 'vertical'
+    end
+
+    orientation
+
+  end
+
   def stub_image(width = 420, height = 350, text = 'item 1', options = {})
     image_url = "http://placehold.it/#{width}x#{height}&text=#{text}"
     options[:src] = image_url

@@ -1,0 +1,24 @@
+#modal-large-image.modal-wrapper
+  label.modal-window-overlay for="appartment-item-image-window-close"
+  .modal-window
+    label.modal-close-button for="appartment-item-image-window-close"
+      = embedded_svg_from_assets('static_images/all/menu-close-button.svg')
+    /.modal-header
+      .modal-header-title-column
+        .h2
+          |Форма замовлення
+      label.modal-header-close-button-column for="appartment-item-image-window-close"
+        = embedded_svg_from_assets('static_images/all/menu-close-button.svg')
+
+
+
+    - @appartment_images.each_with_index do |image, index|
+      .large-image id="large-image-#{(index+1).to_s}" class="orientation-#{get_image_orientation(image.image.large_image)}"
+        nav
+          label.prev for="appartment-item-image-#{((index > 0)? index : @appartment_images.count).to_s}-flag"
+            = embedded_svg_from_assets('static_images/all/select-arrow.svg')
+          label.next for="appartment-item-image-#{((index+1 < @appartment_images.count)? index+2 : 1).to_s}-flag"
+            = embedded_svg_from_assets('static_images/all/select-arrow.svg')
+        img src=image.image.large_image.url
+
+

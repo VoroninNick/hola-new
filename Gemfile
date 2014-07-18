@@ -70,6 +70,7 @@ gem 'binding_of_caller'
 gem 'fancybox2-rails', '~> 0.2.8'
 
 gem 'mini_magick'
+gem 'rmagick'
 
 group :development do
   gem 'thin'

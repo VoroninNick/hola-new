@@ -1,0 +1,142 @@
+$appartment-images-count: 50
+
+.appartment-item-image-flag.modal-window-checkbox
+
+
+  &:checked
+    //~ .modal-window-overlay, ~ .modal-window
+    //  display: block
+
+    ~ #modal-large-image.modal-wrapper
+      display: block
+
+    ~ #body-inner
+      //overflow: auto
+      //height: 100%
+      overflow: hidden
+
+
+
+  @for $i from 1 through $appartment-images-count
+    &#appartment-item-image-#{$i}-flag
+      ~
+        #modal-large-image
+          .large-image
+            display: none
+
+      &:checked
+        ~
+          #modal-large-image
+            .large-image
+              &#large-image-#{$i}
+                display: block
+
+
+input.modal-window-checkbox.modal-window-close#appartment-item-image-window-close
+  &:checked
+    ~
+      #modal-large-image.modal-wrapper
+        display: none
+
+
+
+
+
+#modal-large-image.modal-wrapper
+  max-width: 100%
+  max-height: 100%
+  //.modal-window-scroller
+  //  height: 100%
+  //
+  //  .modal-window-height
+  //    max-height: 100%
+  //    top: 50%
+  //
+  //    -webkit-transform: translate(-50%, -50%)
+  //    -moz-transform: translate(-50%, -50%)
+  //    -ms-transform: translate(-50%, -50%)
+  //    -o-transform: translate(-50%, -50%)
+  //    transform: translate(-50%, -50%)
+  //
+  //    width: auto
+  //    max-width: 90%
+  //    left: 50%
+
+  .modal-window
+    max-width: 100%
+    max-height: 100%
+
+    z-index: 0
+    position: absolute
+    top: 50%
+    left: 50%
+    right: auto
+    bottom: auto
+    transform: translate(-50%, -50%)
+
+  //.modal-content
+  //  min-height: 0
+  //  max-width: 100%
+  //  max-height: 100%
+
+  .large-image
+    max-width: 100%
+    max-height: 100%
+    &.orientation-horizontal
+      width: 960px
+      img
+
+
+    &.orientation-vertical
+      width: 600px
+      img
+
+
+    img
+      max-height: 100%
+      max-width: 100%
+
+
+    nav
+      width: 100%
+      position: absolute
+      top: 50%
+      left: 0
+
+
+      label.prev
+
+        left: 0
+        margin-left: -50px
+        transform: rotate(-90deg)
+      label.next
+        right: 0
+        margin-right: -50px
+        transform: rotate(90deg)
+
+      label.prev, label.next
+        position: absolute
+
+        svg
+          width: 16px
+          height: 25px
+
+
+  .modal-close-button
+    position: absolute
+    top: 0
+    right: 0
+    left: auto
+    bottom: auto
+    margin-right: -50px
+
+    svg
+      width: 2rem
+      height: 2rem
+
+      .bg
+        fill: transparent
+      .shadow
+        fill: transparent
+
+

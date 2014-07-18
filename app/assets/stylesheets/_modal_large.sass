@@ -1,17 +1,11 @@
-.modal-window-checkbox
+@import "config"
+
+input.modal-window-checkbox
   display: none
 
-  &:checked
-    //~ .modal-window-overlay, ~ .modal-window
-    //  display: block
+input.modal-window-close
+  display: none
 
-    ~ .modal-wrapper
-      display: block
-
-    ~ #body-inner
-      //overflow: auto
-      //height: 100%
-      overflow: hidden
 
 .modal-wrapper
   display: none
@@ -49,7 +43,7 @@
     top: 50%
 
     transform: translateY(-50%)
-    width: 800px
+    width: $modal-window-width
     //max-width: 90%
     width: 100%
     max-height: 100%
@@ -68,7 +62,7 @@
     top: 0
 
   .modal-window-width
-    width: 800px
+    width: $modal-window-width
     max-width: 90%
     margin: 0 auto
     position: relative

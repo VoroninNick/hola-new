@@ -23,6 +23,6 @@
             .price.h1.right
               = price_to_currency_string(250)
             br
-            = order_button('350 $', 'Замовити!')
+            = order_button(price_to_currency_string(250), 'Замовити!', 'medium', '#modal-order-form', true, 'modal-order-form-window-checkbox')
 
     .clearfix

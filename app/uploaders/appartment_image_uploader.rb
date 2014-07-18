@@ -3,8 +3,8 @@
 class AppartmentImageUploader < CarrierWave::Uploader::Base
 
   # Include RMagick or MiniMagick support:
-  # include CarrierWave::RMagick
-  include CarrierWave::MiniMagick
+  include CarrierWave::RMagick
+  # include CarrierWave::MiniMagick
 
   # Choose what kind of storage to use for this uploader:
   storage :file
@@ -31,6 +31,29 @@ class AppartmentImageUploader < CarrierWave::Uploader::Base
   #   # do something
   # end
 
+  def image
+    @image ||= MiniMagick::Image.open( model.send(mounted_as).path )
+  end
+
+  def image_width
+    image[:width]
+  end
+
+  def image_height
+    image[:height]
+  end
+
+  def scale_image
+    width = image_width #function defined above
+    height = image_height #function defined above
+
+    if width && height && width > height
+      process :resize_to_fit => [224, 320, '#000']
+    else
+      process :resize_to_fill => [224, 320, '#000']
+    end
+  end
+
   # Create different versions of your uploaded files:
   version :thumb do
     #process :resize_thumb
@@ -40,8 +63,71 @@ class AppartmentImageUploader < CarrierWave::Uploader::Base
     process :resize_to_fill => [300, 300]
   end
 
+  def save_best_ratio
+    image_width = 0
+    image_height = 0
+
+    manipulate! do |img|
+      #image_width = img['width']
+      #image_height = img['height']
+      @geometry = [ img.columns, img.rows ]
+    end
+
+    if image_width >= image_height
+      process :resize_to_fill => [960, 600]
+    else
+      process :resize_to_fill => [600, 960]
+    end
+
+    #[image_width, image_height]
+  end
+
+  def do_staff
+    image_width = 0
+    image_height = 0
+
+    manipulate! do |img|
+      image_width = img['width']
+      image_height = img['height']
+      #@geometry = [ img.columns, img.rows ]
+
+      if image_width >= image_height
+        img.resize_to_fill 960, 600
+      else
+        img.resize_to_fill 600, 960
+      end
+    end
+
+
+  end
+
+  def my_scale_method
+    manipulate!  do |img|
+      #overlay_path = Rails.root.join("app/assets/images/stamp_overlay.png")
+      #overlay = Magick::Image.read(overlay_path).first
+      #source = source.resize_to_fill(70, 70).quantize(256, Magick::GRAYColorspace).contrast(true)
+      #source.composite!(overlay, 0, 0, Magick::OverCompositeOp)
+      #colored = Magick::Image.new(70, 70) { self.background_color = color }
+      #colored.composite(source.negate, 0, 0, Magick::CopyOpacityCompositeOp)
+
+      image_width = img.columns
+      image_height = img.rows
+
+      if image_width >= image_height
+        img.resize_to_fill 960, 600
+      else
+        img.resize_to_fill 600, 960
+      end
+    end
+  end
+
   version :large_image do
-    process :resize_to_fit => [800, 800]
+    #process :resize_to_fit => [800, 800]
+    #process :save_best_ratio
+    #image_size = get_size
+    #process :scale_image
+    #scale_image
+    process :my_scale_method
   end
 
   # resizes an image, while preserving the original aspect ratio,

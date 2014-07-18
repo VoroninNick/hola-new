@@ -1,0 +1,21 @@
+/#modal-order-form-container style="display: none;"
+#modal-large-image.modal-wrapper
+  .modal-window-scroller
+    label.modal-window-overlay for="appartment-item-image-window-close"
+    .modal-window-height
+      /.modal-window-width
+      .modal-header
+        .modal-header-row.row
+          .modal-header-title-column.columns.large-10
+            .h2
+              |Форма замовлення
+          label.modal-header-close-button-column for="appartment-item-image-window-close"
+            = embedded_svg_from_assets('static_images/all/menu-close-button.svg')
+
+
+
+      .modal-content
+        .modal-content-row.row
+          - @appartment_images.each_with_index do |image, index|
+            .large-image.columns.large-12 id="large-image-#{(index+1).to_s}"
+              img src=image.image.large_image.url class="orientation-#{get_image_orientation(image.image.large_image)}"
