@@ -78,7 +78,7 @@ class Appartment < ActiveRecord::Base
         #   p.path = "/#{locale.to_s}/appartments/#{self.name.parameterize}"
         # end
 
-        if !p.translations_by_locale.keys.include?(locale)
+        if !p.translations_by_locale.keys.include?(locale) || ( p.path.nil? || p.path.length == 0 )
           p.path = "/#{locale.to_s}/appartments/#{self.name.parameterize}"
         end
       end
