@@ -28,6 +28,9 @@ module Hola
         uk: [:uk, :ru, :en, :pl],
         ru: [:ru, :uk, :en, :pl]}
 
+
+    config.i18n.load_path += Dir[Rails.root.join('config', 'locales', 'rails_admin', '*.{rb,yml}').to_s]
+
     config.assets.precompile += %w( test.js test.css )
   end
 end
