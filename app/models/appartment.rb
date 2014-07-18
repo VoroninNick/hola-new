@@ -73,14 +73,17 @@ class Appartment < ActiveRecord::Base
         self.name = "appartment-#{id}"
       end
 
+      if !p.translations_by_locale.keys.include?(locale) || ( p.path.nil? || p.path.length == 0 )
+        p.translations_by_locale[locale].path = "/#{locale.to_s}/appartments/#{self.name.parameterize}"
+        p.save
+      end
+
       I18n.with_locale locale do
         # if p.path.nil? || p.path.length == 0
         #   p.path = "/#{locale.to_s}/appartments/#{self.name.parameterize}"
         # end
 
-        if !p.translations_by_locale.keys.include?(locale) || ( p.path.nil? || p.path.length == 0 )
-          p.path = "/#{locale.to_s}/appartments/#{self.name.parameterize}"
-        end
+
       end
     end
 
