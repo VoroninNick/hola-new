@@ -132,10 +132,10 @@ class Appartment < ActiveRecord::Base
         label 'avatar'
       end
 
-      field :intro_text do
+      field :intro_text, :ck_editor do
         show
       end
-      field :description do
+      field :description, :ck_editor do
         show
       end
 

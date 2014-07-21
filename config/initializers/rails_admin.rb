@@ -1,3 +1,13 @@
+Rails.configuration.to_prepare do
+  #require '../../app/helpers/rails_admin/application_helper_patch'
+  #require "#{RailsRoot}/lib/rails_admin/config_patch"
+  require File.expand_path('../../../lib/rails_admin/config_patch', __FILE__)
+
+  RailsAdmin::Config.send     :include, RailsAdmin::ConfigPatch
+  RailsAdmin::ApplicationHelper.send     :include, RailsAdmin::ApplicationHelperPatch
+
+end
+
 RailsAdmin.config do |config|
 
   ### Popular gems integration
@@ -106,6 +116,52 @@ RailsAdmin.config do |config|
       end
     end
   end
+
+  root = Tree::TreeNode.new('navigation_static_tree')
+
+
+  config.navigation_static_links = root
+  root << Tree::TreeNode.new('appartments', title: 'Квартири')
+  root << Tree::TreeNode.new('regions', title: 'Райони')
+  root << Tree::TreeNode.new('appartment_categories', title: 'Категорії квартир')
+  root << Tree::TreeNode.new('gallery', title: 'Галерея')
+  root << Tree::TreeNode.new('sliders', title: 'Слайдери')
+  root << Tree::TreeNode.new('pages', title: 'Сторінки')
+
+
+  appartments = root['appartments']
+  appartments << Tree::TreeNode.new( 'Всі квартири', { link: '/admin/appartment' } )
+
+  regions = root['regions']
+  regions << Tree::TreeNode.new( 'Всі регіони', { link: '/admin/region' } )
+
+  appartment_categories = root['appartment_categories']
+  appartment_categories << Tree::TreeNode.new('Всі категорії', { link: '/admin/appartment_category' } )
+
+  gallery = root['gallery']
+
+  gallery << Tree::TreeNode.new('appartment_images', title: 'Картинки квартир')
+  gallery_appartment_images = gallery['appartment_images']
+  gallery_appartment_images << Tree::TreeNode.new('all', { title: 'Всі', link: '/admin/appartment_image' } )
+
+  sliders = root['sliders']
+  sliders << Tree::TreeNode.new('home_sliders', title: 'Слайдери головної сторінки')
+  home_sliders = sliders['home_sliders']
+  home_sliders << Tree::TreeNode.new('all', { title: 'всі', link: '/admin/home_slider' } )
+
+  sliders << Tree::TreeNode.new('appartment_sliders', title: 'Слайдери квартир')
+  appartment_sliders = sliders['appartment_sliders']
+  appartment_sliders << Tree::TreeNode.new('all', { title: 'всі', link: '/admin/appartment_slider' } )
+
+
+  pages = root['pages']
+  pages << Tree::TreeNode.new('all', { title: 'Всі', link: '/admin/page' } )
+  pages << Tree::TreeNode.new('home_page', { title: 'Головна', link: '/admin/pages~home_page/1' } )
+
+
+
+
+
 
 
 

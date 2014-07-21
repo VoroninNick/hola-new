@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  mount Ckeditor::Engine => '/ckeditor'
   # get 'pages/show'
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
