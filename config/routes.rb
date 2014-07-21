@@ -2,9 +2,10 @@ Rails.application.routes.draw do
   mount Ckeditor::Engine => '/ckeditor'
   # get 'pages/show'
 
-  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+
 
   scope "(:locale)", locale: /#{I18n.available_locales.join('|')}/, defaults: {source_route: true} do
+    mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
     get 'appartments', to: 'appartments#list', as: 'appartments'
     #
     # get 'appartments/:item', to: 'appartments#item', as: 'appartments_item'

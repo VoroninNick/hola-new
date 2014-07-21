@@ -8,6 +8,8 @@ Rails.configuration.to_prepare do
 
 end
 
+I18n.locale = :uk
+
 RailsAdmin.config do |config|
 
   ### Popular gems integration
@@ -55,8 +57,12 @@ RailsAdmin.config do |config|
 
   config.included_models = [ SitemapRecord, Pages::HomePage, HomeSlider, AppartmentSlider, Menu ]
 
+  [Appartment, Region].each do |model|
+    config.included_models += [model, model::Translation]
+  end
+
   # add translatable pages
-  [Page, Appartment, Article, Dictionary, MenuItem].each do |model|
+  [Page, Article, Dictionary, MenuItem].each do |model|
     config.included_models += [model, model::Translation]
 
     config.model model::Translation do
@@ -89,7 +95,7 @@ RailsAdmin.config do |config|
   #   end
   # end
 
-  [Image, AppartmentCategory, AppartmentIcon, AppartmentImage, Metadata, Region, HomeSlide, AppartmentSlide].each do |model|
+  [Image, AppartmentCategory, AppartmentIcon, AppartmentImage, Metadata, HomeSlide, AppartmentSlide].each do |model|
     config.model model do
       edit do
         include_all_fields

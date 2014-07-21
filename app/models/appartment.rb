@@ -1,3 +1,5 @@
+#encoding: utf-8
+
 class Appartment < ActiveRecord::Base
   # base page data
   acts_as_page_block
@@ -45,6 +47,29 @@ class Appartment < ActiveRecord::Base
 
   class Translation
     attr_accessible :locale, :intro_text, :description, :address
+
+
+
+    rails_admin do
+      field :locale do
+        html_attributes  readonly: "readonly"
+      end
+
+      field :address do
+        show
+        label "адреса"
+      end
+
+      field :intro_text, :ck_editor do
+        show
+        label "Текст про квартиру(виводиться зразу під слайдером)"
+      end
+
+      field :description, :ck_editor do
+        show
+        label "Текст про квартиру(виводиться зразу під галереєю)"
+      end
+    end
   end
 
 
@@ -101,45 +126,79 @@ class Appartment < ActiveRecord::Base
       #   default_longitude 151.0
       # end
 
-      field :name
+      field :name do
+        label "Ім'я квартири (використовуэться лише для url. якщо заповтите url вручну, може пропустити це поле)"
+      end
 
-      field :publish
+      field :publish do
+        label "Публікувати?"
+      end
 
-      field :available
+      field :available do
+        label "доступна квартира?"
+      end
 
-      field :recommended
+      field :recommended do
+        label "рекомендована?"
+      end
 
-      field :appartment_category
+      field :appartment_category do
+        label "категорія квартири"
+      end
 
-      field :region
+      field :region do
+        label "район квартири"
+      end
 
-      field :lat
-      field :lng
+      field :lat do
+        label "координати квартири: широта"
+        help "наприклад: 49.83445\nhttps://www.google.com/maps/place/Uhors'ka+St,+7%D0%90,+L'viv,+Lviv+Oblast,+Ukraine/@49.8123145,24.041031,17z/data=!3m1!4b1!4m2!3m1!1s0x473ae7fb1ae5a5a1:0xfb49271c412ed40d"
+      end
+      field :lng do
+        label "координати квартири: довгота"
+      end
 
-      field :address
+      field :address do
 
-      field :price
+        label "адреса (англійська мова)"
+      end
 
-      field :pages
+      field :price do
+        label "цына квартири за 1 день"
+      end
 
-      field :slider
+      field :pages do
+        label "інформація про сторінки"
+      end
 
-      field :appartment_icons
+      field :slider do
+        label "слайдер для квартири"
+      end
 
-      field :appartment_images
+      field :appartment_icons do
+        label "Іконки"
+      end
+
+      field :appartment_images do
+        label "Картинки"
+      end
 
       field :main_image do
-        label 'avatar'
+        label "Головна картинка(аватарка)"
       end
 
       field :intro_text, :ck_editor do
         show
+        label "Текст про квартиру (англійська мова)\n(виводиться зразу під слайдером) "
       end
       field :description, :ck_editor do
         show
+        label "Текст про квартиру (англійська мова)\n(виводиться зразу під галереєю)"
       end
 
-      field :translations, :globalize_tabs
+      field :translations, :globalize_tabs do
+        label "Переклад"
+      end
     end
   end
 end
