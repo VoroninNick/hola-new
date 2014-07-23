@@ -15,7 +15,7 @@ class HomeController < ApplicationController
     @appartment_markers = []
 
     Appartment.available.each do |appartment|
-      m = {lat: appartment.lat, lng: appartment.lng, title: appartment.name, icon_type: 'available'}
+      m = {lat: appartment.lat, lng: appartment.lng, category: appartment.appartment_category.name, price: ApplicationHelper.self_price_to_currency_string(appartment.price), address: appartment.address}
       @appartment_markers.push m
     end
 

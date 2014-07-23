@@ -19,10 +19,11 @@
 // turbolinks
 // selectize
 // google_maps
-// richmarker
+//= require richmarker
 //= require forms
 // home
 // home_map
+//= require test_map
 //= require order_form
 
 $(document).foundation();

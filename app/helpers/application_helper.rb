@@ -110,6 +110,12 @@ module ApplicationHelper
   end
 
   def price_to_currency_string(price)
+    ApplicationHelper.self_price_to_currency_string(price)
+  end
+
+  def self.self_price_to_currency_string(price)
+
+
     require 'money'
     require 'money/bank/google_currency'
 

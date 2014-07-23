@@ -1,7 +1,121 @@
-.html-marker
+@import "config"
+@import "functions"
+
+$marker-tooltip-height: 60px
+
+.appartment-marker
   //width: 35px
   //height: 60px
+
+  .marker-tooltip
+    display: none
+    opacity: 0
+    //background: white
+    padding: 0
+    position: relative
+    height: $marker-tooltip-height
+    margin-left: -133px
+    margin-top: -60px
+    width: 300px
+    top: -100%
+    //margin-top: -10px
+    //left: 50%
+    //@include transform( translateX(-50%) )
+
+
+    @include transition-duration(0.3s)
+    @include transition-property(opacity)
+
+
+
+
+
+
+
+
+    .address-and-category
+      background: $item-info-bg-color
+      float: left
+      width: 210px
+      height: 60px
+      border-radius: 10px 0 0 10px
+
+      padding: 9px 10px 0 12px
+
+      .address
+        font: $visual-h4-font
+        color: white
+        height: 20px
+        line-height: 20px
+        overflow: hidden
+
+      .category
+        font: $visual-h4-font
+        height: 40px
+        line-height: 20px
+        overflow: hidden
+        font-size: 0.8rem
+
+    .price
+      width: 90px
+      float: left
+      text-align: center
+      color: white
+      font: $visual-h4-font
+
+      text-shadow: rgba(100, 100, 100, 0.7) -2px 2px 0.5px
+      font-size: 1.2rem
+      font-weight: 700
+
+      background-color: $pink-color
+      line-height: $marker-tooltip-height
+      height: $marker-tooltip-height
+      overflow: hidden
+
+      border-radius: 0 10px 10px 0
+
+
+    &:hover
+      .address-and-category
+        background-color: $green-color
+
+
 
   svg
     width: 35px
     height: 60px
+
+    path.circle, path.circle-border, path.right-side, path.left-side
+      @include transition-property(fill)
+      @include transition-duration(0.3s)
+
+
+
+  &:hover
+    svg
+      path.circle-border
+        fill: $brand-button-corner-dark-color
+
+      path.circle
+        fill: $green-color
+      path.right-side
+        fill: $brand-button-corner-dark-color
+      path.left-side
+        fill: $green-color
+
+
+    .marker-tooltip
+      opacity: 1
+      display: block
+
+
+
+
+
+
+
+
+
+
+
+
