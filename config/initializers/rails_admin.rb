@@ -1,3 +1,5 @@
+#encoding: utf-8
+
 Rails.configuration.to_prepare do
   #require '../../app/helpers/rails_admin/application_helper_patch'
   #require "#{RailsRoot}/lib/rails_admin/config_patch"
@@ -8,7 +10,7 @@ Rails.configuration.to_prepare do
 
 end
 
-I18n.locale = :uk
+#I18n.locale = :uk
 
 RailsAdmin.config do |config|
 
@@ -133,6 +135,8 @@ RailsAdmin.config do |config|
   root << Tree::TreeNode.new('gallery', title: 'Галерея')
   root << Tree::TreeNode.new('sliders', title: 'Слайдери')
   root << Tree::TreeNode.new('pages', title: 'Сторінки')
+  root << Tree::TreeNode.new('articles', title: 'Статті')
+
 
 
   appartments = root['appartments']
@@ -163,6 +167,17 @@ RailsAdmin.config do |config|
   pages = root['pages']
   pages << Tree::TreeNode.new('all', { title: 'Всі', link: '/admin/page' } )
   pages << Tree::TreeNode.new('home_page', { title: 'Головна', link: '/admin/pages~home_page/1' } )
+
+
+  articles = root['articles']
+  articles << Tree::TreeNode.new('all', { title: 'Всі', link: '/admin/article' } )
+  #articles << Tree::TreeNode.new('useful_articles', title: 'Корисні статті')
+  #useful_articles = articles['useful_articles']
+  #useful_articles << Tree::TreeNode.new('all', { title: 'Всі', link: "/admin/article?source_route=true&utf8=✓&query=article" } )
+
+  #articles << Tree::TreeNode.new('news', title: 'Новини')
+  #news = articles['news']
+  #news << Tree::TreeNode.new('all', { title: 'Всі', link: "/admin/article?source_route=true&utf8=✓&query=article" } )
 
 
 

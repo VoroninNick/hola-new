@@ -25,6 +25,7 @@ module RailsAdmin
           #content_tag :li, link_to
           if item.parent
             if item.content && item.content.is_a?(Hash) && item.content[:link]
+              puts item.content[:link]
               concat( content_tag(:li, link_to("#{ item.content[:title] ? item.content[:title] : item.name }", item.content[:link]), class: "#{ item.level > 0 ? 'nav-level-'+ (item.level - 1 ).to_s : '' }" ) )
             else
               concat( content_tag( :li, "#{ item.content && item.content[:title] ? item.content[:title] : item.name }", class: "nav-header #{ item.level > 0 ? 'nav-level-'+ (item.level - 1 ).to_s : '' }" ) )

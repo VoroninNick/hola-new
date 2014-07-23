@@ -1,0 +1,92 @@
+$(document).on('ready', function() {
+    /**
+     * Called on the intiial page load.
+     */
+    var map, map2;
+    var HOME_MAPTYPE_ID = 'home_style';
+    var marker, marker2;
+
+
+    function init() {
+
+        var homeStyleProperties = [
+            {
+                featureType: 'all',
+                stylers: [
+                    { "saturation": -100 },
+                    { "lightness": 0 },
+                    { "gamma": 1.18 }
+                ]
+            }
+        ];
+
+        var styledMapOptions = {
+            //name: 'Custom Style'
+            name: 'home style'
+        };
+
+        var customMapType = new google.maps.StyledMapType(homeStyleProperties, styledMapOptions);
+
+
+
+        var mapCenter = new google.maps.LatLng(0, 0);
+        map = new google.maps.Map( $('.map-container').get(0), {
+            zoom: 1,
+            center: mapCenter,
+            //mapTypeId: google.maps.MapTypeId.ROADMAP
+            mapTypeId: HOME_MAPTYPE_ID
+        });
+
+        map.mapTypes.set(HOME_MAPTYPE_ID, customMapType);
+
+//        map2 = new google.maps.Map(document.getElementById(ma2'), {
+//            zoom: 1,
+//            center: mapCenter,
+//            mapTypeId: google.maps.MapTypeId.TERRAIN
+//        });
+
+        marker = new RichMarker({
+            position: mapCenter,
+            map: map,
+            draggable: true,
+            content: '<div class="my-marker"><div>This is a nice image</div>' +
+                    '<div><img src="http://farm4.static.flickr.com/3212/3012579547_' +
+                    '097e27ced9_m.jpg"/></div><div>You should drag it!</div></div>'
+        });
+
+        //var div = document.createElement('DIV');
+        //div.innerHTML = '<div class="my-other-marker">I am flat marker!</div>';
+
+        var $div = jQuery('<div class="my-other-marker"><a href="https://google.com" target="_blank"><%= ApplicationHelper.js_embedded_svg('marker.svg') %></a></div>');
+
+        $div.find('a').on('click', function (event) {
+            event.preventDefault()
+            alert('hello')
+        })
+
+        var div = $div.get(0)
+
+        marker2 = new RichMarker({
+            map: map,
+            position: new google.maps.LatLng(49.83445, 24.051365),
+            draggable: true,
+            flat: true,
+            anchor: RichMarkerPosition.MIDDLE,
+            content: div
+        });
+
+        google.maps.event.addListener(marker, 'position_changed', function () {
+            log('Marker position: ' + marker.getPosition());
+        });
+
+
+    }
+
+
+
+
+
+    // Register an event listener to fire when the page finishes loading.
+    google.maps.event.addDomListener(window, 'load', init);
+
+});

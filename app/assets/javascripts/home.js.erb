@@ -24,14 +24,47 @@ function initializeHomeMap(){
         mapTypeId: HOME_MAPTYPE_ID
     };
 
+
+
     var map_container = $('.map-container').get(0)
 
     map = new google.maps.Map(map_container,
         mapOptions);
 
+
+
+
+
+
     var $map_wrapper = $('.map-wrapper')
     var data_markers_str = $map_wrapper.attr('data-markers')
     if(data_markers_str){
+        function HTMLMarker(lat,lng){
+            this.lat = lat;
+            this.lng = lng;
+            this.pos = new google.maps.LatLng(lat,lng);
+        }
+
+        HTMLMarker.prototype = new google.maps.OverlayView();
+        HTMLMarker.prototype.onRemove= function(){}
+
+        //init your html element here
+        HTMLMarker.prototype.onAdd= function(){
+            div = document.createElement('DIV');
+            div.className = "htmlMarker";
+            div.innerHTML = '<%= ApplicationHelper.js_embedded_svg('marker.svg') %>'
+            var panes = this.getPanes();
+            panes.overlayImage.appendChild(div);
+        }
+
+        HTMLMarker.prototype.draw = function(){
+            var overlayProjection = this.getProjection();
+            var position = overlayProjection.fromLatLngToDivPixel(this.pos);
+            var panes = this.getPanes();
+            panes.overlayImage.style.left = position.x + 'px';
+            panes.overlayImage.style.top = position.y - 30 + 'px';
+        }
+
         var markers = []
 
         //var pairs = data_markers.split(';')
@@ -40,16 +73,39 @@ function initializeHomeMap(){
 
         for(var i=0; i<data_markers.length;i++){
             var m = data_markers[i]
-            var icon = ''
-            if(m.icon_type == 'available'){
-                icon = "<%= asset_path('czmk-map-pointer.png') %>"
-            }
-            new google.maps.Marker({
-                position: new google.maps.LatLng(m.lat, m.lng),
-                map: map,
-                title: m.title,
-                icon: icon
+            //var icon = ''
+            //if(m.icon_type == 'available'){
+            //    icon = "<%# asset_path('czmk-map-pointer.png') %>"
+            //}
+
+            //var htmlMarker = new HTMLMarker(m.lat, m.lng);
+            //htmlMarker.setMap(map);
+            //alert('added marker: lat:'+ m.lat + '; lng: ' + m.lng)
+
+            //new google.maps.Marker({
+                //position: new google.maps.LatLng(m.lat, m.lng),
+                //map: map,
+                //title: m.title,
+                //icon: icon
+            //})
+
+            var $div = jQuery('<div class="html-marker"><a href="https://google.com" target="_blank"><%= ApplicationHelper.js_embedded_svg('marker.svg') %></a></div>');
+
+            $div.find('a').on('click', function (event) {
+                event.preventDefault()
+                alert('hello')
             })
+
+            var div = $div.get(0)
+
+            var marker = new RichMarker({
+                map: map,
+                position: new google.maps.LatLng(49.83445, 24.051365),
+                draggable: true,
+                flat: true,
+                anchor: RichMarkerPosition.MIDDLE,
+                content: div
+            });
         }
     }
 

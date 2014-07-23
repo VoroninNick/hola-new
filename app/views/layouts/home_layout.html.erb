@@ -5,6 +5,8 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
   <title>Rich Marker</title>
 
+  <%= stylesheet_link_tag    "application" %>
+
   <style type="text/css">
       .map-container {
           width: 600px;
@@ -48,15 +50,44 @@
   <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
   <script type="text/javascript" src="/assets/richmarker.js"></script>
 
-  <%= javascript_include_tag "test" %>
+  <%= javascript_include_tag "application" %>
 
   <script type="text/javascript" src="/assets/test_map.js"></script>
 
 </head>
 <body>
-<h3>Rich Marker v3</h3>
+<%= render partial: 'partials/modal_order_form_checkbox' %>
+<% if params[:controller] == 'appartments' && params[:action] == 'item' && !@appartment_images.nil? && @appartment_images.count > 0 %>
+    <%= render partial: 'appartments/modal_large_image_checkbox' %>
+<% end %>
+<div id="body-inner">
+  <div id="wrap">
 
-<div class="map-container"></div>
+    <div id="main">
+      <%= render partial: 'partials/header' %>
+      <div id="content">
+        <%= yield %>
+      </div>
+    </div>
+
+  </div>
+
+  <%= render partial: 'partials/footer' %>
+
+
+</div>
+
+
+
+
+<%= render partial: 'partials/load_disqus' %>
+
+<%= render partial: 'partials/modal_order_form_large_jquery' %>
+
+<% if params[:controller] == 'appartments' && params[:action] == 'item' && !@appartment_images.nil? && @appartment_images.count > 0 %>
+    <%# render partial: 'appartments/modal_large_image' %>
+    <%= render partial: 'appartments/modal_large_image_version2' %>
+<% end %>
 
 
 

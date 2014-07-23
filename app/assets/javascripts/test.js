@@ -1,8 +1,8 @@
 //= require jquery
 //= require jquery_ujs
-//= require foundation
-//= require turbolinks
-//= require selectize
+// foundation
+// turbolinks
+// selectize
 
 $(document).on('ready', function(){
     //var $home_form = $('#home-form')

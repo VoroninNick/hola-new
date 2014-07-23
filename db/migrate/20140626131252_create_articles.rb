@@ -1,5 +1,5 @@
 class CreateArticles < ActiveRecord::Migration
-  def change
+  def up
     create_table :articles do |t|
       t.boolean :publish
       t.string :title

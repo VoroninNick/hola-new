@@ -19,6 +19,8 @@ class HomeController < ApplicationController
       @appartment_markers.push m
     end
 
+    render layout: 'application'
+
   end
 
   def css_svg(filename, options={})

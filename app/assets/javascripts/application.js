@@ -13,14 +13,16 @@
 //= require jquery
 //= require fancybox
 //= require jquery_ujs
-//= require foundation
+// foundation
 //= require moment.min
 //= require jquery.daterangepicker
 // turbolinks
 // selectize
-//= require google_maps
+// google_maps
+// richmarker
 //= require forms
-//= require home
+// home
+// home_map
 //= require order_form
 
 $(document).foundation();

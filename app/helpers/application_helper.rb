@@ -56,7 +56,7 @@ module ApplicationHelper
     if options[:class].present?
       svg['class'] = options[:class]
     end
-    source = doc.to_html.html_safe
+    source = svg.to_html
     minimized_source = source
     minimized_source = minimized_source.remove("\r")
     minimized_source = minimized_source.remove("\t")
