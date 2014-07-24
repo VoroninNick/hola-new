@@ -152,7 +152,7 @@ module ApplicationHelper
   end
 
   def page_type
-    if params[:controller].index('devise') >= 0
+    if params[:controller].index('devise') != nil
       :devise_route
 
     elsif params[:source_route] != true
