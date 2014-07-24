@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+
+ get "/users/sign_up", to: "error#not_found"
+ post "/users", to: "error#not_found"
+
   devise_for :users
   mount Ckeditor::Engine => '/ckeditor'
   # get 'pages/show'
@@ -8,6 +12,7 @@ Rails.application.routes.draw do
 
 
   scope "(:locale)", locale: /#{I18n.available_locales.join('|')}/, defaults: {source_route: true} do
+
 
     get "/appartments/search/(*query)", to: 'appartments#search'
 
@@ -39,6 +44,13 @@ Rails.application.routes.draw do
 
 
   DynamicRouter.load
+
+  get "*path", to: 'error#not_found', defaults: { error_code: 404 }
+
+  #get "/404", :to => "errors#not_found"
+  #get "/422", :to => "errors#unacceptable"
+  #get "/500", :to => "errors#internal_error"
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
