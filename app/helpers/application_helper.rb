@@ -144,14 +144,18 @@ module ApplicationHelper
   end
 
   def page
-
-    if params[:source_route] != true
-      Page.find(params[:page_id])
+    if params[:controller].index('devise').nil?
+      if params[:source_route] != true
+        Page.find(params[:page_id])
+      end
     end
   end
 
   def page_type
-    if params[:source_route] != true
+    if params[:controller].index('devise') >= 0
+      :devise_route
+
+    elsif params[:source_route] != true
       :db_page
     else
       :source_route
