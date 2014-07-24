@@ -9,7 +9,7 @@ Rails.application.routes.draw do
 
   scope "(:locale)", locale: /#{I18n.available_locales.join('|')}/, defaults: {source_route: true} do
 
-    get "/appartments/search(*query)", to: 'appartments#search'
+    get "/appartments/search/(*query)", to: 'appartments#search'
 
     get 'test/gmap'
 
