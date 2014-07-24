@@ -40,6 +40,8 @@ class MenuItem < ActiveRecord::Base
       field :linked_to_page
       field :page
 
+      field :translations, :globalize_tabs
+
       # field :children
     end
 
