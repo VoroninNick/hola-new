@@ -13,7 +13,7 @@
 //= require jquery
 //= require fancybox
 //= require jquery_ujs
-// foundation
+//= require foundation
 //= require moment.min
 //= require jquery.daterangepicker
 // turbolinks

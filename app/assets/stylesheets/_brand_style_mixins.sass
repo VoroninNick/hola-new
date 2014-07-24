@@ -1,0 +1,55 @@
+@import "config"
+
+@mixin h1
+  font: $visual-h1-font
+  padding: $visual-h1-padding
+  text-shadow: $visual-h1-text-shadow
+  color: $visual-h1-color
+
+@mixin h2
+  font: $visual-h2-font
+  padding: $visual-h2-padding
+  text-shadow: $visual-h2-text-shadow
+  color: $visual-h2-color
+
+@mixin h3
+  font: $visual-h3-font
+  padding: $visual-h3-padding
+  text-shadow: $visual-h3-text-shadow
+  color: $visual-h3-color
+
+@mixin h4
+  font: $visual-h4-font
+  padding: $visual-h4-padding
+  text-shadow: $visual-h4-text-shadow
+  color: $visual-h4-color
+
+
+
+
+@mixin white-link
+  &, &:visited, &:link
+    color: white
+    text-decoration: none
+  &:hover
+    color: $green-color
+    text-decoration: underline
+
+@mixin green-link
+  &, &:visited, &:link
+    color: $green-color
+    text-decoration: none
+    cursor: pointer
+  &:hover
+    text-decoration: underline
+
+@mixin secondary-link
+  &
+    font-size: 0.75rem
+    font-weight: 300
+  &, &:visited, &:link
+    color: #666
+    text-decoration: none
+  &:hover
+    color: $green-color
+    text-decoration: underline

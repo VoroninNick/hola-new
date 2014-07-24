@@ -5,7 +5,7 @@ en:
       secondary-menu:
         about:
           title: "About us"
-          link: "%{Appartment.first.page.path}"
+          link: "/en/about-us"
 
         news: "News"
         articles: "Useful articles"

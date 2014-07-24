@@ -23,7 +23,7 @@ Rails.application.routes.draw do
     #
     # get 'appartments/:item', to: 'appartments#item', as: 'appartments_item'
     #
-    get 'about', to: 'about#index', as: 'about'
+    get 'about-us', to: 'about#index', as: 'about'
     #
     get 'articles', to: 'articles#list', as: 'articles'
     #

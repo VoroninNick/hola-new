@@ -27,10 +27,19 @@ $(document).on('ready', function() {
 
         var customMapType = new google.maps.StyledMapType(homeStyleProperties, styledMapOptions);
 
+        var $map_wrapper = $('.map-wrapper')
+        var data_markers_str = $map_wrapper.attr('data-markers')
 
-        var mapCenter = new google.maps.LatLng(0, 0);
+        if (data_markers_str) {
+            var markers = []
+            var data_markers = $.parseJSON(data_markers_str)
+            var first_marker = data_markers[0]
+
+
+        var mapCenter = new google.maps.LatLng(first_marker.lat,first_marker.lng );
         map = new google.maps.Map($('.map-container').get(0), {
-            zoom: 1,
+            scrollwheel: false,
+            zoom: 10,
             center: mapCenter,
             //mapTypeId: google.maps.MapTypeId.ROADMAP
             mapTypeId: HOME_MAPTYPE_ID
@@ -44,13 +53,11 @@ $(document).on('ready', function() {
 
         console.log('hello')
 
-        var $map_wrapper = $('.map-wrapper')
-        var data_markers_str = $map_wrapper.attr('data-markers')
 
-        if (data_markers_str) {
 
-            var markers = []
-            var data_markers = $.parseJSON(data_markers_str)
+
+
+
 
             for(var i=0; i<data_markers.length;i++) {
 

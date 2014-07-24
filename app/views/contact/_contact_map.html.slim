@@ -1,0 +1,7 @@
+.contact-map-section
+  input id="show-large-map-flag" class="large-map-flag" name="large-map-flag" type="radio"
+  input id="show-small-map-flag" checked="checked" class="large-map-flag" name="large-map-flag" type="radio"
+  #contact-map-wrapper.map-wrapper data-markers="#{@appartment_markers.to_json}"
+    #contact-map-container.map-container
+  label class="map-size-label" id="displayed-small-map" for="show-large-map-flag"
+  label class="map-size-label" id="displayed-large-map" for="show-small-map-flag"

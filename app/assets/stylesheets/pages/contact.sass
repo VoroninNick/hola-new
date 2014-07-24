@@ -1,0 +1,125 @@
+.contact-map-section
+  input.large-map-flag
+    display: none
+
+    ~
+
+      label.map-size-label
+        display: none
+
+    &#show-large-map-flag
+      &:checked
+        ~
+          label#displayed-large-map
+            display: block
+
+          #contact-map-wrapper
+            height: 700px
+
+
+    &#show-small-map-flag
+      &:checked
+        ~
+          label#displayed-small-map
+            display: block
+
+          #contact-map-wrapper
+            height: 200px
+
+
+label.map-size-label
+  height: 0
+  width: 0
+  //background: red
+  right: 20%
+  position: absolute
+  border-style: solid
+
+  &#displayed-large-map
+    border-width: 0 15px 16px 15px
+    border-color: transparent transparent $green-color transparent
+    margin-top: -16px
+
+  &#displayed-small-map
+    border-width: 16px 15px 0 15px
+    border-color: $green-color transparent transparent transparent
+
+
+#contact-map-wrapper
+  overflow: hidden
+  @include transition-property(height)
+  @include transition-duration(0.4s)
+
+#contact-map-container
+  height: 700px
+
+.contact-info
+  .h1
+    text-transform: uppercase
+    text-align: center
+
+  .phone
+    color: $desktop-secondary-header-text-color
+    font: $visual-h1-font
+
+
+
+  .address, .email, .phone .phone-number
+    line-height: 35px
+
+  .address
+    .address-text
+      color: #777
+
+
+  .email
+    .email-text
+      @include green-link
+      font-weight: 600
+
+
+  .social-links
+    height: 8rem
+    text-align: center
+    background-color: $desktop-primary-header-background
+    padding: 2rem 0
+    margin: 6rem 0 0 0
+
+    .social-link
+      height: 4rem
+      width: 4rem
+      text-decoration: none
+
+      margin-left: rem-calc(30)
+
+      &:first-child
+        margin-left: 0
+
+      svg
+        width: 4rem
+        height: 4rem
+
+      &#facebook
+        &:hover
+          svg
+            .bg
+              fill: #265999
+
+            .shadow
+              fill: #444953
+              opacity: 0.3
+
+      &#vk
+        &:hover
+          svg
+            .bg
+              fill: #008ACE
+
+            .shadow
+              fill: #444953
+              opacity: 0.3
+
+
+.page.contact-show
+  .separator
+    margin: 3rem 0

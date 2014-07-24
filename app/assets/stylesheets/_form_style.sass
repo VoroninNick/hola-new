@@ -1,0 +1,141 @@
+form
+
+  .field
+    &.form-field
+      height: $input-field-height
+      line-height: $input-field-height
+      //background: #454954
+      margin-bottom: 2rem
+
+      &.input-field
+        .button-top, .button-bottom
+          background: #454954
+
+        .button-bottom
+          &:before
+            border-bottom-color: #27282d
+          &:after
+            border-top-color: #636b78
+
+        input
+          margin: 0
+          background: transparent
+          border: none
+          color: white
+          font-weight: 300
+          text-transform: none
+          font-size: 1.3rem
+          cursor: text
+          padding: 1rem 1.5rem
+
+          &::-webkit-input-placeholder
+            color: white
+
+          &:-moz-placeholder /* Firefox 18- */
+            color: white
+
+          &::-moz-placeholder   /* Firefox 19+ */
+            color: white
+
+          &:-ms-input-placeholder
+            color: white
+
+
+          &:focus
+            box-shadow: none
+
+
+
+      &.textarea-field
+        height: 16rem
+        .textarea-wrapper
+          height: 16rem
+          .large-brand-button
+            height: 16rem
+
+            .button-top, .button-bottom
+              background: #454954
+
+
+            .button-bottom
+              &:before
+                border-bottom-color: #27282d
+              &:after
+                border-top-color: #636b78
+
+            textarea
+              height: 16rem
+              padding: 1rem 1.5rem
+              resize: none
+              border: none
+              background: transparent
+              box-shadow: none
+
+              color: white
+              font-weight: 300
+              text-transform: none
+              font-size: 1.3rem
+              cursor: text
+
+
+              &::-webkit-input-placeholder
+                color: white
+
+              &:-moz-placeholder /* Firefox 18- */
+                color: white
+
+              &::-moz-placeholder   /* Firefox 19+ */
+                color: white
+
+              &:-ms-input-placeholder
+                color: white
+
+              scrollbar:
+                track-color: #2e3138
+
+
+
+              &::-webkit-scrollbar
+                width: 1rem
+                height: 1rem
+
+              &::-webkit-scrollbar-button
+                background-color: #666
+
+              &::-webkit-scrollbar-track
+                background-color: #2e3138
+
+
+              &::-webkit-scrollbar-track-piece
+                //background-color: #ffffff
+
+              &::-webkit-scrollbar-thumb
+                height: 1rem
+                width: 1rem
+                background-color: #81a31b
+                //border-radius: 3px
+
+              &::-webkit-scrollbar-corner
+                background-color: transparent
+
+              &::-webkit-resizer
+                //background-color: #666
+
+
+
+      &.submit-field
+        input
+          background: transparent
+          border: none
+          outline: none
+
+
+
+.separator
+  height: 2px
+  border-top: 1px #414141 solid
+  border-bottom: 1px #232323 solid
+  margin: 2rem 0
+
+
+
