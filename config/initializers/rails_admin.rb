@@ -130,43 +130,26 @@ RailsAdmin.config do |config|
 
   config.navigation_static_links = root
   root << Tree::TreeNode.new('appartments', title: 'Квартири')
-  root << Tree::TreeNode.new('regions', title: 'Райони')
-  root << Tree::TreeNode.new('appartment_categories', title: 'Категорії квартир')
-  root << Tree::TreeNode.new('appartment_icons', title: 'Іконки для квартир')
   root << Tree::TreeNode.new('gallery', title: 'Галерея')
   root << Tree::TreeNode.new('sliders', title: 'Слайдери')
+  root << Tree::TreeNode.new('articles', title: 'Публікації')
   root << Tree::TreeNode.new('pages', title: 'Сторінки')
-  root << Tree::TreeNode.new('articles', title: 'Статті')
+
 
 
 
   appartments = root['appartments']
   appartments << Tree::TreeNode.new( 'Всі квартири', { link: '/admin/appartment' } )
-
-  regions = root['regions']
-  regions << Tree::TreeNode.new( 'Всі регіони', { link: '/admin/region' } )
-
-  appartment_categories = root['appartment_categories']
-  appartment_categories << Tree::TreeNode.new('Всі категорії', { link: '/admin/appartment_category' } )
-
-  appartment_icons = root['appartment_icons']
-  appartment_icons << Tree::TreeNode.new('Створити нову', { link: '/admin/appartment_icon/new' } )
-  appartment_icons << Tree::TreeNode.new('Всі', { link: '/admin/appartment_icon' } )
+  appartments << Tree::TreeNode.new('Іконки', { link: '/admin/appartment_icon' } )
+  appartments << Tree::TreeNode.new('Райони', { link: '/admin/region' } )
+  appartments << Tree::TreeNode.new('Категорії', { link: '/admin/appartment_category' } )
 
   gallery = root['gallery']
-
-  gallery << Tree::TreeNode.new('appartment_images', title: 'Картинки квартир')
-  gallery_appartment_images = gallery['appartment_images']
-  gallery_appartment_images << Tree::TreeNode.new('all', { title: 'Всі', link: '/admin/appartment_image' } )
+  gallery << Tree::TreeNode.new('all', { title: 'Галереї квартир', link: '/admin/appartment_image' } )
 
   sliders = root['sliders']
-  sliders << Tree::TreeNode.new('home_sliders', title: 'Слайдери головної сторінки')
-  home_sliders = sliders['home_sliders']
-  home_sliders << Tree::TreeNode.new('all', { title: 'всі', link: '/admin/home_slider' } )
-
-  sliders << Tree::TreeNode.new('appartment_sliders', title: 'Слайдери квартир')
-  appartment_sliders = sliders['appartment_sliders']
-  appartment_sliders << Tree::TreeNode.new('all', { title: 'всі', link: '/admin/appartment_slider' } )
+  sliders << Tree::TreeNode.new('home_sliders', { title: 'Для головної', link: '/admin/home_slider' } )
+  sliders << Tree::TreeNode.new('appartment_sliders', { title: 'Для квартир', link: '/admin/appartment_slider' } )
 
 
   pages = root['pages']
@@ -175,7 +158,7 @@ RailsAdmin.config do |config|
 
 
   articles = root['articles']
-  articles << Tree::TreeNode.new('all', { title: 'Всі', link: '/admin/article' } )
+  articles << Tree::TreeNode.new('all', { title: 'Всі статті', link: '/admin/article' } )
   #articles << Tree::TreeNode.new('useful_articles', title: 'Корисні статті')
   #useful_articles = articles['useful_articles']
   #useful_articles << Tree::TreeNode.new('all', { title: 'Всі', link: "/admin/article?source_route=true&utf8=✓&query=article" } )
