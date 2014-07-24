@@ -89,3 +89,5 @@ gem 'http_accept_language'
 gem 'rubytree'
 
 gem 'ckeditor'
+
+gem 'russian'

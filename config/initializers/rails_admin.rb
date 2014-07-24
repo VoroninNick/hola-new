@@ -132,6 +132,7 @@ RailsAdmin.config do |config|
   root << Tree::TreeNode.new('appartments', title: 'Квартири')
   root << Tree::TreeNode.new('regions', title: 'Райони')
   root << Tree::TreeNode.new('appartment_categories', title: 'Категорії квартир')
+  root << Tree::TreeNode.new('appartment_icons', title: 'Іконки для квартир')
   root << Tree::TreeNode.new('gallery', title: 'Галерея')
   root << Tree::TreeNode.new('sliders', title: 'Слайдери')
   root << Tree::TreeNode.new('pages', title: 'Сторінки')
@@ -147,6 +148,10 @@ RailsAdmin.config do |config|
 
   appartment_categories = root['appartment_categories']
   appartment_categories << Tree::TreeNode.new('Всі категорії', { link: '/admin/appartment_category' } )
+
+  appartment_icons = root['appartment_icons']
+  appartment_icons << Tree::TreeNode.new('Створити нову', { link: '/admin/appartment_icon/new' } )
+  appartment_icons << Tree::TreeNode.new('Всі', { link: '/admin/appartment_icon' } )
 
   gallery = root['gallery']
 

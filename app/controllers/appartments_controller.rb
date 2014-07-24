@@ -33,4 +33,8 @@ class AppartmentsController < ApplicationController
 
     end
   end
+
+  def search
+    render inline: "#{params.inspect} <br/>query_params_count: #{params[:query].split('/').inspect}"
+  end
 end
