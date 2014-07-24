@@ -134,6 +134,7 @@ RailsAdmin.config do |config|
   root << Tree::TreeNode.new('sliders', title: 'Слайдери')
   root << Tree::TreeNode.new('articles', title: 'Публікації')
   root << Tree::TreeNode.new('pages', title: 'Сторінки')
+  root << Tree::TreeNode.new('navigation', title: 'Навігація')
 
 
 
@@ -166,6 +167,9 @@ RailsAdmin.config do |config|
   #articles << Tree::TreeNode.new('news', title: 'Новини')
   #news = articles['news']
   #news << Tree::TreeNode.new('all', { title: 'Всі', link: "/admin/article?source_route=true&utf8=✓&query=article" } )
+
+  navigation = root['navigation']
+  navigation << Tree::TreeNode.new('menu', { title: 'Меню', link: '/admin/menu' } )
 
 
 
