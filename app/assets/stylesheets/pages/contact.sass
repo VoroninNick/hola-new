@@ -1,17 +1,52 @@
+@-webkit-keyframes above-triangle-shadow-show
+  0%
+    //display: block
+    opacity: 0
+    border-width: 0 15px 15px 15px
+    display: block
+
+  50%
+    opacity: 1
+    border-width: 0 100px 100px 100px
+
+  100%
+    padding: 0 100px
+    background-color: rgba(255,0,0,0.9)
+    opacity: 0
+    display: none
+
+
+
 .contact-map-section
   input.large-map-flag
     display: none
 
     ~
-
-      label.map-size-label
+      .map-arrow
+        //label.map-size-label
+        //opacity: 0
         display: none
+        @include transition-property(display)
+        @include transition-delay(4s)
+
+
 
     &#show-large-map-flag
       &:checked
         ~
-          label#displayed-large-map
+          .map-arrow#arrow-above
+            //label#displayed-large-map
             display: block
+
+
+            .shadow
+              background: red
+              opacity: 0
+              display: none
+
+
+              @include animation-name(above-triangle-shadow-show)
+              @include animation-duration(4s)
 
           #contact-map-wrapper
             height: 700px
@@ -20,29 +55,76 @@
     &#show-small-map-flag
       &:checked
         ~
-          label#displayed-small-map
+          .map-arrow#arrow-below
+            //label#displayed-small-map
             display: block
+
+            .shadow
+              background: red
+              opacity: 0
+              display: none
 
           #contact-map-wrapper
             height: 200px
 
 
-label.map-size-label
-  height: 0
-  width: 0
-  //background: red
-  right: 20%
+.map-arrow
   position: absolute
-  border-style: solid
+  right: 20%
+  margin-top: -100px
+  width: 200px
+  height: 200px
 
-  &#displayed-large-map
-    border-width: 0 15px 16px 15px
-    border-color: transparent transparent $green-color transparent
-    margin-top: -16px
+  label.map-size-label
+    height: 0
+    width: 0
+    //background: red
+    //right: 20%
+    position: absolute
+    border-style: solid
+    left: 50%
+    top: 50%
+    right: auto
+    bottom: auto
 
-  &#displayed-small-map
-    border-width: 16px 15px 0 15px
-    border-color: $green-color transparent transparent transparent
+    @include transform( translate(-50%, -50%) )
+
+
+
+    & + .shadow
+      //content: ""
+      position: absolute
+      display: block
+      width: 0
+      height: 0
+      border-style: solid
+
+
+      left: 50%
+      top: 50%
+      bottom: auto
+      right: auto
+      @include transform( translate(-50%, -50%) )
+
+
+    &#displayed-large-map
+      border-width: 0 15px 16px 15px
+      border-color: transparent transparent $green-color transparent
+      margin-top: -8px
+
+      & + .shadow
+        border-width: 0 100px 100px 100px
+        border-color: transparent transparent #007bff transparent
+
+    &#displayed-small-map
+      border-width: 16px 15px 0 15px
+      border-color: $green-color transparent transparent transparent
+      margin-top: 8px
+
+
+      & + .shadow
+        border-width: 100px 100px 0 100px
+        border-color: #007bff transparent transparent transparent
 
 
 #contact-map-wrapper
