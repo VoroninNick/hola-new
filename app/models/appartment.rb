@@ -80,7 +80,7 @@ class Appartment < ActiveRecord::Base
   scope :recommended, -> { available.where(recommended: 't').order('id desc') }
 
 
-  before_save :check_page
+  after_save :check_page
 
   def check_page
     if pages.count == 0
@@ -94,12 +94,17 @@ class Appartment < ActiveRecord::Base
 
     p = page
     self.translations_by_locale.keys.each do |locale|
+
       if self.name.nil? || self.name.length == 0
         self.name = "appartment-#{id}"
       end
 
+
+
       if !p.translations_by_locale.keys.include?(locale) || ( p.path.nil? || p.path.length == 0 )
-        p.translations_by_locale[locale].path = "/#{locale.to_s}/appartments/#{self.name.parameterize}"
+        translation = Page.translation_class.create!(locale: locale, page_id: self.id)
+        translation.path = "/#{locale.to_s}/appartments/#{self.name.parameterize}"
+        translation.save
         p.save
       end
 
