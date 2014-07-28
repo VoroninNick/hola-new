@@ -62,17 +62,10 @@
 
       #primary-header-menu.right
         ul
-          li
-            a.title href=t('layout.header.secondary-menu.about.link', name: 'my_name')
-              = t('layout.header.secondary-menu.about.title')
-
-          li
-            a.title href=news_path
-              |Новини
-
-          li
-            a.title href=articles_path
-              |Корисні статті
+          - get_desktop_first_menu_items.each do |menu_item|
+            li
+              a.title href=menu_item.get_link
+                = menu_item.name
 
   #secondary-header
     .row
@@ -99,12 +92,10 @@
 
         #secondary-header-menu.left
           ul
-            li
-              a.title href=appartments_path
-                |Квартири
-            li
-              a.title href=contact_path
-                |Контакти
+            - get_desktop_second_menu_items.each do |menu_item|
+              li
+                a.title href=menu_item.get_link
+                  = menu_item.name
 
             li.separator
 
@@ -124,21 +115,10 @@
 
   #mobile-menu
     ul
-      li
-        a
-          |Квартири
-      li
-        a
-          |Контакти
-      li
-        a
-          |Про нас
-      li
-        a
-          |Новини
-      li
-        a
-          |Корисні статті
+      - get_mobile_header_menu_items.each do |menu_item|
+        li
+          a.title href=menu_item.get_link
+            = menu_item.name
       li
         .social-buttons
       li
@@ -157,13 +137,3 @@
                   a.toggle-image title="#{locale.to_s}"
                     = embedded_svg_from_assets("static_images/all/language-#{locale.to_s}-color.svg", class: 'active')
                     = embedded_svg_from_assets("static_images/all/language-#{locale.to_s}.svg", class: 'inactive')
-
-
-
-
-
-
-
-
-
-

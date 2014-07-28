@@ -65,6 +65,13 @@ class Page < ActiveRecord::Base
       field :controller
       field :action
       field :layout
+      field :appartments do
+        hide
+      end
+
+      field :custom_page do
+        hide
+      end
       field :metadata
       field :sitemap_record
       field :translations, :globalize_tabs

@@ -26,6 +26,14 @@ class MenuItem < ActiveRecord::Base
     MenuItem.where.not(id: id).map { |c| [ c.name, c.id ] }
   end
 
+  def get_link
+    if linked_to_page == true
+      page.path
+    else
+      link
+    end
+  end
+
 
   rails_admin do
     edit do

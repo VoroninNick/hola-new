@@ -14,16 +14,10 @@
       #menu-and-social-buttons.columns.large-4.large-right.small-12
         #menu
           ul
-            li
-              = link_to('Квартири', appartments_path)
-            li
-              = link_to('Контакти', '#')
-            li
-              = link_to('Про нас', '#')
-            li
-              = link_to('Новини', '#')
-            li
-              = link_to('Корисні статті', '#')
+            - get_footer_menu_items_.each do |menu_item|
+              li
+                a.title href=menu_item.get_link
+                  = menu_item.name
 
         #social-buttons
           ul

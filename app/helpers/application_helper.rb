@@ -145,7 +145,7 @@ module ApplicationHelper
 
   def page
     if params[:controller].index('devise').nil? && (params[:controller] != 'error' && params[:action] != 'not_found')
-      if params[:source_route] != true
+      if params[:source_route] != true && params[:page_id]
         Page.find(params[:page_id])
       end
     end
@@ -161,6 +161,38 @@ module ApplicationHelper
       :source_route
     end
   end
+
+  def get_desktop_first_menu_items
+    Menu.find(1).menu_items
+  end
+
+  def get_desktop_second_menu_items
+    Menu.find(2).menu_items
+  end
+
+  def get_mobile_header_menu_items
+    Menu.find(3).menu_items
+  end
+
+  def get_footer_menu_items
+    Menu.find(4).menu_items
+  end
+
+  def is_menu_item_active?(menu_item)
+    p = page
+    if !p.nil?
+      if menu_item.linked_to_page == true && !menu_item.page.nil?
+        p.id == menu_item.page.id
+      else
+        false
+      end
+    else
+      false
+    end
+
+  end
+
+
 end
 
 
