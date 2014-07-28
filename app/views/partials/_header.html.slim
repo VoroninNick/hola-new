@@ -73,11 +73,11 @@
         a#mobile-close-button.toggle-button
           = embedded_svg_from_assets('static_images/all/menu-close-button.svg')
 
-        - if current_page?(root_path) || current_page?(root_path(locale: I18n.locale) )
+        - if page.id == 14
           #logo
             = embedded_svg_from_assets('static_images/all/logo.svg')
         - else
-          a#logo href="#{root_path(locale: I18n.locale)}"
+          a#logo href="#{Page.find(14).path}"
             = embedded_svg_from_assets('static_images/all/logo.svg')
 
       .right
