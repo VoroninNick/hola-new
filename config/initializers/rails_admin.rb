@@ -156,6 +156,7 @@ RailsAdmin.config do |config|
   pages = root['pages']
   pages << Tree::TreeNode.new('all', { title: 'Всі', link: '/admin/page' } )
   pages << Tree::TreeNode.new('home_page', { title: 'Головна', link: '/admin/pages~home_page/1' } )
+  pages << Tree::TreeNode.new('about_page', { title: 'Про нас', link: '/admin/pages~about_page/1' } )
 
 
   articles = root['articles']
