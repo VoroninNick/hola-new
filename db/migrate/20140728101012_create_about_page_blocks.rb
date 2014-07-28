@@ -6,7 +6,7 @@ class CreateAboutPageBlocks < ActiveRecord::Migration
       t.string :title
       t.string :alt
 
-      t.belongs_to :pages_about_page
+      t.belongs_to :about_page
 
       t.timestamps
     end
