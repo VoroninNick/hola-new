@@ -14,26 +14,26 @@ Rails.application.routes.draw do
   scope "(:locale)", locale: /#{I18n.available_locales.join('|')}/, defaults: {source_route: true} do
 
 
-    get "/appartments/search/(*query)", to: 'appartments#search'
+    #get "/appartments/search/(*query)", to: 'appartments#search'
 
-    get 'test/gmap'
+    #get 'test/gmap'
 
     mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
-    get 'appartments', to: 'appartments#list', as: 'appartments'
+    #get 'appartments', to: 'appartments#list', as: 'appartments'
     #
     # get 'appartments/:item', to: 'appartments#item', as: 'appartments_item'
     #
-    get 'about-us', to: 'about#index', as: 'about'
+    #get 'about-us', to: 'about#index', as: 'about'
     #
-    get 'articles', to: 'articles#list', as: 'articles'
+    #get 'articles', to: 'articles#list', as: 'articles'
     #
     # get 'articles/:item', to: 'articles#item', as: 'articles_item'
     #
-    get 'news', to: 'news#list', as: 'news'
+    #get 'news', to: 'news#list', as: 'news'
     #
     # get 'news/:item', to: 'news#item', as: 'news_item'
     #
-    get 'contact', to: 'contact#show', as: 'contact'
+    #get 'contact', to: 'contact#show', as: 'contact'
     #
     # get 'contact/create'
     #

@@ -14,7 +14,7 @@
       #menu-and-social-buttons.columns.large-4.large-right.small-12
         #menu
           ul
-            - get_footer_menu_items_.each do |menu_item|
+            - get_footer_menu_items.each do |menu_item|
               li
                 a.title href=menu_item.get_link
                   = menu_item.name
