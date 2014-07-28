@@ -39,7 +39,7 @@ Rails.application.routes.draw do
     #
     # get 'test', to: 'test#index'
 
-    root to: 'home#index'
+    #root to: 'home#index'
   end
 
 
