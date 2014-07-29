@@ -44,6 +44,10 @@ class AboutPageBlock < ActiveRecord::Base
 
   rails_admin do
 
+    field :title do
+      label "Заголовок"
+    end
+
     field :content, :ck_editor do
       label "текст"
     end
@@ -53,7 +57,7 @@ class AboutPageBlock < ActiveRecord::Base
     field :alt do
       label "alt (короткий опис картинки)"
     end
-    field :title do
+    field :image_title do
       label "title (короткий заголовок картинки)"
     end
     field :translations, :globalize_tabs do
