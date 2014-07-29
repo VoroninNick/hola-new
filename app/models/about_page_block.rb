@@ -7,12 +7,12 @@ class AboutPageBlock < ActiveRecord::Base
 
   mount_uploader :image, AboutBlockImageUploader
 
-  translates :content, :alt, :title
+  translates :content, :alt, :title, :image_title
   accepts_nested_attributes_for :translations
   attr_accessible :translations_attributes, :translations
 
   class Translation
-    attr_accessible :locale, :content, :alt, :title
+    attr_accessible :locale, :content, :alt, :title, :image_title
 
 
 
@@ -21,7 +21,9 @@ class AboutPageBlock < ActiveRecord::Base
         html_attributes  readonly: "readonly"
       end
 
-      field :title
+      field :title do
+        label "Заголовок"
+      end
 
       field :content do
         show
@@ -33,7 +35,7 @@ class AboutPageBlock < ActiveRecord::Base
         label "alt (короткий опис картинки)"
       end
 
-      field :title do
+      field :image_title do
         show
         label "title (короткий заголовок картинки)"
       end
