@@ -42,7 +42,8 @@
         .large-brand-container
           .content
             .svg-container
-              img src=about_page_block.image.thumb.url title=about_page_block.image_title alt=about_page_block.alt
+              -if index > 0
+                img src=about_page_block.image.thumb.url title=about_page_block.image_title alt=about_page_block.alt
 
             .description-container
               .title.h3
