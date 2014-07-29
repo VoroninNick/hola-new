@@ -3,7 +3,7 @@
 class AboutPageBlock < ActiveRecord::Base
   belongs_to :pages_about_page
 
-  attr_accessible :content, :image, :alt, :title#, :description
+  attr_accessible :content, :image, :alt, :title, :image_title#, :description
 
   mount_uploader :image, AboutBlockImageUploader
 
@@ -20,6 +20,8 @@ class AboutPageBlock < ActiveRecord::Base
       field :locale do
         html_attributes  readonly: "readonly"
       end
+
+      field :title
 
       field :content do
         show
