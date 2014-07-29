@@ -73,7 +73,11 @@ module ApplicationHelper
   end
 
   def embedded_svg filename, options={}
-    file = File.read(Rails.root.to_s + filename.to_s)
+    embedded_svg_from_absolute_path(Rails.root.to_s + filename.to_s, options)
+  end
+
+  def embedded_svg_from_absolute_path(filename, options = {})
+    file = File.read(filename.to_s)
     doc = Nokogiri::HTML::DocumentFragment.parse file
     svg = doc.at_css 'svg'
     if options[:class].present?
