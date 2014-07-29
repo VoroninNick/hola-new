@@ -13,8 +13,7 @@ Rails.application.routes.draw do
 
   scope "(:locale)", locale: /#{I18n.available_locales.join('|')}/, defaults: {source_route: true} do
 
-
-    #get "/appartments/search/(*query)", to: 'appartments#search'
+             #get "/appartments/search/(*query)", to: 'appartments#search'
 
     #get 'test/gmap'
 
@@ -39,7 +38,7 @@ Rails.application.routes.draw do
     #
     # get 'test', to: 'test#index'
 
-    #root to: 'home#index'
+    root to: 'home#index', defaults: {page_id: Pages::HomePage.first.page.id}
   end
 
 
