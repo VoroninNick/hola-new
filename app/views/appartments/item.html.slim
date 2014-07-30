@@ -18,7 +18,7 @@
     #appartment-description
       #appartment-description-column.columns.large-6
         .h4.show-for-small
-          |Опис квартири
+          = t('pages.apartment-item.description.title')
         .description
           = raw @appartment.intro_text
 
@@ -28,7 +28,7 @@
       .large-brand-container
         .content
           .h2
-            |Фотографії квартири
+            = t('pages.apartment-item.gallery.title')
           - if @appartment_images.count > 8
             - for page_number in 1..((@appartment_images.count / 8).ceil()+1)
               input.appartment-images-page type="radio" name="appartment-images-page" id="appartment-images-page-#{page_number}" *( page_number == 1? {checked: 'checked'} : {} )

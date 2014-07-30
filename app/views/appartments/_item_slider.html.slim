@@ -21,7 +21,7 @@
                   .description
                     = @appartment.region.name
                   br
-                    = order_button(price_to_currency_string(@appartment.price), 'Замовити!', 'large', '#modal-order-form', true, 'modal-order-form-window-checkbox')
+                    = order_button(price_to_currency_string(@appartment.price), t('partials.appartment.order-button.title'), 'large', '#modal-order-form', true, 'modal-order-form-window-checkbox')
                 .brand-bottom-bg
 
   - if @appartment_slider.slides.count > 1

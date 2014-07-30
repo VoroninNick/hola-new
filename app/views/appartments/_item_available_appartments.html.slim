@@ -2,7 +2,7 @@
   .full-width-container
     .content
       .h2.columns.large-12
-        |Зараз вільні
+        = t('partials.available-apartments.title')
 
       #appartments-item-available-carousel.collection-carousel
         .reset
@@ -26,7 +26,7 @@
                     .price.h1.right
                       = price_to_currency_string(appartment.price)
                     br
-                    = order_button(price_to_currency_string(appartment.price), 'Замовити!', 'medium', '#modal-order-form', true, 'modal-order-form-window-checkbox')
+                    = order_button(price_to_currency_string(appartment.price), t('partials.appartment.order-button.title'), 'medium', '#modal-order-form', true, 'modal-order-form-window-checkbox')
 
 
       .clearfix
