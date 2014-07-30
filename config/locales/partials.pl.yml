@@ -1,41 +1,41 @@
-en:
+pl:
   partials:
     search-form:
-      title: "форма швидкого пошуку"
+      title: "tworzą szybkie wyszukiwanie"
       fields:
         category-field:
-          label: "хочу"
+          label: "chcieć"
           predefined-values:
-            all: "всі"
+            all: "wszystko"
         district-field:
-          label: "в"
+          label: "w"
           predefined-values:
-            all: "всі"
+            all: "wszystko"
         price-from:
-          label: "від"
+          label: "z"
         price-to:
-          label: "до"
+          label: "do"
       button:
-        title: "Знайти"
+        title: "odnaleźć"
 
 
     available-apartments:
-      title: 'зараз вільні'
+      title: 'jest dostępny'
 
     recommended-apartments:
-      title: "рекомендовані квартири"
+      title: "polecane apartamenty"
 
     map:
-      title: "наші квартири на мапі"
+      title: "nasze apartamenty na mapie"
       map-size-arrow:
-        collapse: "згорнути"
-        expand: "розгорнути"
+        collapse: "blisko"
+        expand: "rozszerzać"
 
     appartment:
       order-button:
-        title: "замовити!"
+        title: "zamówienie!"
 
     home-articles-and-video:
-      title: "в допомогу подорожувальникам"
+      title: "pomóc podorozhuvalnykam"
       show-more-button:
-        title: 'показати більше'
+        title: 'Pokaż więcej'
