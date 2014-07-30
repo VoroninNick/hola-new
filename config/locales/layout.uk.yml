@@ -1,0 +1,14 @@
+en:
+  layout:
+    header:
+      address: "Sakharova str., 17, Lviv, Ukraine"
+    footer:
+      copyright: "&copy;&nbsp;2009 — 2014 ТзОВ «Квартири Львову»<br>Всі права застережено"
+      developed-by:
+        made: "Зроблено"
+        design-studio: "дизайн студією Миколи Вороніна"
+        year: "в 2014р."
+        site-info: "Інформація про сайт"
+
+      contact:
+        address: "вул. Сахарова, 17, м. Львів, Україна"
