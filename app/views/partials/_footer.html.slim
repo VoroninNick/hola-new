@@ -45,7 +45,7 @@
       #copyright-and-developed-by.columns.large-4.small-12
         #copyright
           p
-            = raw t('layout.footer.copyright', Date.today.year.to_s)
+            = raw t('layout.footer.copyright', current_year: Date.today.year.to_s)
         = developed_by
 
   #footer-links

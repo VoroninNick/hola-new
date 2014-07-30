@@ -1,0 +1,41 @@
+en:
+  partials:
+    search-form:
+      title: "форма швидкого пошуку"
+      fields:
+        category-field:
+          label: "хочу"
+          predefined-values:
+            all: "всі"
+        district-field:
+          label: "в"
+          predefined-values:
+            all: "всі"
+        price-from:
+          label: "від"
+        price-to:
+          label: "до"
+      button:
+        title: "Знайти"
+
+
+    available-apartments:
+      title: 'зараз вільні'
+
+    recommended-apartments:
+      title: "рекомендовані квартири"
+
+    map:
+      title: "наші квартири на мапі"
+      map-size-arrow:
+        collapse: "згорнути"
+        expand: "розгорнути"
+
+    appartment:
+      order-button:
+        title: "замовити!"
+
+    home-articles-and-video:
+      title: "в допомогу подорожувальникам"
+      show-more-button:
+        title: 'показати більше'

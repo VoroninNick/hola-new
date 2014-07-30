@@ -6,7 +6,7 @@
     .row
       .columns.large-12
       .h1
-        |Контактуйте з нами
+        = t('pages.contact.contacts.title')
 
     .contacts
 
@@ -16,13 +16,13 @@
             .phone-svg.show-for-touch
               = embedded_svg_from_assets('static_images/all/phone.svg')
             .phone-number
-              |+38 (032) 240-33-50
+              = t('pages.contact.contacts.phones.phone-1.title')
 
           .phone
             .phone-svg.show-for-touch
               = embedded_svg_from_assets('static_images/all/phone.svg')
             .phone-number
-              |+38 (067) 765-33-50
+              = t('pages.contact.contacts.phones.phone-2.title')
 
         .address-and-email.left.columns.large-6
 
@@ -30,13 +30,13 @@
             .address-svg.show-for-touch
               = embedded_svg_from_assets('static_images/all/location.svg')
             .address-text
-              |вул. Сахарова, 17, м. Львів, Україна
+              = t('pages.contact.contacts.address')
 
           .email
             .email-svg.show-for-touch
               = embedded_svg_from_assets('static_images/all/location.svg')
             .email-text
-              |info@lviv-appartments.net
+              = t('pages.contact.contacts.email')
 
     .social-links
       a#facebook.social-link href="https://facebook.com"

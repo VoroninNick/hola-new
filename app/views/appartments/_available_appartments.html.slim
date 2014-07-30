@@ -3,7 +3,7 @@
     .large-brand-container
       .content
         .h2.columns.large-12
-          |Доступні квартири
+          = t('partials.available-apartments.title')
 
         - @available_appartments.each do |appartment|
           .item.columns.large-4
@@ -24,7 +24,7 @@
                 .price.h1.right
                   = price_to_currency_string(appartment.price)
                 br
-                = order_button(price_to_currency_string(appartment.price), 'Замовити!', 'medium', '#modal-order-form', true, 'modal-order-form-window-checkbox')
+                = order_button(price_to_currency_string(appartment.price), t('partials.appartment.order-button.title'), 'medium', '#modal-order-form', true, 'modal-order-form-window-checkbox')
         .clearfix
 
 

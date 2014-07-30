@@ -5,7 +5,7 @@
         #decorative-line
 
     .h2.columns.large-12
-      |В допомогу подорожувальникам
+      = t('partials.home-articles-and-video.title')
 
     #articles.columns.large-6
       - for i in 0..3
@@ -46,5 +46,5 @@
         .button-top
         .button-value
           a href="#more-publications-and-video"
-            |Показати більше
+            = t('partials.home-articles-and-video.show-more-button.title')
         .button-bottom

@@ -1,0 +1,12 @@
+en:
+  pages:
+    contact:
+      contacts:
+        title: "контактуйте з нами"
+        address: "Str. Sakharov, 17, Lviv, Ukraine"
+        email: "info@lviv-appartments.net"
+        phones:
+          phone-1:
+            title: "+38 (032) 240-33-50"
+          phone-2:
+            title: "+38 (067) 765-33-50"
