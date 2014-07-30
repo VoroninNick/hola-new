@@ -12,6 +12,6 @@ en:
             title: "+38 (067) 765-33-50"
     apartment-item:
       description:
-        title: "опис квартири"
+        title: "apartment description"
       gallery:
-        title: "фотографії квартири"
+        title: "apartment gallery"

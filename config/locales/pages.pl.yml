@@ -10,3 +10,9 @@ pl:
             title: "+38 (032) 240-33-50"
           phone-2:
             title: "+38 (067) 765-33-50"
+
+    apartment-item:
+      description:
+        title: "Opis apartamentu"
+      gallery:
+        title: "zdjęcia mieszkania"

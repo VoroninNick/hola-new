@@ -10,3 +10,10 @@ uk:
             title: "+38 (032) 240-33-50"
           phone-2:
             title: "+38 (067) 765-33-50"
+
+
+    apartment-item:
+      description:
+        title: "опис квартири"
+      gallery:
+        title: "фотографії квартири"
