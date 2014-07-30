@@ -38,7 +38,7 @@
 
 
 
-      div class="feature columns large-10 large-centered #{ (index % 2 == 1)? 'left-image' : 'right-image' }" (id: index > 0)
+      div class="feature columns large-10 large-centered #{ (index % 2 == 1)? 'left-image' : 'right-image' }" id=("intro" if index == 0)
         .large-brand-container
           .content
             .svg-container
