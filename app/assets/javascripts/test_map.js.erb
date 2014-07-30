@@ -38,7 +38,7 @@ $(document).on('ready', function() {
 
         var mapCenter = new google.maps.LatLng(first_marker.lat,first_marker.lng );
         map = new google.maps.Map($('.map-container').get(0), {
-            scrollwheel: false,
+            scrollwheel: true,
             zoom: 10,
             center: mapCenter,
             //mapTypeId: google.maps.MapTypeId.ROADMAP
@@ -77,7 +77,7 @@ $(document).on('ready', function() {
                 marker = new RichMarker({
                     map: map,
                     position: new google.maps.LatLng(m.lat, m.lng),
-                    draggable: true,
+                    draggable: false,
                     flat: true,
                     anchor: RichMarkerPosition.MIDDLE,
                     content: div
