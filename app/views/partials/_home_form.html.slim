@@ -2,48 +2,39 @@
   #home-form-row
     #home-form-column.columns
       .h2
-        |Форма швидкого пошуку
+        = t('partials.search-form.title')
       form
         #quantity-field.field.columns.large-6
-          label хочу
+          label
+            = t('partials.search-form.fields.category-field.label')
 
           .select
 
             select#quantity-select name="quantity"
-              option value="1"
-                |1-кімнатну
-              option value="2"
-                |2-кімнатну
-              option value="3"
-                |3-кімнатну
-              option value="4"
-                |4-кімнатну
-
-
+              - @appartment_categories.each_with_index do |c, index|
+                option value="#{index}"
+                  = c.name
 
 
         #region-field.field.columns.large-6
           label for="region-select"
-            |в
+            = t('partials.search-form.fields.district-field.label')
           .select
-            select id="region-select" name="region"
-              option value="1"
-                |Галицькому р-ні
-              option value="2"
-                |Сихівському р-ні
-              option value="3"
-                |Шевченківському р-ні
+            select id="region-select" name="region" data-count=@appartment_regions.count
+              - @appartment_regions.each_with_index do |region, index|
+                option value="#{index}"
+                  = region.name
 
 
         #price-from-field.field.columns.large-3
           label for="price-from-input"
-            |від
+            = t('partials.search-form.fields.price-from.label')
           .input-text
             input id="price-from-input" type="text" name="price-from" placeholder=price_to_currency_string(120)
 
         #price-to-field.field.columns.large-3
           label for="price-to-input"
-            |до
+            = t('partials.search-form.fields.price-to.label')
           .input-text
             input id="price-to-input" type="text" name="price-to" placeholder=price_to_currency_string(320)
 
@@ -52,7 +43,7 @@
             .large-brand-button
               .button-top
               .button-value
-                input type="submit" value="Знайти"
+                input type="submit" value=t('partials.search-form.button.title')
               .button-bottom
-
-
+  
+  

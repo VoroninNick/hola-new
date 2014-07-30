@@ -26,7 +26,7 @@
                           = slide.appartment.region.name
                         br
                           // order_button("#{trim(@appartment.price).to_s} $", 'Замовити!', 'large')
-                          = order_button( price_to_currency_string(slide.appartment.price), 'Замовити!', 'large', '#modal-order-form', true, 'modal-order-form-window-checkbox')
+                          = order_button( price_to_currency_string(slide.appartment.price), t('partials.appartment.order-button.title'), 'large', '#modal-order-form', true, 'modal-order-form-window-checkbox')
                       .brand-bottom-bg
 
             - else
@@ -47,7 +47,7 @@
                           = slide.description
                         br
                           // order_button("#{trim(@appartment.price).to_s} $", 'Замовити!', 'large')
-                          = order_button( price_to_currency_string(slide.price), 'Замовити!', 'large', '#modal-order-form', true, 'modal-order-form-window-checkbox')
+                          = order_button( price_to_currency_string(slide.price), t('partials.appartment.order-button.title'), 'large', '#modal-order-form', true, 'modal-order-form-window-checkbox')
                       .brand-bottom-bg
 
 
