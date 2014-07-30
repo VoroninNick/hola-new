@@ -39,3 +39,18 @@ pl:
       title: "pomóc podorozhuvalnykam"
       show-more-button:
         title: 'Pokaż więcej'
+
+    order-form:
+      title: "Formularz zamówienia"
+      fields:
+        name-field:
+          placeholder: "twoje imię*"
+        phone-field:
+          placeholder: "telefon kontaktowy*"
+        email-field:
+          placeholder: "e-mail*"
+        message:
+          placeholder: "twoja wiadomość*"
+
+      order-button:
+        title: 'zamówienie'

@@ -39,3 +39,18 @@ ru:
       title: "в помощь путешественникам"
       show-more-button:
         title: 'показать больше'
+
+    order-form:
+      title: "форма заказа"
+      fields:
+        name-field:
+          placeholder: "ваше имя*"
+        phone-field:
+          placeholder: "контакный телефон*"
+        email-field:
+          placeholder: "электронная почта*"
+        message:
+          placeholder: "текст Вашего сообщения*"
+
+      order-button:
+        title: 'заказать'

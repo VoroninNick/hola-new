@@ -39,3 +39,19 @@ uk:
       title: "в допомогу подорожувальникам"
       show-more-button:
         title: 'показати більше'
+
+
+    order-form:
+      title: "форма замовлення"
+      fields:
+        name-field:
+          placeholder: "ваше ім'я*"
+        phone-field:
+          placeholder: "телефон контактний*"
+        email-field:
+          placeholder: "електронна пошта*"
+        message:
+          placeholder: "текст Вашого повідомлення*"
+
+      order-button:
+        title: 'замовити'

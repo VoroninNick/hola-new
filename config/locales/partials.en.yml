@@ -39,3 +39,18 @@ en:
       title: "useful information for travelers"
       show-more-button:
         title: 'show more'
+
+    order-form:
+      title: "order form"
+      fields:
+        name-field:
+          placeholder: "name*"
+        phone-field:
+          placeholder: "phone*"
+        email-field:
+          placeholder: "email*"
+        message:
+          placeholder: "message*"
+
+      order-button:
+        title: 'order'

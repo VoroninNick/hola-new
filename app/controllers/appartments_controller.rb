@@ -32,7 +32,7 @@ class AppartmentsController < ApplicationController
 
       @appartment_slider = @appartment.slider
 
-      @appartment_markers = [{lat: @appartment.lat, lng: @appartment.lng, title: @appartment.name, icon_type: 'available'}]
+      @appartment_markers = [{lat: @appartment.lat, lng: @appartment.lng, title: @appartment.name, category: @appartment.appartment_category.name, price: ApplicationHelper.self_price_to_currency_string(@appartment.price), address: @appartment.address}]
 
     end
   end

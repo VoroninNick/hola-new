@@ -9,7 +9,7 @@
           .modal-header-row.row
             .modal-header-title-column.columns.large-10
               .h2
-                |Форма замовлення
+                = t('partials.order-form.title')
             label.modal-header-close-button-column for="modal-order-form-window-checkbox"
               = embedded_svg_from_assets('static_images/all/menu-close-button.svg')
 
@@ -60,34 +60,34 @@
                     .large-brand-button
                       .button-top
                       .button-value
-                        input#field-name-input placeholder="Ваше ім'я*" type="text"
+                        input#field-name-input placeholder=t('partials.order-form.fields.name-field.placeholder') type="text"
                       .button-bottom
 
 
-                #field-name.field.form-field.input-field.columns.large-12.required
+                #field-phone.field.form-field.input-field.columns.large-12.required
                   .input-wrapper
                     .large-brand-button
                       .button-top
                       .button-value
-                        input#field-name-input placeholder="Телефон контактний*" type="text"
+                        input#field-name-input placeholder=t('partials.order-form.fields.phone-field.placeholder') type="text"
                       .button-bottom
 
-                #field-name.field.form-field.input-field.columns.large-12.required
+                #field-email.field.form-field.input-field.columns.large-12.required
                   .input-wrapper
                     .large-brand-button
                       .button-top
                       .button-value
-                        input#field-name-input placeholder="Електронна пошта*" type="text"
+                        input#field-name-input placeholder=t('partials.order-form.fields.email-field.placeholder') type="text"
                       .button-bottom
 
               .columns.large-6
 
-                #field-name.field.form-field.textarea-field.columns.large-12.required
+                #field-message.field.form-field.textarea-field.columns.large-12.required
                   .textarea-wrapper
                     .large-brand-button
                       .button-top
                       .button-value
-                        textarea#field-name-input placeholder="Текст Вашого повідомлення*"
+                        textarea#field-name-input placeholder=t('partials.order-form.fields.message.placeholder')
                       .button-bottom
 
               /#submit-field.field.form-field.submit-field.columns.large-6.required
@@ -104,5 +104,5 @@
                   .large-brand-button
                     .button-top
                     .button-value
-                      input type="submit" value="Замовити"
+                      input type="submit" value=t('partials.order-form.order-button.title')
                     .button-bottom
