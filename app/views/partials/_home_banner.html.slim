@@ -1,58 +1,59 @@
-#home-slider.slider
-  - @home_slider.slides.each_with_index do |slide, index|
-    input.slide-flag type="radio" name="home-slide-flag" id="slide-#{(index+1).to_s}-flag" *(index == 0? {checked: 'checked'} : {})
-
-  .slides
-
-
+- if !@home_slider.nil? && @home_slider.respond_to?(:slides) && ( ((@home_slider.slides.respond_to?(:count))? @home_slider.slides.count > 0 : true )  )
+  #home-slider.slider
     - @home_slider.slides.each_with_index do |slide, index|
-        div class="slide slide-#{(index+1).to_s}"
-          - if slide.render_from_appartment
-            .slide-image
-              // link_to( image_tag(slide.image.appartment_slide.url), '#' )
-              = link_to( image_tag(slide.image.home_slide.url), slide.appartment.page.path )
-            .slide-description-wrapper
-              .reset
-                .row
-                  .slide-description.small-brand-container.bottom-side.right.pull-1
-                    .content
-                      .title
-                        a href=slide.appartment.page.path
-                          // @appartment.appartment_category.name
-                          = slide.appartment.appartment_category.name
-                      .description
-                        // @appartment.region.name
-                        = slide.appartment.region.name
-                      br
-                        // order_button("#{trim(@appartment.price).to_s} $", 'Замовити!', 'large')
-                        = order_button( price_to_currency_string(slide.appartment.price), 'Замовити!', 'large', '#modal-order-form', true, 'modal-order-form-window-checkbox')
-                    .brand-bottom-bg
+      input.slide-flag type="radio" name="home-slide-flag" id="slide-#{(index+1).to_s}-flag" *(index == 0? {checked: 'checked'} : {})
 
-          - else
-            .slide-image
-              // link_to( image_tag(slide.image.appartment_slide.url), '#' )
-              = link_to( image_tag(slide.image.home_slide.url), '#' )
-            .slide-description-wrapper
-              .reset
-                .row
-                  .slide-description.small-brand-container.bottom-side.right.pull-1
-                    .content
-                      .title
-                        a href=((!slide.link.nil? && slide.link.length>0)? slide.link : false)
-                          // @appartment.appartment_category.name
-                          = slide.title
-                      .description
-                        // @appartment.region.name
-                        = slide.description
-                      br
-                        // order_button("#{trim(@appartment.price).to_s} $", 'Замовити!', 'large')
-                        = order_button( price_to_currency_string(slide.price), 'Замовити!', 'large', '#modal-order-form', true, 'modal-order-form-window-checkbox')
-                    .brand-bottom-bg
+    .slides
 
 
-  - if @home_slider.slides.count > 1
-    .bullets
-      ul
-        - @home_slider.slides.each_with_index do |slide, index|
-          li class="slide-#{(index + 1).to_s}"
-            label for="slide-#{(index+1).to_s}-flag"
+      - @home_slider.slides.each_with_index do |slide, index|
+          div class="slide slide-#{(index+1).to_s}"
+            - if slide.render_from_appartment
+              .slide-image
+                // link_to( image_tag(slide.image.appartment_slide.url), '#' )
+                = link_to( image_tag(slide.image.home_slide.url), slide.appartment.page.path )
+              .slide-description-wrapper
+                .reset
+                  .row
+                    .slide-description.small-brand-container.bottom-side.right.pull-1
+                      .content
+                        .title
+                          a href=slide.appartment.page.path
+                            // @appartment.appartment_category.name
+                            = slide.appartment.appartment_category.name
+                        .description
+                          // @appartment.region.name
+                          = slide.appartment.region.name
+                        br
+                          // order_button("#{trim(@appartment.price).to_s} $", 'Замовити!', 'large')
+                          = order_button( price_to_currency_string(slide.appartment.price), 'Замовити!', 'large', '#modal-order-form', true, 'modal-order-form-window-checkbox')
+                      .brand-bottom-bg
+
+            - else
+              .slide-image
+                // link_to( image_tag(slide.image.appartment_slide.url), '#' )
+                = link_to( image_tag(slide.image.home_slide.url), '#' )
+              .slide-description-wrapper
+                .reset
+                  .row
+                    .slide-description.small-brand-container.bottom-side.right.pull-1
+                      .content
+                        .title
+                          a href=((!slide.link.nil? && slide.link.length>0)? slide.link : false)
+                            // @appartment.appartment_category.name
+                            = slide.title
+                        .description
+                          // @appartment.region.name
+                          = slide.description
+                        br
+                          // order_button("#{trim(@appartment.price).to_s} $", 'Замовити!', 'large')
+                          = order_button( price_to_currency_string(slide.price), 'Замовити!', 'large', '#modal-order-form', true, 'modal-order-form-window-checkbox')
+                      .brand-bottom-bg
+
+
+    - if @home_slider.slides.count > 1
+      .bullets
+        ul
+          - @home_slider.slides.each_with_index do |slide, index|
+            li class="slide-#{(index + 1).to_s}"
+              label for="slide-#{(index+1).to_s}-flag"

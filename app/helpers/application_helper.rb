@@ -182,6 +182,10 @@ module ApplicationHelper
     Menu.find(4).menu_items
   end
 
+  def get_footer_links
+    Menu.find(5).menu_items
+  end
+
   def is_menu_item_active?(menu_item)
     p = page
     if !p.nil?

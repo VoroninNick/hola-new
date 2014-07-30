@@ -4,10 +4,10 @@
     = link_to embedded_svg_from_assets('vs/vs-logo.svg'), 'http://voroninstudio.eu'
   .description
     p
-      |Зроблено&nbsp;
+      = raw "#{ t('layout.footer.developed-by.made')}&nbsp;"
       a href="http://voroninstudio.eu/" rel="nofollow"
-        |дизайн студією Миколи Вороніна&nbsp;
-      |в 2014р.
+        = raw "#{ t('layout.footer.developed-by.design-studio')}&nbsp;"
+      = raw t('layout.footer.developed-by.year')
     p
       a href="http://voroninstudio.eu/" rel="nofollow"
-        |Інформація про сайт
+        = raw t('layout.footer.developed-by.site-info')
