@@ -3,12 +3,12 @@ pl:
     header:
       address: "ul. Sacharowa, 17, Lwów, Ukraina"
     footer:
-      copyright: "&copy;&nbsp;2009 - %{current_year} Apartamenty Ltd. &laquo;we Lwowie&raquo;<br>Wszystkie prawa zastrzeżone"
+      copyright: "&copy;&nbsp;2009 - %{current_year} Ltd. &laquo;apartamenty we Lwowie&raquo;<br>Wszystkie prawa zastrzeżone"
       developed-by:
-        made: "Зроблено"
-        design-studio: "дизайн студією Миколи Вороніна"
-        year: "в 2014р."
-        site-info: "Інформація про сайт"
+        made: "Ręcznie w"
+        design-studio: "Woronin Design Studio"
+        year: "2014."
+        site-info: "O tej stronie"
 
       contact:
         address: "ul. Sacharowa, 17, Lwów, Ukraina"

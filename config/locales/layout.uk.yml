@@ -1,7 +1,7 @@
 uk:
   layout:
     header:
-      address: "Sakharova str., 17, Lviv, Ukraine"
+      address: "вул. Сахарова, 17, м. Львів, Україна"
     footer:
       copyright: "&copy;&nbsp;2009 — %{current_year} ТзОВ «Квартири Львову»<br>Всі права застережено"
       developed-by:
