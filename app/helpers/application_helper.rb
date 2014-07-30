@@ -149,7 +149,7 @@ module ApplicationHelper
 
   def page
     if params[:controller].index('devise').nil? && (params[:controller] != 'error' && params[:action] != 'not_found')
-      if params[:source_route] != true && params[:page_id]
+      if params[:page_id]
         Page.find(params[:page_id])
       end
     end
