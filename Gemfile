@@ -56,7 +56,7 @@ gem "selectize-rails"
 gem "rails_admin_map_field", :github => "beyondthestory/rails_admin_map_field"
 
 gem 'globalize'
-gem 'rails_admin_globalize_field', github: 'VoroninNick/rails_admin_globalize_field', branch: 'pasha'
+gem 'rails_admin_globalize_field', github: 'VoroninNick/rails_admin_globalize_field', branch: 'allow-current-locale'
 
 gem 'carrierwave'
 

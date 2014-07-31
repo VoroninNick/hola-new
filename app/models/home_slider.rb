@@ -12,6 +12,8 @@ class HomeSlider < ActiveRecord::Base
   attr_accessible :slides_attributes
 
 
+
+
   rails_admin do
     edit do
       field :name

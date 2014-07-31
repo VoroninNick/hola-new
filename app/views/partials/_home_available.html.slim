@@ -20,7 +20,10 @@
                       a href=appartment.page.path
                         = appartment.appartment_category.name
                     .region.left
-                      = appartment.region.name
+                      - if !appartment.region.nil?
+                        = appartment.region.name
+                      - else
+                        = 'undefined region'
                     .address.left
                       = appartment.address
                     .price.h1.right

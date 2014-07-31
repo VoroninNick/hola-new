@@ -23,8 +23,8 @@ class Appartment < ActiveRecord::Base
   belongs_to :appartment_category
   attr_accessible :appartment_category, :appartment_category_id
 
-  belongs_to :region
-  attr_accessible :region, :region_id
+  has_and_belongs_to_many :regions, join_table: 'appartments_and_regions'
+  attr_accessible :regions
 
   #has_many :appartment_and_appartment_icon_links
   #has_many :appartment_icons, through: :appartment_and_appartment_icon_links
@@ -45,14 +45,35 @@ class Appartment < ActiveRecord::Base
   accepts_nested_attributes_for :translations
   attr_accessible :translations_attributes, :translations
 
+  def region
+    if self.regions.count > 0
+      regions.order('priority desc').first
+    else
+      nil
+    end
+  end
+
+  before_save :save_original_locale
+
+  def save_original_locale
+    self.class.translated_attribute_names.each do |attr|
+      self[attr] = self.translations_by_locale[I18n.locale][attr]
+    end
+  end
+
   class Translation
     attr_accessible :locale, :intro_text, :description, :address
 
 
 
     rails_admin do
+      include_all_fields
+
       field :locale do
-        html_attributes  readonly: "readonly"
+        hide
+      end
+      field :globalized_model do
+        hide
       end
 
       field :address do
@@ -123,6 +144,79 @@ class Appartment < ActiveRecord::Base
 
 
   rails_admin do
+    field :name do
+      label "Ім'я квартири"
+      help "використовуэться лише для url. якщо заповтите url вручну, може пропустити це поле"
+    end
+
+    field :publish do
+      label "Публікувати?"
+    end
+
+    field :available do
+      label "доступна квартира?"
+    end
+
+    field :recommended do
+      label "рекомендована?"
+    end
+
+    field :appartment_category do
+      label "категорія квартири"
+    end
+
+    field :regions do
+      label "райони квартири"
+    end
+
+    field :lat do
+      label "координати квартири: широта"
+      help "наприклад: 49.83445\nhttps://www.google.com/maps/place/Uhors'ka+St,+7%D0%90,+L'viv,+Lviv+Oblast,+Ukraine/@49.8123145,24.041031,17z/data=!3m1!4b1!4m2!3m1!1s0x473ae7fb1ae5a5a1:0xfb49271c412ed40d"
+    end
+
+    field :lng do
+      label "координати квартири: довгота"
+    end
+
+    field :address do
+      hide
+      label "адреса (англійська мова)"
+    end
+
+    field :price do
+      label "ціна квартири за 1 день"
+    end
+
+    field :pages do
+      label "інформація про сторінки"
+    end
+
+    field :slider do
+      label "слайдер для квартири"
+    end
+
+    field :appartment_icons do
+      label "Іконки"
+    end
+
+    field :appartment_images do
+      label "Картинки"
+    end
+
+    field :main_image do
+      label "Головна картинка(аватарка)"
+    end
+
+
+    list do
+      field :id
+      field :name
+      field :appartment_category
+      field :publish
+      field :available
+      field :recommended
+    end
+
     edit do
       # field :lat, :map do
       #   longitude_field :lng
@@ -131,75 +225,33 @@ class Appartment < ActiveRecord::Base
       #   default_longitude 151.0
       # end
 
-      field :name do
-        label "Ім'я квартири (використовуэться лише для url. якщо заповтите url вручну, може пропустити це поле)"
-      end
+      field :name
 
-      field :publish do
-        label "Публікувати?"
-      end
+      field :publish
 
-      field :available do
-        label "доступна квартира?"
-      end
+      field :available
 
-      field :recommended do
-        label "рекомендована?"
-      end
+      field :recommended
 
-      field :appartment_category do
-        label "категорія квартири"
-      end
+      field :appartment_category
 
-      field :region do
-        label "район квартири"
-      end
+      field :regions
 
-      field :lat do
-        label "координати квартири: широта"
-        help "наприклад: 49.83445\nhttps://www.google.com/maps/place/Uhors'ka+St,+7%D0%90,+L'viv,+Lviv+Oblast,+Ukraine/@49.8123145,24.041031,17z/data=!3m1!4b1!4m2!3m1!1s0x473ae7fb1ae5a5a1:0xfb49271c412ed40d"
-      end
-      field :lng do
-        label "координати квартири: довгота"
-      end
+      field :lat
 
-      field :address do
+      field :lng
 
-        label "адреса (англійська мова)"
-      end
+      field :price
 
-      field :price do
-        label "цына квартири за 1 день"
-      end
+      field :pages
 
-      field :pages do
-        label "інформація про сторінки"
-      end
+      field :slider
 
-      field :slider do
-        label "слайдер для квартири"
-      end
+      field :appartment_icons
 
-      field :appartment_icons do
-        label "Іконки"
-      end
+      field :appartment_images
 
-      field :appartment_images do
-        label "Картинки"
-      end
-
-      field :main_image do
-        label "Головна картинка(аватарка)"
-      end
-
-      field :intro_text, :ck_editor do
-        show
-        label "Текст про квартиру (англійська мова)\n(виводиться зразу під слайдером) "
-      end
-      field :description, :ck_editor do
-        show
-        label "Текст про квартиру (англійська мова)\n(виводиться зразу під галереєю)"
-      end
+      field :main_image
 
       field :translations, :globalize_tabs do
         label "Переклад"

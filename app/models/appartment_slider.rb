@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 class AppartmentSlider < ActiveRecord::Base
   #self.table_name = 'sliders'
 
@@ -14,7 +16,9 @@ class AppartmentSlider < ActiveRecord::Base
 
   rails_admin do
     edit do
-      field :name
+      field :name do
+        label "внутрішній ідентифікатор"
+      end
       field :slides
       field :sliderable
     end

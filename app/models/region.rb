@@ -2,20 +2,34 @@
 
 class Region < ActiveRecord::Base
   attr_accessible :name, :description
-  has_many :appartments
+  has_and_belongs_to_many :appartments, join_table: 'appartments_and_regions'
   attr_accessible :appartments
 
   translates :name, :description
   accepts_nested_attributes_for :translations
   attr_accessible :translations_attributes, :translations
+  attr_accessible :priority
+
+  before_save :save_original_locale
+
+  def save_original_locale
+    self.class.translated_attribute_names.each do |attr|
+      self[attr] = self.translations_by_locale[I18n.locale][attr]
+    end
+  end
 
   class Translation
     attr_accessible :name, :description, :locale
 
     rails_admin do
       edit do
+        include_all_fields
+
         field :locale do
-          html_attributes  readonly: "readonly"
+          hide
+        end
+        field :globalized_model do
+          hide
         end
 
         field :name do
@@ -23,7 +37,7 @@ class Region < ActiveRecord::Base
         end
 
         field :description do
-          label 'Кввартири в цьому районі'
+          label 'Опис'
         end
 
 
@@ -35,13 +49,15 @@ class Region < ActiveRecord::Base
   rails_admin do
     navigation_label 'Район'
     edit do
-      field :name do
-        label "Назва"
+      field :translations, :globalize_tabs
+      field :priority do
+        label "Приорітет"
+        help "0 - для звичайних районів, 1 - для логічних. Наприклад: Галицький = 0; Центр = 1"
       end
       field :appartments do
         label 'Кввартири в цьому районі'
       end
-      field :translations, :globalize_tabs
+
     end
   end
 end
