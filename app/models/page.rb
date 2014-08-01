@@ -84,23 +84,22 @@ class Page < ActiveRecord::Base
 
     end
 
-    configure :controller do
+    configure :controller, :hidden do
+    end
+
+    configure :action, :hidden do
       hide
     end
 
-    configure :action do
+    configure :layout, :hidden do
       hide
     end
 
-    configure :layout do
+    configure :appartments, :hidden do
       hide
     end
 
-    configure :appartments do
-      hide
-    end
-
-    configure :custom_page do
+    configure :custom_page, :hidden do
       hide
     end
 
