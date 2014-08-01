@@ -59,7 +59,7 @@ RailsAdmin.config do |config|
 
   config.included_models = [ SitemapRecord, Pages::HomePage, HomeSlider, AppartmentSlider, Menu, Pages::AboutPage ]
 
-  [Appartment, Region, AboutPageBlock, Page].each do |model|
+  [Appartment, Region, AboutPageBlock, Page, AppartmentIcon, AppartmentImage].each do |model|
     config.included_models += [model, model::Translation]
   end
 
@@ -97,7 +97,7 @@ RailsAdmin.config do |config|
   #   end
   # end
 
-  [Image, AppartmentCategory, AppartmentIcon, AppartmentImage, Metadata, HomeSlide, AppartmentSlide].each do |model|
+  [Image, AppartmentCategory, Metadata, HomeSlide, AppartmentSlide].each do |model|
     config.model model do
       edit do
         include_all_fields
