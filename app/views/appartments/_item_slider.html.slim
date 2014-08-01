@@ -18,8 +18,9 @@
                   .title
                     a
                       = @appartment.appartment_category.name
-                  .description
-                    = @appartment.region.name
+                  - if @appartment.region && @appartment.region.name.length > 0
+                    .description
+                      = @appartment.region.name
                   br
                     = order_button(price_to_currency_string(@appartment.price), t('partials.appartment.order-button.title'), 'large', '#modal-order-form', true, 'modal-order-form-window-checkbox')
                 .brand-bottom-bg
