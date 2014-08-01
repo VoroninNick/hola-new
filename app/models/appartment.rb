@@ -69,9 +69,7 @@ class Appartment < ActiveRecord::Base
     rails_admin do
       include_all_fields
 
-      field :locale do
-        hide
-      end
+      field :locale, :hidden
       field :globalized_model do
         hide
       end
@@ -144,66 +142,66 @@ class Appartment < ActiveRecord::Base
 
 
   rails_admin do
-    field :name do
+    configure :name do
       label "Ім'я квартири"
       help "використовуэться лише для url. якщо заповтите url вручну, може пропустити це поле"
     end
 
-    field :publish do
+    configure :publish do
       label "Публікувати?"
     end
 
-    field :available do
+    configure :available do
       label "доступна квартира?"
     end
 
-    field :recommended do
+    configure :recommended do
       label "рекомендована?"
     end
 
-    field :appartment_category do
+    configure :appartment_category do
       label "категорія квартири"
     end
 
-    field :regions do
+    configure :regions do
       label "райони квартири"
     end
 
-    field :lat do
+    configure :lat do
       label "координати квартири: широта"
       help "наприклад: 49.83445\nhttps://www.google.com/maps/place/Uhors'ka+St,+7%D0%90,+L'viv,+Lviv+Oblast,+Ukraine/@49.8123145,24.041031,17z/data=!3m1!4b1!4m2!3m1!1s0x473ae7fb1ae5a5a1:0xfb49271c412ed40d"
     end
 
-    field :lng do
+    configure :lng do
       label "координати квартири: довгота"
     end
 
-    field :address do
+    configure :address do
       hide
       label "адреса (англійська мова)"
     end
 
-    field :price do
+    configure :price do
       label "ціна квартири за 1 день"
     end
 
-    field :pages do
+    configure :pages do
       label "інформація про сторінки"
     end
 
-    field :slider do
+    configure :slider do
       label "слайдер для квартири"
     end
 
-    field :appartment_icons do
+    configure :appartment_icons do
       label "Іконки"
     end
 
-    field :appartment_images do
+    configure :appartment_images do
       label "Картинки"
     end
 
-    field :main_image do
+    configure :main_image do
       label "Головна картинка(аватарка)"
     end
 
