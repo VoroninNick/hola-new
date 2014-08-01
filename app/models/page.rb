@@ -80,32 +80,53 @@ class Page < ActiveRecord::Base
 
   rails_admin do
 
+    configure :name do
+
+    end
+
+    configure :controller do
+      hide
+    end
+
+    configure :action do
+      hide
+    end
+
+    configure :layout do
+      hide
+    end
+
+    configure :appartments do
+      hide
+    end
+
+    configure :custom_page do
+      hide
+    end
+
+    configure :metadata do
+
+    end
+
+    configure :sitemap_record do
+
+    end
+
     edit do
-      include_all_fields
       field :name do
         #hide
       end
 
-      field :translations, :globalize_tabs
-      field :controller do
-        hide
-      end
-      field :action do
-        hide
-      end
-      field :layout do
-        hide
-      end
-      field :appartments do
-        hide
-      end
-
-      field :custom_page do
+      field :translations, :globalize_tabs do
 
       end
-      field :metadata do
+      field :controller
+      field :action
+      field :layout
+      field :appartments
 
-      end
+      field :custom_page
+      field :metadata
       field :sitemap_record
 
 
@@ -113,29 +134,22 @@ class Page < ActiveRecord::Base
 
     nested do
 
-      field :name do
-        hide
-      end
+      field :name
 
-      field :path do
-
-      end
-      field :data do
-        hide
-      end
-      field :controller do
-        hide
-      end
-      field :action do
-        hide
-      end
-      field :layout do
-        hide
-      end
+      field :path
+      field :data
+      field :controller
+      field :action
+      field :layout
       field :metadata
       field :sitemap_record
       field :translations, :globalize_tabs
+    end
 
+    list do
+      field :name
+      field :path
+      field :custom_page
     end
   end
 
