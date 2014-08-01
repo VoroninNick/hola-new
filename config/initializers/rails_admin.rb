@@ -59,12 +59,12 @@ RailsAdmin.config do |config|
 
   config.included_models = [ SitemapRecord, Pages::HomePage, HomeSlider, AppartmentSlider, Menu, Pages::AboutPage ]
 
-  [Appartment, Region, AboutPageBlock].each do |model|
+  [Appartment, Region, AboutPageBlock, Page].each do |model|
     config.included_models += [model, model::Translation]
   end
 
   # add translatable pages
-  [Page, Article, Dictionary, MenuItem].each do |model|
+  [Article, Dictionary, MenuItem].each do |model|
     config.included_models += [model, model::Translation]
 
     config.model model::Translation do

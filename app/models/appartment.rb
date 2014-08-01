@@ -242,10 +242,6 @@ class Appartment < ActiveRecord::Base
 
       field :price
 
-      field :pages
-
-      field :slider
-
       field :appartment_icons
 
       field :appartment_images
@@ -255,6 +251,10 @@ class Appartment < ActiveRecord::Base
       field :translations, :globalize_tabs do
         label "Переклад"
       end
+
+      field :slider
+
+      field :pages
     end
   end
 end
