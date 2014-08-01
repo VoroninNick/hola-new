@@ -10,11 +10,13 @@ class Region < ActiveRecord::Base
   attr_accessible :translations_attributes, :translations
   attr_accessible :priority
 
-  before_save :save_original_locale
+  #before_save :save_original_locale
 
   def save_original_locale
-    self.class.translated_attribute_names.each do |attr|
-      self[attr] = self.translations_by_locale[I18n.locale][attr]
+    if !new_record?
+      self.class.translated_attribute_names.each do |attr|
+        self[attr] = self.translations_by_locale[I18n.locale][attr]
+      end
     end
   end
 
@@ -48,8 +50,39 @@ class Region < ActiveRecord::Base
 
   rails_admin do
     navigation_label 'Район'
+
+    # new do
+    #   field :name do
+    #     show
+    #   end
+    #   field :description do
+    #     show
+    #   end
+    #   field :translations, :globalize_tabs do
+    #     show
+    #   end
+    #   field :priority do
+    #     label "Приорітет"
+    #     help "0 - для звичайних районів, 1 - для логічних. Наприклад: Галицький = 0; Центр = 1"
+    #   end
+    #   field :appartments do
+    #     label 'Кввартири в цьому районі'
+    #   end
+    # end
+
     edit do
-      field :translations, :globalize_tabs
+      field :name do
+        show
+        html_attributes({ style: "display: none" })
+      end
+
+      field :description do
+        hide
+      end
+
+      field :translations, :globalize_tabs do
+        show
+      end
       field :priority do
         label "Приорітет"
         help "0 - для звичайних районів, 1 - для логічних. Наприклад: Галицький = 0; Центр = 1"
@@ -59,5 +92,7 @@ class Region < ActiveRecord::Base
       end
 
     end
+
+
   end
 end

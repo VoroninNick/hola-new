@@ -47,6 +47,27 @@ class Page < ActiveRecord::Base
 
   class Translation
     attr_accessible :locale, :path, :data
+
+    rails_admin do
+      edit do
+        include_all_fields
+
+        field :locale, :hidden
+        field :globalized_model do
+          hide
+        end
+
+        field :path do
+          show
+          label "path"
+        end
+
+        field :data do
+          label "data"
+          hide
+        end
+      end
+    end
   end
 
 
@@ -60,8 +81,7 @@ class Page < ActiveRecord::Base
         #hide
       end
 
-      field :path
-      field :data
+      field :translations, :globalize_tabs
       field :controller
       field :action
       field :layout
@@ -74,7 +94,7 @@ class Page < ActiveRecord::Base
       end
       field :metadata
       field :sitemap_record
-      field :translations, :globalize_tabs
+
 
     end
 
