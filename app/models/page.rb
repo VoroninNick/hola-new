@@ -112,21 +112,11 @@ class Page < ActiveRecord::Base
     end
 
     edit do
-      field :name do
-        #hide
-      end
+      field :name
 
       field :translations, :globalize_tabs do
 
       end
-      field :controller
-      field :action
-      field :layout
-      field :appartments
-
-      field :custom_page
-      field :metadata
-      field :sitemap_record
 
 
     end
@@ -134,14 +124,6 @@ class Page < ActiveRecord::Base
     nested do
 
       field :name
-
-      field :path
-      field :data
-      field :controller
-      field :action
-      field :layout
-      field :metadata
-      field :sitemap_record
       field :translations, :globalize_tabs
     end
 
