@@ -67,6 +67,10 @@ class Page < ActiveRecord::Base
           hide
         end
       end
+
+      nested do
+        field :path
+      end
     end
   end
 
