@@ -9,18 +9,29 @@ class AppartmentIcon < ActiveRecord::Base
 
   mount_uploader :image, AppartmentIconUploader
 
-  translates :name, :tooltip
+  translates :tooltip
   accepts_nested_attributes_for :translations
   attr_accessible :translations_attributes, :translations
 
   class Translation
-    attr_accessible :locale, :name, :tooltip
+    attr_accessible :locale, :tooltip
+
+    rails_admin do
+      edit do
+        field :tooltip
+      end
+    end
   end
 
   rails_admin do
     edit do
-      include_all_fields
-      # field :translations, :globalize_tabs
+
+      field :name
+      field :image
+
+      field :translations, :globalize_tabs
+
+      field :appartments
     end
   end
 end

@@ -65,7 +65,7 @@ class Appartment < ActiveRecord::Base
 
   def validate_appartment_data
     if publish
-      validates_presence_of :lat, :lng, :price, :address, :intro_text, :description
+      validates_presence_of :lat, :lng, :price, :address, :intro_text, :description, :appartment_category, :regions, :main_image
 
     end
   end
