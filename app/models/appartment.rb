@@ -61,9 +61,9 @@ class Appartment < ActiveRecord::Base
     end
   end
 
-  before_save :validate
+  validate :validate_appartment_data
 
-  def validate
+  def validate_appartment_data
     if publish
       validates_presence_of :lat, :lng, :price, :address, :intro_text, :description
 
