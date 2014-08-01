@@ -27,9 +27,7 @@ class Region < ActiveRecord::Base
       edit do
         include_all_fields
 
-        field :locale do
-          hide
-        end
+        field :locale, :hidden
         field :globalized_model do
           hide
         end
@@ -71,14 +69,6 @@ class Region < ActiveRecord::Base
     # end
 
     edit do
-      field :name do
-        show
-        html_attributes({ style: "display: none" })
-      end
-
-      field :description do
-        hide
-      end
 
       field :translations, :globalize_tabs do
         show

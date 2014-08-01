@@ -53,7 +53,7 @@ class Appartment < ActiveRecord::Base
     end
   end
 
-  before_save :save_original_locale
+  #before_save :save_original_locale
 
   def save_original_locale
     self.class.translated_attribute_names.each do |attr|
