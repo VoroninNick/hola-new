@@ -27,12 +27,10 @@ class AppartmentSlide < ActiveRecord::Base
     attr_accessible :title, :description, :locale
 
     rails_admin do
-      include_all_fields
-      field :locale do
-        hide
-      end
-      field :globalized_model do
-        hide
+      edit do
+        field :locale, :hidden
+        #field :
+        field :globalized_model
       end
     end
   end
@@ -47,9 +45,7 @@ class AppartmentSlide < ActiveRecord::Base
       end
       field :image
 
-      field :translations, :globalize_tabs do
-        hide
-      end
+      #field :translations, :globalize_tabs
 
       #field :tag_list do
       #  partial 'tag_list_with_suggestions'

@@ -21,9 +21,11 @@
                           a href=slide.appartment.page.path
                             // @appartment.appartment_category.name
                             = slide.appartment.appartment_category.name
-                        .description
-                          // @appartment.region.name
-                          = slide.appartment.region.name
+                        - if !slide.appartment.region.nil? && slide.appartment.region.name.length > 0
+                          .description
+
+                              // @appartment.region.name
+                              = slide.appartment.region.name
                         br
                           // order_button("#{trim(@appartment.price).to_s} $", 'Замовити!', 'large')
                           = order_button( price_to_currency_string(slide.appartment.price), t('partials.appartment.order-button.title'), 'large', '#modal-order-form', true, 'modal-order-form-window-checkbox')
