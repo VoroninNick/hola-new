@@ -121,9 +121,10 @@ class Appartment < ActiveRecord::Base
 
 
       if !p.translations_by_locale.keys.include?(locale) || ( p.path.nil? || p.path.length == 0 )
-        translation = Page.translation_class.create!(locale: locale, page_id: p.id)
+        translation = p.translations.new(locale: locale)
         translation.path = "/#{locale.to_s}/appartments/#{self.name.parameterize}"
-        translation.save
+        #translation.save
+        p.translations.push(translation)
         p.save
       end
 
