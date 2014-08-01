@@ -61,6 +61,15 @@ class Appartment < ActiveRecord::Base
     end
   end
 
+  before_save :validate
+
+  def validate
+    if self.publish
+      validates_presence_of :lat, :lng, :price, :address, :intro_text, :description
+
+    end
+  end
+
   class Translation
     attr_accessible :locale, :intro_text, :description, :address
 
