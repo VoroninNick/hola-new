@@ -12,12 +12,7 @@ class HomeController < ApplicationController
     @appartment_categories = AppartmentCategory.all
     @appartment_regions = Region.all
 
-    @appartment_markers = []
-
-    Appartment.available.each do |appartment|
-      m = {lat: appartment.lat, lng: appartment.lng, category: appartment.appartment_category.name, price: ApplicationHelper.self_price_to_currency_string(appartment.price), address: appartment.address}
-      @appartment_markers.push m
-    end
+    @appartment_markers = Appartment.get_markers(@available_appartments)
 
     render layout: 'application'
 

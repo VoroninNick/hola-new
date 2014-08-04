@@ -149,6 +149,24 @@ class Appartment < ActiveRecord::Base
     p.save
   end
 
+  def self.get_markers(apartments)
+    markers = []
+    if apartments.nil?
+      []
+    elsif apartments.respond_to?(:each)
+      apartments.each do |apartment|
+        if apartment.is_a?(Appartment)
+          m = {lat: apartment.lat, lng: apartment.lng, category: apartment.appartment_category.name, price: ApplicationHelper.self_price_to_currency_string(apartment.price), address: apartment.address, apartment_url: apartment.page.path}
+          markers.push m
+        end
+      end
+    elsif apartments.is_a?(Appartment)
+      apartment = apartments
+      m = {lat: apartment.lat, lng: apartment.lng, category: apartment.appartment_category.name, price: ApplicationHelper.self_price_to_currency_string(apartment.price), address: apartment.address, apartment_url: apartment.page.path }
+      markers.push m
+    end
+  end
+
 
 
   rails_admin do

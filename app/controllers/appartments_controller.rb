@@ -2,16 +2,13 @@ class AppartmentsController < ApplicationController
   def list
     @available_appartments = Appartment.available
 
-    @appartment_markers = []
+
 
     @appartment_categories = AppartmentCategory.all
     @appartment_regions = Region.all
 
-    @available_appartments.each do |appartment|
-      m = {lat: appartment.lat, lng: appartment.lng, category: appartment.appartment_category.name, price: ApplicationHelper.self_price_to_currency_string(appartment.price), address: appartment.address}
-      @appartment_markers.push m
-    end
 
+    @appartment_markers = Appartment.get_markers(@available_appartments)
 
   end
 
@@ -32,7 +29,7 @@ class AppartmentsController < ApplicationController
 
       @appartment_slider = @appartment.slider
 
-      @appartment_markers = [{lat: @appartment.lat, lng: @appartment.lng, title: @appartment.name, category: @appartment.appartment_category.name, price: ApplicationHelper.self_price_to_currency_string(@appartment.price), address: @appartment.address}]
+      @appartment_markers = Appartment.get_markers(@appartment)
 
     end
   end
