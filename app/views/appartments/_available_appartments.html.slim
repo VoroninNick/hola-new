@@ -17,7 +17,7 @@
                 .item-title.h4
                   a href=appartment.page.path
                     = appartment.appartment_category.name
-                - if region && region.name.length > 0
+                - if appartment.region && appartment.region.name.length > 0
                   .region.left
                     = appartment.region.name
                 .address.left
