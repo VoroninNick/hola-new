@@ -7,8 +7,12 @@ class Page < ActiveRecord::Base
 
   # book
 
+  belongs_to :path_template
+  attr_accessible :path_template, :path_template_id
+
   attr_accessible :name
   attr_accessible :path
+
   attr_accessible :data
   attr_accessible :controller
   attr_accessible :action
@@ -114,6 +118,8 @@ class Page < ActiveRecord::Base
     edit do
       field :name
 
+      field :path_template
+
       field :translations, :globalize_tabs do
 
       end
@@ -124,6 +130,7 @@ class Page < ActiveRecord::Base
     nested do
 
       field :name
+      field :path_template
       field :translations, :globalize_tabs
     end
 

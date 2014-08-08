@@ -1,0 +1,44 @@
+.page.articles-list
+  .secondary-page-title
+    .row
+      .columns.large-12
+        h1.h1
+          |Новини
+
+
+
+  #articles-list.list
+    #articles-list-row.row
+      - if !@items.nil? && @items.respond_to?(:each)
+        - @items.each_with_index do |item, index|
+          .item class=( "right-image" if index % 2 == 1 )
+            .item-date.columns.large-2
+              - date = item.updated_at
+              = date.strftime("%d.%m.%Y")
+            .button-read.columns.large-2
+              .large-brand-button
+                .button-top
+                .button-value
+                  a href="#more-publications-and-video"
+                    = t('pages.articles-list.read-button.title')
+                .button-bottom
+
+
+            .item-content.columns.large-10  class=( "large-push-2" if index % 2 == 1 )
+              .item-image.columns class=( 'large-right' if index % 2 == 1 )
+                a href=item.page.path
+                  img src=item.avatar.article_list_thumb.url
+              .item-description.columns
+                .h2.item-title
+                  a href="#"
+                    = item.title
+                .item-short-description
+                  = item.short_description
+
+            .clearfix
+
+
+
+
+  
+  

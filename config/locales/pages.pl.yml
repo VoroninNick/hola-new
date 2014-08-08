@@ -16,3 +16,8 @@ pl:
         title: "Opis apartamentu"
       gallery:
         title: "zdjęcia mieszkania"
+
+
+    articles-list:
+      read-button:
+        title: 'czytać'

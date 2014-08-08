@@ -1,6 +1,6 @@
 class Setting < ActiveRecord::Base
   belongs_to :configuration
-  attr_accessible
+  attr_accessible :name, :value
 
   rails_admin do
     edit do

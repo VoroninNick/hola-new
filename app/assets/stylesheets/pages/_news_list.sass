@@ -1,0 +1,159 @@
+.secondary-page-title
+  background: $pink-color
+  height: 6.25rem
+  line-height: 6.25rem
+
+
+  .h1
+    line-height: 6.25rem
+    padding: 0
+    margin: 0
+    text-align: right
+    text-transform: uppercase
+    text-shadow: #666666 -2px 2px 1px
+    font-size: 2rem
+    font-weight: 700
+
+
+.page.articles-list
+  .list
+    margin-top: 3rem
+    padding-bottom: 100px
+    .item
+      position: relative
+
+      margin-top: 100px
+
+      &:first-child
+        margin-top: 0
+
+      .item-content
+        padding: 0 2rem 0 0
+
+      .item-image
+        padding: 0
+
+        width: 200px
+        z-index: 1
+
+
+        img
+          border-radius: 12px 0 0 12px
+
+      .item-description
+        height: 12.5rem
+        padding: 1rem 2rem 1rem 14.5rem
+        background: $light-gray-color
+        border-radius: 12px
+        width: 100%
+        float: none
+
+        .item-title
+          color: $green-color
+          text-transform: uppercase
+          font-size: 1.25rem
+          padding: 0.5rem 0rem
+          max-height: 4rem
+
+        .item-short-description
+          max-height: 6rem
+          overflow-y: hidden
+
+
+        &:before
+          content: ""
+          position: absolute
+          display: block
+          width: 2px
+          height: 100px
+          top: 100%
+          right: 100px
+          border-left: 2px dashed #4c4d4f
+
+
+      &, &.left-image
+        .item-description
+          &:after
+            content: ""
+            position: absolute
+            display: block
+            top: 50%
+            left: 100%
+            width: 4rem
+            height: 2px
+            margin-top: -1px
+            border-top: 2px dashed #4c4d4f
+
+      &.right-image
+        @media #{$large-up}
+          .item-content
+            padding: 0 0 0 2rem
+
+
+            .item-image
+              img
+                border-radius: 0 12px 12px 0
+            .item-description
+              padding: 1rem 14.5rem 1rem 2rem
+
+              &:before
+                right: auto
+                left: 100px
+
+
+              &:after
+                left: -4rem
+
+          .button-read
+            left: 0
+            padding: 0 2rem 0 0
+
+          .item-date
+            right: 0
+
+      &:last-child
+        .item-content
+          .item-description
+            &:before
+              content: none
+
+
+
+
+
+      .item-date
+        position: absolute
+        top: 100%
+        margin-top: 0.75rem
+        font-size: 0.8rem
+        color: #777
+        text-align: center
+
+      .button-read
+
+        position: absolute
+
+        left: 83.34%
+        width: 16.66%
+        padding: 0 0 0 2rem
+        top: 50%
+        @include transform( translateY(-50%) )
+
+
+        .large-brand-button
+          height: 3rem
+
+          .button-value
+            height: 3rem
+            z-index: 1
+
+            a
+              color: white
+              text-align: center
+              line-height: 3rem
+              display: block
+              text-decoration: none
+
+
+
+

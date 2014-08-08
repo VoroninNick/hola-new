@@ -1,0 +1,31 @@
+.page.news-list
+  .secondary-page-title
+    .row
+      .columns.large-12
+        h1.h1
+          |Новини
+
+
+
+  #news-list.list
+    #news-list-row.row
+      #info
+        = Article.where(publish: 't').order('updated_at desc').inspect
+      - if !@items.nil? && @items.respond_to?(:each)
+        - @items.each do |item|
+          .item
+            .item-image.columns.large-2
+              a href=item.page.path
+                img src=item.avatar.article_list_thumb.url
+            .item-description.columns.large-12
+              .item-title
+                = item.title
+              .item-short-description
+                = item.short_description
+
+            .item-date
+              = item.updated_at
+
+            .button-read
+
+

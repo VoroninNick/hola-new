@@ -17,3 +17,8 @@ uk:
         title: "опис квартири"
       gallery:
         title: "фотографії квартири"
+
+
+    articles-list:
+      read-button:
+        title: 'читати'

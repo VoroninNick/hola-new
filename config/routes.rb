@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   # get 'pages/show'
 
 
-
+  DynamicRouter.load
 
 
   scope "(:locale)", locale: /#{I18n.available_locales.join('|')}/, defaults: {source_route: true} do
@@ -24,13 +24,13 @@ Rails.application.routes.draw do
     #
     #get 'about-us', to: 'about#index', as: 'about'
     #
-    #get 'articles', to: 'articles#list', as: 'articles'
+    get 'articles', to: 'articles#articles_list', as: 'articles'
     #
-    # get 'articles/:item', to: 'articles#item', as: 'articles_item'
+    get 'articles/:item', to: 'articles#article_item', as: 'articles_item'
     #
-    #get 'news', to: 'news#list', as: 'news'
+    get 'news', to: 'articles#news_list', as: 'news'
     #
-    # get 'news/:item', to: 'news#item', as: 'news_item'
+    get 'news/:item', to: 'articles#news_item', as: 'news_item'
     #
     #get 'contact', to: 'contact#show', as: 'contact'
     #
@@ -42,7 +42,7 @@ Rails.application.routes.draw do
   end
 
 
-  DynamicRouter.load
+
 
   get "*path", to: 'error#not_found', defaults: { error_code: 404 }
 
@@ -106,3 +106,4 @@ Rails.application.routes.draw do
   #     resources :products
   #   end
 end
+

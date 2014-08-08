@@ -165,6 +165,8 @@ class Appartment < ActiveRecord::Base
       m = {lat: apartment.lat, lng: apartment.lng, category: apartment.appartment_category.name, price: ApplicationHelper.self_price_to_currency_string(apartment.price), address: apartment.address, apartment_url: apartment.page.path }
       markers.push m
     end
+
+    markers
   end
 
 

@@ -16,6 +16,10 @@ class DynamicRouter
 
       end
     end
+
+    if Configuration.settings_hash["detect_locale_automatically"] == 'true'
+
+    end
   end
 
   def self.reload

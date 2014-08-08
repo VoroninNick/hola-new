@@ -15,3 +15,7 @@ en:
         title: "apartment description"
       gallery:
         title: "apartment gallery"
+
+    articles-list:
+      read-button:
+        title: 'read'

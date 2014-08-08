@@ -57,7 +57,7 @@ RailsAdmin.config do |config|
     # history_show
   end
 
-  config.included_models = [ SitemapRecord, Pages::HomePage, HomeSlider, AppartmentSlider, Menu, Pages::AboutPage ]
+  config.included_models = [ SitemapRecord, Pages::HomePage, HomeSlider, AppartmentSlider, Menu, Pages::AboutPage, Configuration, Setting, PathTemplate ]
 
   [Appartment, Region, AboutPageBlock, Page, AppartmentIcon, AppartmentImage, AppartmentSlide, AppartmentCategory].each do |model|
     config.included_models += [model, model::Translation]

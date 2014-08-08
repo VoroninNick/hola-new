@@ -16,3 +16,8 @@ ru:
         title: "описание квартиры"
       gallery:
         title: "фотографии квартиры"
+
+
+    articles-list:
+      read-button:
+        title: 'читать'

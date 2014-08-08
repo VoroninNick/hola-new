@@ -15,6 +15,15 @@ class Article < ActiveRecord::Base
 
   class Translation
     attr_accessible :locale, :title, :short_description, :content
+
+    rails_admin do
+      edit do
+        field :locale, :hidden
+        field :title
+        field :short_description
+        field :content, :ck_editor
+      end
+    end
   end
 
 
@@ -24,14 +33,11 @@ class Article < ActiveRecord::Base
 
   before_save :check_page
 
-  def check_page
-    if self.article_type.nil? || self.article_type.length == 0 || !['article', 'news'].include?(self.article_type)
-      self.article_type = 'article'
-    end
+  after_save :check_page
 
+  def check_page
     if pages.count == 0
       p = Page.new
-      p.controller ||= 'articles'
       p.action ||= 'item'
       p.layout ||= 'application'
       p.save
@@ -39,19 +45,30 @@ class Article < ActiveRecord::Base
     end
 
     p = page
+    if self.article_type == 'news'
+      p.page.controller = 'news'
+    elsif self.article_type == 'articles'
+      p.page.controller = 'articles'
+    end
     self.translations_by_locale.keys.each do |locale|
-      if self.name.nil? || self.name.length == 0
-        self.name = "#{self.article_type}-#{id}"
+
+      if self.title.nil? || self.title.length == 0
+        self.title = "#{(self.article_type == 'article')? 'article' : (self.article_type == 'news')? 'news' : ''}-#{id}"
       end
 
+
+
       if !p.translations_by_locale.keys.include?(locale) || ( p.path.nil? || p.path.length == 0 )
-        p.translations_by_locale[locale].path = "/#{locale.to_s}/appartments/#{self.name.parameterize}"
+        translation = p.translations.new(locale: locale)
+        translation.path = "#{self.title.parameterize}"
+        #translation.save
+        p.translations.push(translation)
         p.save
       end
 
       I18n.with_locale locale do
         # if p.path.nil? || p.path.length == 0
-        #   p.path = "/#{locale.to_s}/appartments/#{self.name.parameterize}"
+        #   p.path = "/#{locale.to_s}/appartments/#{self.title.parameterize}"
         # end
 
 
@@ -81,21 +98,25 @@ class Article < ActiveRecord::Base
         end
       end
 
-      field :title
+      #field :title
 
       field :avatar
 
-      field :short_description
+      field :translations, :globalize_tabs do
+        label "Переклад"
+      end
 
-      field :content
+      #field :short_description
+
+      #field :content
 
       #field :tag_list
 
       field :release_date
 
-      field :translations, :globalize_tabs do
-        label "Переклад"
-      end
+      field :pages
+
+
     end
   end
 end

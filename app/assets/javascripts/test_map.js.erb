@@ -63,7 +63,7 @@ $(document).on('ready', function() {
 
                 var m = data_markers[i]
 
-                var $div = jQuery('<div class="appartment-marker"><div class="marker-tooltip"></div><a href="'+ m.apartment_url +'" target="_blank"><%= ApplicationHelper.js_embedded_svg('marker.svg') %></a></div>');
+                var $div = jQuery('<div class="appartment-marker"><div class="marker-tooltip"></div><a href="'+ m.apartment_url +'"><%= ApplicationHelper.js_embedded_svg('marker.svg') %></a></div>');
                 var $marker_tooltip = $div.find('.marker-tooltip')
                 $marker_tooltip.append('<a href="'+ m.apartment_url+'"><div class="address-and-category"><div class="address">'+ m.address+'</div><div class="category">'+ m.category+'</div></div><div class="price">'+ m.price+'</div></a>')
 
